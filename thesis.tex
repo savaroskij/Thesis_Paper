@@ -1,0 +1,30 @@
+\documentclass[11pt, letterpaper, twoside, openright]{book}
+\usepackage[T1]{fontenc}
+
+\usepackage[a-1b]{pdfx}
+\usepackage{hyperref}
+\usepackage{siunitx}
+
+\includeonly{./chapters/abstract/abstract}
+
+\title{Title}
+\author{Matteo Savatteri}
+\date{\today}
+
+\begin{document}
+\frontmatter
+
+\maketitle
+\tableofcontents
+% Include abstract
+\include{./chapters/abstract/abstract}
+
+\mainmatter
+
+% include chapters
+%\include{./chapters/ch1/ch1}
+%\include{./chapters/ch2/ch2}
+
+\backmatter
+
+\end{document}
