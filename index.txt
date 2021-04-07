@@ -1,0 +1,67 @@
+Index:
+        Chapter 1: "The Cosmic Microwave Backgound: an Introduction"
+                The CMB Radiation:
+                        - spiegare origine della radiazione
+                        - spiegare la forma dello spettro e perche' e` a
+                        questa temperatura
+                The CMB Temperature Anisotropies:
+                        - Mostrare spettro di potenza angolare e suo
+                        significato
+                The CMB Polarizarion:
+                        - Scattering Thomson
+                        - E-Modes and B-Modes
+        Chapter 2: LSPE/Strip
+                The LSPE Experiment:
+                        - Overview esperimento
+                        - Gli strumenti: SWIPE e STRIP
+                The Strip Instrument:
+                        - Descivere obbiettivi e sito 
+                        - Descrivere sommariamente il telescopio rotante
+                        - Descrivere il piano focale
+                Atmospheric Effects Systematic:
+                        - Spiegare perche` atmosfera e` problematica per
+                        esperimenti da terra e Strip
+        Chapter 3: The Atmospheric Emission Model (Vedi Church per questo titolo)
+                The Equation of Radiative Transfer:
+                        - Mostrare ipotesi equazione, sua soluzione in LTE
+                        - Temperatura di brillanza di atmosfera
+                Numerical Solution [...]:
+                        - libCAL, libaatm
+                        - Metodo montecarlo
+                        - Il problema dell'input
+                Atmospheric Spatial Structures?
+        Chapter 4: The Atmospheric Statistical Picture
+                The ERA5 Dataset:
+                        - Risoluzione spaziale e temporale
+                        - Parametri rilevanti
+                The CDFs .fits file:
+                        - Come si costruisce?
+                        - Quali sono i suoi vantaggi?
+                The Seasonal Matrices:
+                        - Come si costruiscono?
+                        - Qual e` il loro significato?
+        Chapter 5: Atmospheric Temperatures Annaual Variation:
+                The CMB Atmospheric Library:
+                        - Introduzione alla libreria
+                        - Metodi rilevanti e loro analisi
+                The tatmget computer program:
+                        - Descrizione sommaria del programma
+                Atmospheric Temperature Seasonal Matrices
+        Chapter 6: Comparison with QUIJOTE-MFI Data
+                Comparison with Raw Data:
+                        - Descrizione dataset MFI
+                        - Il problema della risoluzione spaziale
+                The Calibration Coefficient:
+                        - I profili dei palloni sonda
+                        - Il programma am
+                        - Comparazione dati am/cal
+                        - Il coefficiente di calibrazione e i suoi limiti
+                Comparison with Calibrated Data
+        Chapter 7: Atmosphere White Noise Contribution
+                The Strip Polarimeters:
+                        - Risolvere algebra polarimetro e mostrare segnale su diodi Q e U
+                Bandshape Integration:
+                        - Mostra come si effettua integrazione in banda
+                        - Mostra sigma risultante
+        Conclusions
+        Appendices
