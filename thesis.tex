@@ -1,10 +1,12 @@
 \documentclass[11pt, letterpaper, twoside, openright]{book}
-\usepackage[T1]{fontenc}
 
 \usepackage[a-1b]{pdfx}
 \usepackage{hyperref}
+\usepackage[T1]{fontenc}
 \usepackage{siunitx}
 \usepackage{blindtext}
+\usepackage{graphicx}
+\graphicspath{{./chapters/ch1/images/}{./chapters/ch2/images/}{./chapters/ch3/images/}{./chapters/ch4/images/}{./chapters/ch5/images/}{./chapters/ch6/images/}{./chapters/ch7/images/}}
 
 %\includeonly{./chapters/}
 
@@ -18,6 +20,8 @@
 \maketitle
 \include{./chapters/acknowledgements/acknowledgements}
 \tableofcontents
+\listoffigures
+\listoftables
 
 \mainmatter
 
