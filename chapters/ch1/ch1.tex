@@ -338,6 +338,122 @@ curved $k = 1$ universe. Measuring the present day total energy density
 $\rho_{\text{tot},0}$ and the Hubble constant $H_0$, gives us the
 opportunity to have knowledge of the spatial geometry of our universe. 
 
+\subsection{The Components of the Cosmological Fluid}
+
+According to current theories and pieces of evidence, there are three
+entities that contribute to the current energy density of our universe:
+
+\begin{itemize}
+        \item Conventional matter or \emph{dust};
+        \item Radiation;
+        \item Dark Energy or \emph{cosmological constant}.
+\end{itemize}
+
+To derive a solution for the time evolution of the scale factor $a\qty(t)$
+in our universe, it is essential to write a state equation
+$P\qty(\rho) = \rho$ for each one of these component:
+
+\begin{itemize}
+        \item For dust-like matter (e.g. galaxies or cold dark matter):
+        $P_m\qty(\rho_m) = 0$;
+        \item For radiation we must impose a null trace for the energy-momentum
+        tensor $T_{\mu \nu}$ in \autoref{eq:energy_momentum_tensor}: $P_r\qty(\rho_m)
+        = \frac{1}{3} \rho_r c^2$;
+        \item For Dark Energy the equation of state is obtained
+        substituting  $G_{\mu \nu} = -g_{\mu \nu} \Lambda$, with $\Lambda =
+        \text{const.}$ and $\Lambda > 0$, in \autoref{eq:einstein}:
+        $P_\Lambda\qty(\rho_\Lambda) = -\rho_\Lambda c^2$, $\rho_\Lambda =
+        \frac{\Lambda}{8\pi G}$.
+\end{itemize}
+
+The dependence on the scale factor for the energy densities characterized by
+these state equations is found making use of the continuity equation 
+(\autoref{eq:continuity}):
+
+\begin{align}
+        \rho_m\qty(a) & = \rho_{m,0}a^{-3} \label{eq:rho_m} \\
+        \rho_r\qty(a) & = \rho_{r,0}a^{-4} \label{eq:rho_r} \\
+        \rho_\Lambda\qty(a) & = \rho_{\Lambda,0} \label{eq:rho_lambda} \\
+\end{align}
+
+The quantity $\Lambda$ is known as the \emph{cosmological constant} and the
+corresponding density $\rho_\Lambda$ is the \emph{vacuum energy density},
+associated with the \emph{zero-point energy} of the vacuum state. Note that
+Dark Energy has negative pressure $P_\Lambda = -\rho_\Lambda c^2$, and it
+does not dilute away as the universe expands.
+
+The total energy density of our universe is:
+
+\begin{equation}
+        \rho_\text{tot}\qty(a) = \frac{\rho_{m,0}}{a^3} + \frac{\rho_{r,0}}{a^4} +
+        \rho_{\Lambda,0} 
+\end{equation}
+
+An expanding universe is radiation dominated at first, in a second phase 
+its expansion is driven by matter and at last by Dark Energy. In fact every
+universe characterized by a non-zero cosmological constant ($\Lambda \neq
+0$) will be ultimately become dodinated by the vacuum energy density
+$\rho_\Lambda$. A plot of the evolution of the three kinds of energy
+density is shown in \autoref{fig:density_evolution}.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{density_evolution}
+        \caption{Energy density evolution.}
+        \label{fig:density_evolution}
+\end{figure}
+
+Given the total energy density we can solve the first Friedmann equation
+and obtain the evolution of the scale factor in our universe. The scale
+factors for the three different space curvatures ($k = 0,\pm 1$) in the
+simple case of a matter dominated universe are sketched in 
+\autoref{fig:scale_factor_evolution_matter}. In the case of an expanding
+flat or hyperbolic geometry ($k = 0,-1$) the universe expands for ever with:
+
+\begin{equation}
+        \dot a\qty(t \rightarrow +\infty)
+                \begin{cases}
+                        > 0 & \qif k = -1 \\
+                        \rightarrow 0 & \qif k = 0
+                \end{cases}
+\end{equation}
+
+The spherical universe ($k = +1$) instead eventually re-collapses at a finite
+time $t_{\text{bc}}$ with:
+
+\begin{equation}
+        a\qty(t_{\text{bc}}) = 0 
+\end{equation}
+
+This event is known as \emph{Big Crunch}.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{scale_factor_evolution_matter}
+        \caption{Scale factor evolution in a matter dominated universe.}
+        \label{fig:scale_factor_evolution_matter}
+\end{figure}
+
+In the case of Dark Energy dominated universe every possible solution for
+each one of the three space curvatures describes the same spacetime, but with
+different coodinates. This spacetime is kwown as \emph{de Sitter space}.
+The evolution of the scale factor for this kind of universe is shown in
+\autoref{fig:scale_factor_evolution_sitter}. This solution shows a
+contracting phase when $t < 0$, followed by a phase of accelerating
+expansion ($\ddot a > 0$) when $t > 0$. In particular there's no
+\emph{Big Bang} when $t = 0$:
+
+\begin{equation}
+        a\qty(t = 0) = \sqrt{\frac{3c^2}{\Lambda}} 
+\end{equation}
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{scale_factor_evolution_sitter}
+        \caption{Scale factor evolution for de Sitter space}
+        \label{fig:scale_factor_evolution_sitter}
+\end{figure}
+
 \section{The CMB Radiation}
 
 \begin{figure}
