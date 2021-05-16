@@ -1249,4 +1249,234 @@ enough to solve the horizon problem.
         \label{fig:horizon_inflation_solution}
 \end{figure}
 
+
+We can understand how the flatness problem is solved rewriting
+\autoref{eq:friedmann_curvature} in term of the comoving apparent horizon
+and taking its absolute value.  We obtain
+
+\begin{equation}
+        \abs{\Omega\qty(t) - 1} = k d_{H,\text{co}}. 
+\end{equation}
+
+If the comoving apparent horizon decreases the Universe is driven toward
+flatness. The solution $\Omega = 1$ is an attractor during inflation.
+
+\subsection{Conditions for Inflation}
+
+We have just seen that the a necessary condition for inflation is a
+shrinking comoving apparent horizon in the early Universe. This is
+equivalent to
+
+\begin{equation}
+        \dot d_{H,\text{co}} < 0.
+\end{equation}
+
+Calculation of the time derivative yields
+
+\begin{equation}
+        \frac{-\ddot a\qty(t)}{a^2\qty(t) H^2\qty(t)} < 0
+\end{equation}
+
+therefore a necessary condition for inflation is a phase of accelerated
+expansion of the Universe,
+
+\begin{equation}
+        \ddot a\qty(t) > 0 
+\end{equation}
+
+The second time derivative of the scale factor can be related to the first
+time derivative of the Hubble parameter in this way
+
+\begin{equation}
+        \frac{\ddot a\qty(t)}{a\qty(t)} = H^2\qty(t)\qty(1 - \epsilon\qty(t)). 
+\end{equation}
+
+$\epsilon$ is known as the \emph{slow-roll parameter} and is defined as
+$\epsilon\qty(t) \equiv -\frac{\dot H\qty(t)}{H^2\qty(t)}$.
+Therefore, for an accelerating phase to happen in the early universe is
+required that
+
+\begin{equation}
+        \epsilon\qty(t) < 1. 
+\end{equation}
+
+This condition implies that the fractional change of the Hubble parameter
+is small during iflation. As a result we can assume 
+
+\begin{equation}
+        H\qty(t) = H_I = \text{const.} 
+\end{equation}
+
+during inflation.
+
+Furthermore, looking at the second Friedmann equation, we infer that the condition $\ddot
+a > 0$ requires
+
+\begin{equation}
+        P\qty(t) < -\frac{1}{3} \rho\qty(t).
+\end{equation}
+
+This demands the presence of a component of the cosmological fluid
+characterized by the negative pressure, or, in an equivalent way, a
+violation of the \emph{strong energy condition}. 
+
+\subsection{Physics of Inflation}
+
+A simple physical model of inflation involves a single scalar field
+$\phi\qty(\vb{\chi},t)$, known as \emph{inflaton}. The physical nature of
+the inflaton is unknown, but we can simply use it as an \emph{order
+paramerer} to parametrize the time-evolution of the inflationary energy
+density.
+
+The action associated to the a scalar field weakly coupled to gravity is
+
+\begin{equation}
+        S\qty[g,\phi] = S_{EH}\qty[g] + S_\phi\qty[g,\phi] 
+\end{equation}
+
+where $S_{EH}\qty[g]$ is the gravitational Einstein-Hilbert action and
+$S[g,\phi]$ is generic action for a scalar field. The explicit shapes of 
+these action action terms are
+
+\begin{align}
+        S_{EH}[g] & = \frac{1}{16\pi G} \int \sqrt{-g} R \dd[4]{\chi} \\
+        S_\phi[g,\phi] & = \frac{\sqrt{-g}}{2}
+        g^{\mu \nu}\partial_\mu\phi\partial_\nu\phi - V\qty(\phi)
+\end{align}
+
+where $V\qty(\phi)$ is a potential that describes the self-interactions of
+the scalar field $\phi$.
+
+The application of the variational principle to the action gives the
+field equation of motion
+
+\begin{equation}
+        \frac{1}{\sqrt{-g}} \partial_\mu\qty(\sqrt{-g} \partial^\mu\phi) +
+        V'\qty(\phi) = 0
+\end{equation}
+
+Assuming the FLRW metric for $g_{\mu \nu}$ and that we are working with an
+homogeneous field $\phi\qty(\vb{\chi},t) \equiv \phi\qty(t)$, the equation
+of motion become
+
+\begin{equation}
+        \ddot \phi + 3H \dot\phi + V'\qty(\phi) = 0 
+\end{equation}
+
+the equation of motion of a damped harmonic oscillator and the field
+evolves towards the minimum potential condition.
+
+Under the same assumptions the energy momentum tensor of the field takes
+the form of a perfect fluid, with the following pression and density,
+
+\begin{align}
+        \rho_\phi c^2 & = \frac{1}{2} \dot\phi^2 + V\qty(\phi) \\
+        P_\phi & = \frac{1}{2}\dot\phi^2 - V\qty(\phi).
+\end{align}
+
+The usual $w$ proportionality parameter in the scalar field state equation
+is
+
+\begin{equation}
+        w_\phi\qty(t) = \frac{\frac{1}{2} \dot\phi^2 - V\qty(\phi)}{\frac{1}{2}
+        \dot\phi^2 + V\qty(\phi)} 
+\end{equation}
+
+So in this case the slow-roll parameter becomes
+
+\begin{equation}
+        \epsilon\qty(t) \equiv \frac{3}{2} \qty(w_\phi\qty(t) + 1) =
+        \frac{1}{2} \frac{\dot\phi^2\qty(t)}{H^2\qty(t)}
+\end{equation}
+
+Accelerated expansion takes place when $\epsilon\qty(t) < 1$. In particular
+in the case limit defined by
+
+\begin{equation}
+        \dot\phi^2 \ll V\qty(\phi)
+        \label{eq:sr_condition_1}
+\end{equation}
+
+$\epsilon\qty(t) \ll 1$, so as previuosly stated $H\qty(t) = H_I =
+\text{const.}$ and we are in the de Sitter limit,
+
+\begin{equation}
+        P_\phi\qty(t) \approx -\rho_\phi\qty(t)
+\end{equation}
+
+that is, the inflaton behaves like a perfect fluid characterized by
+negative pressure, as in the case of Dark Energy.
+
+Accelerated expansion is sustained for a sufficiently long period of time
+only if $\ddot \phi\qty(t)$ is small enough,
+
+\begin{equation}
+        \abs{\ddot\phi} \ll \abs{3H\dot\phi}, \abs{V'\qty(\phi)}.
+        \label{eq:sr_condition_2}
+\end{equation}
+
+\autoref{eq:sr_condition_1} and \autoref{eq:sr_condition_2} are known as
+\emph{slow-roll conditions}. Under them the equation of motion for the
+scalar inflation field and the first Friedmann equation become
+
+\begin{align}
+        \dot\phi \approx & -\frac{V'\qty(\phi)}{3H}  \\
+        H^2 \approx & \frac{8\pi G}{3} V\qty(\phi) = H_I
+\end{align}
+
+From the last equation we understand that during inflation the spacetime is
+approximately de Sitter with the scale factor undergoing exponential growth,
+
+\begin{equation}
+        a\qty(t) \approx a\qty(t_I)e^{H_I\qty(t - t_I)} 
+\end{equation}
+
+as expected. The inflation epoch comes to an end when thw slow-roll
+conditions are violated,
+
+\begin{equation}
+        \epsilon(t_{I,\text{end}}) \equiv 1, 
+\end{equation}
+
+from that time on the inflaction field kinetic energy starts to grow, 
+until the field potential comes to its minimun. The field energy is
+dissipated in a process called \emph{reheating} and an epoch well
+described by standard cosmology follows.
+
+There are different inflaton potentials that guarantees slow-roll
+conditions and each one of them corresponds to a distinc model of
+inflation. An example of inflaton potential is shown in
+\autoref{fig:inflaton_potential}.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{inflaton_potential}
+        \caption{Example of inflaton potential}
+        \label{fig:inflaton_potential}
+\end{figure}
+
+\subsection{Inflation and Primordial Perturbations}
+
+The inflationary paradigm can also solve the initial conditions problem,
+providing a physical mechanism to introduce perturbations in the early
+universe. The non-uniformity arises from quantum fluctuations in the
+inflaton field, which appear as linear perturbations of the field itself.
+
+The Universe at the time of inflation was dominated by the inflation field,
+therefore scalar, vector and tensor first order perturbations arised in 
+the spacetime metric. The three kind of perturbations evolve independently:
+vector perturbations decay in an expanding universe. Instead, scalar and
+tensor perturbations exihibit the following power spectra:
+
+\begin{align}
+        P_\phi & \\
+        P_h & ,
+\end{align}
+
+respectively. The predicted values of the spectral
+indeces are, $n_S \approx 1$ and $n_S \approx 0$.
+
+
+
+
 \section{The CMB Polarization}
