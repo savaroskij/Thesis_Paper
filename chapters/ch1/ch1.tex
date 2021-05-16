@@ -67,6 +67,78 @@ There are two main piece of evidence for the cosmological principle:
 The acceptance of such a profound statement it's the prologue to the
 description of the geometry of \emph{spacetime}. 
 
+\subsection{The FLRW Metric}\label{ss:flrw}
+
+Friedmann, Lema\^itre, Robertson and Walker during the 1920-1930s proved
+independently that the most generic metric based on the cosmological
+principle is the Friedmann-Lema\^itre-Robertson-Walker (FLRW) metric:
+
+\begin{equation}
+        \dd{s}^2 = -c^2\dd{t^2} + a\qty(t)^2\qty[\dd{\chi}^2 +
+        f_k\qty(\chi)^2\dd{\Omega}^2]
+        \label{eq:flrw}
+\end{equation}
+
+Where:
+
+\begin{itemize}
+        \item $c$ is the speed of light in vacuum;
+        \item $a\qty(t)$ is a real function of time known as \emph{scale factor};
+        \item $k$ is a real number which parametrizes the spatial curvature of the
+        spacetime. Due to the homogeneity and isotropy of space, $k$ is at most a
+        function of time. For a fixed time $k$ is a constant and:
+
+        \begin{itemize}
+                \item $k = 0$ $\rightarrow$ flat universe;
+                \item $k > 0$ $\rightarrow$ open universe;
+                \item $k < 0$ $\rightarrow$ closed universe.
+        \end{itemize}
+
+        in particular:
+
+        \begin{equation}
+                f_k\qty(\chi) =
+                        \begin{cases}
+                                 \chi & \qif k = 0 \\
+                                 \sqrt{k}^{-1} \sin(\sqrt{k} \chi) & \qif k > 0 \\
+                                 \sqrt{\abs{k}}^{-1} \sinh(\sqrt{\abs{k}} \chi) & \qif k < 0
+                        \end{cases}
+        \end{equation}
+        \item and $\dd{\Omega}^2 = \dd{\theta}^2 + \sin[2](\theta) \dd{\phi}^2$
+        is the metric of the unitary sphere.
+\end{itemize}
+
+The FLRW metric in \autoref{eq:flrw} is invariant under the following transformation:
+
+\begin{equation}
+        \begin{split}
+                \chi & \rightarrow \frac{\chi}{\lambda} \\
+                k & \rightarrow \lambda k \\
+                a & \rightarrow \lambda a
+        \end{split}
+\end{equation}
+
+so it is possible to set:
+
+\begin{align}
+k & = 0,\pm 1 \\
+a\qty(t_0) & = 1
+\end{align}
+
+where $t_0$ is the present time and the function $f_k$ becomes: 
+
+        \begin{equation}
+                f_k\qty(\chi) =
+                        \begin{cases}
+                                 \chi & \qif k = 0 \\
+                                 \sin \chi & \qif k = 1 \\
+                                 \sinh \chi & \qif k = -1 
+                        \end{cases}
+        \end{equation}
+
+We can immediately note that the valid geometry for an homogeneous
+and isotropic spacetime are either flat, spherical or hyperbolic.
+
 \section{The CMB Radiation}
 
 \begin{figure}
