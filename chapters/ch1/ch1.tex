@@ -732,11 +732,438 @@ perfect blackbody spectrum at $T = \SI{2.7260 \pm 0.0013}{\kelvin}$
 
 \section{The CMB Temperature Anisotropies}
 
+The CMB radiation is extremely isotropic. As mentioned in
+\autoref{ss:cosmological_principle} the temperature anisotropies are of the
+order of
+
+\begin{equation}
+\frac{\Delta T\qty(\theta,\phi)}{\bar T} \sim \num{e-5}
+\end{equation}
+
+for every $\theta$ and $\phi$ on the sky, $0 \leq \theta \leq \pi$,
+$0 \leq \phi \leq 2\pi$.
+
+Sachs and Wolfe in 1967 had theorized first the presence of temperature
+anisotropies in the CMB spectrum at large angular scales. Later 
+anisotropies were linked to the quantum oscillations in primordial plasma,
+but the instruments used before the 90s were not sensible enough to carry
+out useful measures of this phenomenon.
+
+The \emph{Differential Microwave Radiometer} (DMR) instrument onboard the
+COBE satellite was the first experiment to map the CMB temperature
+anisotropies.The instrument consists of six differential microwave
+radiometers, two nearly independent channels that operate at each of three
+frequencies: \SI{ 31.5}{\giga\hertz}, \num{53}, and \SI{90}{\giga\hertz}.  
+Making use of two years of DMR data, the amplitude of temperature fluctuations
+was reported to be
+\SI{36 \pm 5}{\micro\kelvin} at \ang{7}, and
+\SI{30.5 \pm 2.7}{\micro\kelvin} when smoothed to \ang{10}.
+The sky maps obtained by DMR is showed in \autoref{fig:dmr_maps}.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=0.80\textwidth]{DMR_maps}
+        \caption{The following image is similar to the June 1992 Physics
+        Today cover picture, with the map including the dipole and Galaxy
+        on the top, the dipole removed map in the middle, and the reduced
+        map on the bottom. The dipole, a smooth variation between
+        relatively hot and relatively cold areas from the upper right to
+        the lower left, is due to the motion of the solar system relative
+        to distant matter in the universe. The signals attributed to this
+        variation are very small, only one thousandth the brightness of the
+        sky.}
+        \label{fig:dmr_maps}
+\end{figure}
+
+The second generation of CMB experiments was represented by the
+\emph{Wilkinson Microwave Anisotropy Probe} (WMAP). The WMAP mission was
+designed to acquire a \ang{;13;} FWHM resolution full sky
+map of the temperature anisotropy of the cosmic microwave background
+radiation. WMAP observed the microwave sky for \num{9} years in \num{5}
+bands. The skymap data products derived from the WMAP observations have
+\num{45} times the sensitivity and \num{33} times the angular resolution
+of the COBE-DMR mission.
+
+\emph{Planck} was the third generation of space-based cosmic microwave background
+experiments, after NASA's COBE and NASA's WMAP. It was also the third
+Medium-Sized Mission (M3) of European Space Agency's (ESA's) Horizon 2000
+Scientific Program. The basic scientific goal of the Planck mission is to
+measure CMB anisotropies at all angular scales larger than \ang{;10;} 
+over the entire sky with a precision of \num{\sim 2} parts per million.
+The model payload consisted of a \SI{1.5}{\meter} off-axis telescope with
+two focal plane arrays of detectors sharing the focal plane. Low frequencies
+were covered by \num{56} tuned radio receivers sensitive to
+\SIrange{30}{100}{\giga\hertz}, while high frequencies were be covered by
+\num{56} bolometers sensitive to \SIrange{100}{850}{\giga\hertz}.
+The Planck mission permitted the extraction of the most precise map of the
+CMB temperature anisotropies, to date. This map is depicted in 
+\autoref{fig:planck_cmb}. 
+
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{Planck_CMB}
         \caption{CMB Anisotropies Planck}
-        \label{fig:plack_cmb}
+        \label{fig:planck_cmb}
+\end{figure}
+
+A comparison of the results obtained by COBE, WMAP, and Plank is showed in
+\autoref{fig:cobe_wmap_planck_comparison}.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{cobe_wmap_planck_comparison}
+        \caption{COBE, WMAP, and Plank results comparison.}
+        \label{fig:cobe_wmap_planck_comparison}
+\end{figure}
+
+\subsection{Density Fluctuations}
+
+The CMB radiation anisotropies contain an imprint of the anisotropies at
+the time of recombination and, if traced back in time, they can be
+interpreted as a signature of the perturbations in the primordial plasma.
+Precise measures of the CMB anisotropies pattern let us discriminate
+between different cosmological models.
+
+The perturbations in the early universe were adiabatic, that is, the
+perturbations in all components of the cosmological fluid are proportional.
+In particular
+
+\begin{equation}
+        \delta_r\qty(\vb{\chi},t) \equiv \frac{4}{3} \delta_m\qty(\vb{\chi},t) 
+\end{equation}
+
+where $\delta_x\qty(\vb{\chi},t)$ is the \emph{density contrast} for a
+specific component of the cosmological fluid
+
+\begin{equation}
+        \delta_x\qty(\vb{\chi},t) = \frac{\var{\rho_x\qty(\vb{\chi},t)}}{\bar \rho_x}
+\end{equation}
+
+$\bar \rho_x$ is the avarage density.
+
+We express the adiabatic relation between radiation and matter in terms of
+temperature fluctuation in the CMB. The Stefan-Boltzmann law, which is
+valid for a black body, states that
+
+\begin{equation}
+        I = \sigma T^4 
+\end{equation}
+
+where I is the intensity of radiant energy, and $\sigma$ is the
+Stefan-Boltzmann constant. We deduce that $\rho_r \sim T^4$, so
+
+\begin{equation}
+        \delta_r = 4 \frac{\var{T}}{\bar T}. 
+\end{equation}
+
+As a consequance of the adiabatic nature of the primordial density
+perturbations, we conclude that
+
+\begin{equation}
+        \frac{\var{T}}{\bar T} = \frac{1}{3} \delta_m. 
+\end{equation}
+
+It is best to perform the Fuorier transform of the density contrast
+
+\begin{equation}
+        \delta \qty(\vb{k},t) = \int \dd[3]{\vb{\chi}} e^{i\vb{k} \vdot
+        \vb{\chi}} \delta\qty(\vb{\chi},t)
+\end{equation}
+
+because the comoving wavenumber $k = a\qty(t) k_\text{phys}$ is linked to a
+physical scale represented by the phisical wavelength
+
+\begin{equation}
+        \lambda_\text{phys} = \frac{2\pi a\qty(t)}{k}.
+\end{equation}
+
+In the hypothesis  of a flat universe ($k = 0$), the wave modes of the
+primordial density contrast $\delta\qty(\vb{k},t = t_\text{BigBang})$
+has evolved over time since Big Bang, according to the perturbation
+equation. Such equation is obtained linearising the fluid equations
+for a perfect fluid in an expanding spacetime:
+
+\begin{equation}
+        \ddot \delta\qty(\vb{\chi},t) + 2H\qty(t)\dot \delta\qty(\vb{\chi},t) -
+        c_s^2\qty(1 + w)\qty(\frac{1}{a^2\qty(t)} \laplacian_\chi + \qty(
+        1 + w)k^2_j)
+        \delta\qty(\vb{\chi},t) = 0
+\end{equation}
+
+which in Fourier space become
+
+\begin{equation}
+        \ddot \delta\qty(\vb{k},t) + 2H\qty(t)\dot \delta\qty(\vb{k},t) -
+        c_s^2\qty(1 + w)\qty(\frac{k^2}{a^2\qty(t)} + \qty(1 + w)k^2_j)
+        \delta\qty(\vb{k},t) = 0.
+        \label{eq:perturbations_density}
+\end{equation}
+
+The relevant quantities in the last equation are:
+
+\begin{itemize}
+        \item $c_s$: the speed of sound for the fluid;
+        \item $k_J$: the \emph{Jeans wavenumber}, which is related to the
+        \emph{Jeans length scale}
+
+        \begin{equation}
+                \lambda_J = c_s c \sqrt{\frac{\pi}{G \bar \rho}}. 
+        \end{equation}
+
+        Only modes with $\lambda > \lambda_J$ will grow over time. This is
+        known as \emph{Jeans instability}.
+        For modes with $\lambda < \lambda_J$
+        \autoref{eq:perturbations_density} is that of a damped harmonic
+        oscillator, so this modes does not grow.
+
+        \item $w$: the same parameter that appears in the equation of state
+        for a specific component of the cosmological fluid
+
+        \begin{equation}
+                P\qty(t) = w \rho\qty(t) c^2. 
+        \end{equation}
+\end{itemize}
+
+The other relevant scale length, in addition to the Jeans length scale is
+set by the expansion of the universe,
+
+\begin{equation}
+        d_H \approx cH^{-1} = c^2 \sqrt{\frac{3}{8\pi G \bar \rho}}. 
+\end{equation}
+
+This is known as the \emph{apparent horizon} or \emph{Hubble radius}.
+Each Fourier mode of a perturbation
+is a coherent wave and causality prohibits the formation of such perturbations
+in case of $\lambda > d_H$, since there is no time for information to cross
+this distance since the Big Bang. 
+
+We know that at recombination our universe was matter dominated, so
+
+\begin{align}
+        a\qty(t) & \propto t^\frac{2}{3} \\
+        H\qty(t) & = \frac{2}{3t}.
+\end{align}
+
+In principle we can substitute these expressions into
+\autoref{eq:perturbations_density} and derive a solution for each component
+of the cosmological fluid and each wavelength, studying if it lays inside
+or outside the apparent horizon and within the Jeans scale length.
+
+There is a subtlety to consider, if we want to extend this line of reasoning
+to the temperature contrast. Photons, to reach an observer from any point
+in space $\vb{x}$, must escape the gravitational pontential. During this
+process they lose energy and so they are redshifted. This effect is known
+as \emph{gravitational redshift}. This change in energy density in turn
+shifts the temperature fluctuations in the CMB. If we consider a varying
+gravitational potential $\delta \phi\qty(\vb{\chi})$, then we obtain
+
+\begin{equation}
+        \frac{\var{T\qty(\vu{n})}}{\bar T} =
+        \frac{\var{\phi\qty(\vb{\chi}_\text{last})}}{c^2}
+\end{equation}
+
+where $\vb{\chi}_\text{last} = \abs{\vb{\chi}_\text{last}} \vu{n}$ is a
+point on the last scattering surface.
+
+The slight change in the gravitational potential results in a modification
+of the local expansion rate of the Universe. We refer to this phenomenon as
+the \emph{Sachs-Wolfe effect}. This gives an extra contribution in
+temperature contrast,
+
+\begin{equation}
+        \frac{\var{T\qty(\vu{n})}}{\bar T} =
+        \frac{\var{\phi\qty(\vb{\chi}_\text{last})}}{3c^2}i.
+\end{equation}
+
+The adiabatic perturbation contribution introduced at the onset of the of
+the present section and Sachs-Wolfe effect contribution are releted by the
+Poisson equation
+
+\begin{equation}
+        \var{\phi\qty(\vb{k},t)} = -\frac{4\pi G}{c^2 k^2}
+        \bar \rho a^2\qty(t) \delta_m\qty(\vb{k},t).
+\end{equation}
+
+Gravitational redshift contribution dominates for large waveleghts, while
+the adiabatic contribution dominates for small wavelength. These two
+contributions are equal for
+
+\begin{equation}
+        k^2_c \sim \frac{4\pi G}{c^4}\bar \rho a\qty(t) \sim
+        \frac{a\qty(t)H\qty(t)}{c} 
+\end{equation}
+
+which is the size of the comoving horizon. This implies that modes that at
+recombination are outside the apparent horizon are dominated by the
+Sachs-Wolfe effect and, in turn, modes that are inside the apparent horizon
+at recombination exhibits the matter power spectrum.
+
+\subsection{Angular Power Spectrum of the CMB Temperature Anisotropies}
+
+Every observer in the Universe sees the CMB as coming from a spherical
+surface centered in the observer. The radius of the spherical shell is
+equal to the distance travelled by a photon since it was last scattered.
+For this reason the aforementioned shell is called the \emph{last
+scattering surface}. Therefore, to describe the CMB temperature
+anisotropies it is convenient to work in spherical polar
+coordinates $\qty(\theta,\phi)$. $\theta$ is the polar angle and $\phi$ is the
+azimuthal angle. 
+
+Next we expand the temperature contrast in spherical coordinates making use
+of the generalized Fourier series expansion
+
+\begin{equation}
+        \frac{\var{T\qty(\theta,\phi)}}{\bar T} =
+        \sum^\infty_{l=0}\sum^l_{m=-l} a_{l,m}
+        Y_{m,l}\qty(\theta,\phi)
+\end{equation}
+
+where $Y_{l,m}\qty(\theta,\phi)$ are the spherical harmonics, $a_{l,m}$ are
+complex coefficients and $l$ is known as the \emph{multipole moment}.
+For every $l$ we have $2l + 1$ values for $m$.
+The measured absolute value of the $a_{l,m}$ coefficients represents the
+CMB temperature anisotropies at different angular separations $\beta \simeq
+\frac{\pi}{l}$. Large $l$ corresponds to small angles on the sky.
+
+The temperature contrast is a zero-mean field, therefore for the $a_{l,m}$
+coefficients we have that
+
+\begin{equation}
+        \expval{a_{l,m} a^*_{l',m'}} = 0
+\end{equation}
+
+where the angular brackets signify average over an ensamble of
+realizations. The statistical quantity we need to calculate the power
+spectrum of temperature fluctuations is the two-point correlation function
+
+\begin{equation}
+        \frac{\expval{\var{T\qty(\theta,\phi)} \var{T\qty(\theta',\phi')}}}
+        {\bar T^2} = 
+        \sum_{l,m}\sum_{l',m'} \expval{a_{l,m} a^*_{l',m'}}
+        Y_{l,0}\qty(\theta,\phi) =
+        \sum_l \frac{2l + 1}{4\pi} P_l\qty(\cos \beta) C_l 
+\end{equation}
+
+where is the Legendre polinomial of order $l$ and the $C_l$ coefficients
+are defined by
+
+\begin{equation}
+        C_l \delta_{l,l'} \delta_{m,m'} \equiv \expval{a_{l,m} a^*_{l',m'}}
+\end{equation}
+
+The statistical rotational
+invariance ensures that this average depends only on the multipole moment
+$l$, which is associated to angular momentum. All the $2l + 1$ coefficients
+for a given $l$ have the same variance
+
+\begin{equation}
+        C_l = \frac{1}{2l + 1} \sum_m \expval{a_{l,m} a^*_{l',m'}} 
+\end{equation}
+
+This means that the total statistical population for each $C_l$ has no more
+than $2l + 1$ samples. We can build an intuitive picture for this fact
+remembering that $\beta \simeq \frac{\pi}{l}$: as $l$ decreases, the size of
+the patch of sky we are considering grows up, and given that we have only
+one sky to study, the total number of independent patches shrinks more and
+more. Such a limitation is kwown as \emph{cosmic variance} and defines the
+intrinsic uncertainty in the knowledge of the $C_l$ coefficients:
+
+\begin{equation}
+        \Delta C_l = C_l \sqrt{\frac{2}{2l + 1}} 
+\end{equation}
+
+\autoref{fig:planck_aps} shows the temperature contrast angular power
+spectrum derived from the sky map obtained from measures performed by the
+Planck satellite (\autoref{fig:planck_cmb}). The coefficients 
+
+\begin{equation}
+        D_l \equiv \frac{l\qty(l + 1)C_l}{2\pi}
+\end{equation}
+
+are plotted as function of the multipole moment l.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{planck_aps}
+        \caption{Plank angular power spectrum}
+        \label{fig:planck_aps}
+\end{figure}
+
+For small values of $l$ we notice a plateu, caused by the Sachs-Wolfe
+effect. At larger $l$, the spectrum exhibits a distinctive patterns of
+patterns of peaaks and troughs, an evidence of acoustic oscillation in the
+early Universe.
+
+Data in the graph are well fitted by the standard
+$\Lambda$CMD model. The main cosmological parameters defining this model of
+the Universe are:
+
+\begin{itemize}
+        \item \textbf{Hubble constant:} it describes the expansion rate of
+        the Universe at present time. The value obtained from Planck
+        measures is
+
+        \begin{equation}
+                H_0 = \SI{67.8 \pm 0.9}{\kilo\meter\per\second\per\mega\parsec}.
+        \end{equation}
+
+        \item \textbf{Acoustic scale:} it is the characteristic angular
+        scale of the fluctuations in CMB. This parameter is constrained by
+        the position of the acoustic peaks. Plank observations yielded
+
+        \begin{equation}
+                \theta_* = \ang{0.59636 \pm 0.00025}.
+        \end{equation}
+
+        \item \textbf{Barionic matter density:} the matter density
+        parameters can be extracted from the relative heights of the 
+        acoustic peaks. The value for baryons has been determined to be
+
+        \begin{equation}
+                \Omega_b h^2 = \num{0.02222 \pm 0.00023}
+        \end{equation}
+
+        where $h$ is defined by
+
+        \begin{equation}
+                H_0 \equiv \SI{100}{\hubble\kilo\meter\per\second\per\mega\parsec} 
+        \end{equation}
+
+        \item \textbf{Dark matter density:} the value of the dark matter
+        density parameter is
+
+        \begin{equation}
+                \Omega_c h^2 = \num{0.1197 \pm 0.0022}.
+        \end{equation}
+
+        \item \textbf{Dark energy density:} The value of the dark energy
+        density parameter is estimed to be
+
+        \begin{equation}
+                \Omega_\Lambda = \num{0.685 \pm 0.012}.
+        \end{equation}
+
+        \item \textbf{Spectral index:} The inflationary paradigm predicts
+        the power spectrum of primordial density perturbations to be a
+        power law, $P\qty(\vb{k},t = t_\text{BigBang}) = k^n$. The index
+        $n$, which is known as the spectral index, has the following value:
+
+        \begin{equation}
+                n = \num{0.9655 \pm 0.0062}.
+        \end{equation}
+
+        \item small-scale fluctuation in the CMB are damped by Thomson
+        scattering from free electrons produced during rionization. Modes
+        with wavelength smaller than the apparent horizon at reionization
+        was suppressed by a factor $e^{-2\tau}$, where $\tau$ is the optical
+        depth of Thomson scattering. The resulting value of $\tau$ from Placnk
+        temperature power spectrum is 
+
+        \begin{equation}
+                \tau = \num{0.078 \pm 0.019}. 
+        \end{equation}
+\end{itemize}
+
 \end{figure}
 
 \section{The CMB Polarization}
