@@ -139,6 +139,47 @@ where $t_0$ is the present time and the function $f_k$ becomes:
 We can immediately note that the valid geometry for an homogeneous
 and isotropic spacetime are either flat, spherical or hyperbolic.
 
+\subsection{The Comoving Distance and the Hubble Parameter}
+
+Consider two points in a slice of space in the spacetime ($t = t_*$): $p_1$,
+$p_2$. The physical distance between them is calculated using the FLRW
+metric for a fixed time:
+
+\begin{equation}
+        \dd{s} = a\qty(t_*)\sqrt{\dd{\chi}^2 +
+        f_k^2\qty(\chi)\dd{\Omega}^2}
+\end{equation}
+
+integrating between $p_1$ and $p_2$, we obtain:
+
+\begin{equation}
+        d_{\text{phys}} = a\qty(t_*)d_{\text{co}}
+        \label{eq:dd}
+\end{equation}
+
+where $d_{\text{co}}$ is the comoving distance, the distance in comoving
+coordinates, which expand in the same way as space, and $d_\text{phys}$ is
+the proper or physical distance.
+
+Taking the time derivative of \autoref{eq:dd}:
+
+\begin{equation}
+        v_{\text{phys}} = \dot a\qty(t) d_{\text{co}} = \frac{\dot a\qty(t)}{a\qty(t)} d_{\text{phys}}
+\end{equation}
+
+where $v_{\text{phys}}$ is the physical or proper velocity and the function:
+
+\begin{equation}
+        H\qty(t) = \frac{\dot a\qty(t)}{a\qty(t)}
+        \label{eq:hubble_parameter}
+\end{equation}
+
+is called the \emph{Hubble parameter} and its present day value $H\qty(t_0)
+\equiv H_0$ is the \emph{Hubble's constant}, introduced in
+\autoref{ss:hubbleslaw}. The Hubble's constant is a cosmological
+parameter of our standard cosmological model and has a positive value,
+indicating that we live in an expanding universe.
+
 \section{The CMB Radiation}
 
 \begin{figure}
