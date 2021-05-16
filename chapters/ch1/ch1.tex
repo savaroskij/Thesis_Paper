@@ -634,6 +634,95 @@ radiation and for this discovery they were awarned the Nobel Prize in 1978.
         \label{fig:horn_antenna_pw}
 \end{figure}
 
+\subsection{The CMB Black Body Spectrum}
+
+Just before recombination and last scattering photons were
+coupled with matter and in thermodinamic equilibrium. The spectral density
+of electromagnetic radiation in thermodinamic equilibrium is described by
+the \emph{Planck law}:
+
+\begin{equation}
+        B_\nu\qty(T) = \frac{2h\nu^3}{c^2}
+        \frac{1}{\exp(\frac{h\nu}{K_b T}) - 1}
+\end{equation}
+
+where $T$ is the temperature of the thermal bath, $\nu$ is the frequency of
+the electromagnetic radiation, $K_b$ is the Boltzmann constant and $h$ is
+the quantum of action, the Planck constant. As mentioned in
+\autoref{ss:brief_thermal_history}, at recombination the temperature of the
+universe was \SI{\sim 3000}{\kelvin}, therefore, making use of the Wien
+Law:
+
+\begin{align}
+        \lambda_{\text{peak}} & = \frac{b}{T} \\
+        b & \approx \SI{2.897e-3}{\meter\kelvin}
+\end{align}
+
+where $\lambda_{\text{peak}}$ is the wavelength at which the spectrum
+peaks, we know that at recombination:
+
+\begin{equation}
+        v_{\text{CMB,max}} \approx \SI{7e4}{\giga\hertz} 
+\end{equation}
+
+As we stated in \autoref{ss:brief_thermal_history}, the temperature of the
+universe is related to the scale factor
+
+\begin{equation}
+        T\qty(a) \propto \frac{1}{a}
+\end{equation}
+
+and as a consequence
+
+\begin{equation}
+        T\qty(a_0) = T\qty(a_{\text{rec}}) a_{\text{rec}}
+        \label{eq:t_scale}
+\end{equation}
+
+where $a_{\text{rec}}$ is the scale factor at the time of recombination.
+
+At the same time, the photons of the CMB radiation are affected by \emph{cosmological
+redshift}, due to Universe expansion. The wavelenght of the light emitted
+at the time of recombination differs from the light observed at present
+time, according to the law
+
+\begin{equation}
+        \lambda\qty(a_0) = \frac{\lambda\qty(a_{\text{rec}})}{a_{\text{rec}}}.
+\end{equation}
+
+For frequency this translates to
+
+\begin{equation}
+        \nu\qty(a_0) = \nu\qty(a_{\text{rec}}) a_{\text{rec}} 
+        \label{eq:nu_scale}
+\end{equation}
+
+and, if we combine \autoref{eq:t_scale} and \autoref{eq:nu_scale}, we
+obtain:
+
+\begin{equation}
+        \frac{h \nu\qty(a_0)}{K_b T\qty(a_0)} =
+        \frac{h \nu\qty(a_{\text{rec}})}{K_b T\qty(a_{\text{rec}})}.
+\end{equation}
+
+This last equation asserts that the shape of the CMB spectrum does not
+change as the Universe expands. However, the characteristic temperature and
+peak frequency of the spectrum have changed according to
+\autoref{eq:t_scale} and \autoref{eq:nu_scale}, so that
+
+\begin{align}
+        T_{\text{CMB}} & \approx \SI{3000}{\kelvin} a_{\text{rec}} \approx
+        \SI{3}{\kelvin} \\
+        v_{\text{CMB,max}} & \approx \SI{7e4}{\giga\hertz} a_{\text{rec}}
+        \approx \SI{70}{\giga\hertz}
+\end{align}
+
+The spectrum of the CMB was measured with high accuracy
+(see \autoref{fig:cmb_spectrum_cobe})
+by the \emph{Far infrared Absolute Spectrometer} (FIRAS) instrument onboard
+the \emph{Cosmic Background Explorer} (COBE) satellite: it is a near
+perfect blackbody spectrum at $T = \SI{2.7260 \pm 0.0013}{\kelvin}$
+
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{CMB_Spectrum_COBE}
