@@ -180,6 +180,164 @@ is called the \emph{Hubble parameter} and its present day value $H\qty(t_0)
 parameter of our standard cosmological model and has a positive value,
 indicating that we live in an expanding universe.
 
+\subsection{The Dynamics of Spacetime}
+
+The evolution of the scale factor $a$ introuced in \autoref{ss:flrw} is
+governed by Einstein field equations of GR:
+
+\begin{equation}
+        G_{\mu \nu} = \frac{8 \pi G}{c^2} T_{\mu \nu}
+        \label{eq:einstein}
+\end{equation}
+
+where:
+
+\begin{itemize}
+        \item $G_{\mu \nu}$ is the Einstein tensor, which describes the
+        geometry of the spacetime;
+        \item $G$ is the universal gravitational constant;
+        \item $T_{\mu \nu}$ is the energy-momentum tensor, responsible for
+        the energy and momentum of matter.
+\end{itemize}
+
+Einstein fields equations of GR relate the geometry of the spacetime to the
+distribution of matter within it. Assuming the cosmological principle, we
+can choose $T_{\mu \nu}$ to be the energy-momentum tensor of a perfect
+fluid, which can be completely characterized by its density and pressure:
+
+\begin{equation}
+         T_{\mu \nu} = (\rho c^2 + P)u_\mu u_\nu + P g_{\mu \nu} 
+         \label{eq:energy_momentum_tensor}
+\end{equation}
+
+Substituting \autoref{eq:flrw} and \autoref{eq:energy_momentum_tensor} in
+\autoref{eq:einstein}, the field equations reduces to two equations for the
+time evolution of the scale factor, known as \emph{Friedmann equations} and
+written by Friedmann himself in 1922:
+
+\begin{align}
+        \qty(\frac{\dot a\qty(t)}{a\qty(t)})^2 & = \frac{8\pi G}{3} \rho\qty(t)
+        - \frac{k\qty(t) c^2}{a^2\qty(t)}
+        \label{eq:friedmann_1} \\
+        \frac{\ddot a\qty(t)}{a\qty(t)} & = -\frac{4\pi G}{3}
+        \qty(\rho\qty(t) + \frac{3 P\qty(t)}{c^2})
+        \label{eq:friedmann_2}
+\end{align}
+
+The Friedmann equations constitutes a system of two differential equations
+with three variables quantity: $a\qty(t)$, $\rho\qty(t)$ and $P\qty(t)$.
+The last equation we need to close the system can be deduced from the
+conservation of the energy-momentum tensor:
+
+\begin{equation}
+        \partial_\mu T^{\mu \nu} = 0 
+\end{equation}
+
+It's the \emph{continuity equation}, which express the conservation of energy in a
+comsmological setting:
+
+\begin{equation}
+        \dot \rho + 3 H \qty(\rho + \frac{P}{c^2}) = 0
+        \label{eq:continuity}
+\end{equation}
+
+A state equation of the kind $P = P\qty(\rho)$ can be specified to
+integrate the continuity equation and determine how the energy density
+depends on the scale factor. We guess a generic and simple shape for the
+state equation of each component of the cosmological fluid:
+
+\begin{equation}
+        P = w \rho c^2 
+        \label{eq:state}
+\end{equation}
+
+where $w$ is a parameter typical of each component.
+Using \autoref{eq:state} in \autoref{eq:continuity} we obtain:
+
+\begin{equation}
+        \frac{\dot \rho}{\rho} = -3\qty(1 + w) \frac{\dot a}{a} 
+\end{equation}
+
+integrating over time from $t_0$ to a generic time $t$ and using the fact
+that $a\qty(t_0) = 1$:
+
+\begin{equation}
+        \rho_w\qty(t) = \rho_{w,0} a^{-3\qty(1 + w)} 
+\end{equation}
+
+where $\rho_{0,w}$ is the present day energy density.
+Therefore the total energy density for the cosmological fluid is:
+
+\begin{equation}
+        \rho_{\text{tot}} = \sum_w \rho_w 
+\end{equation}
+
+and \autoref{eq:friedmann_1} becomes:
+
+\begin{equation}
+        H^2\qty(t) = \frac{8\pi G}{3} \rho_{\text{tot}}\qty(t) -
+        \frac{k\qty(t) c^2}{a^2\qty(t)}
+\end{equation}
+
+where we have used \autoref{eq:hubble_parameter}. The curvature parameter
+$k$ can isolated in the right-hand side of the equation:
+
+\begin{equation}
+        \begin{split}
+                \frac{k\qty(t) c^2}{a^2\qty(t)} & = 
+                \frac{8\pi G \rho_{\text{tot}}\qty(t)}{3} - H^2\qty(t) \\
+                \frac{k\qty(t) c^2}{a^2\qty(t)} & = 
+                H^2\qty(t) \qty(\frac{8\pi G \rho_{\text{tot}}\qty(t)}{3H^2\qty(t)} - 1) \\
+                k(t) & = \frac{H^2\qty(t) a^2\qty(t)}{c^2} \qty(\Omega\qty(t) - 1) \\
+        \end{split}
+        \label{eq:friedmann_curvature}
+\end{equation}
+
+In the last equation we have defined:
+
+\begin{align}
+        \rho_c\qty(t) & \equiv \frac{3H^2\qty(t)}{8\pi G} \\
+        \Omega\qty(t) & \equiv \frac{\rho_{\text{tot}}\qty(t)}{\rho_c\qty(t)}
+\end{align}
+
+The function $\rho_c\qty(t)$ is known as the \emph{critical density}: it
+represents the energy density time evolution for a flat universe ($k = 0$).
+We note that in this case, the total energy density of the universe is
+directly related to the Hubble parameter.
+
+Evaluating \autoref{eq:friedmann_curvature} for $t = t_0$ and assuming a
+time independent space curvature $k(t) = k$, yields:
+
+\begin{equation}
+        k = \frac{H^2_0}{c^2} \qty(\Omega_0 - 1) \\
+\end{equation}
+
+where:
+
+\begin{equation}
+        \Omega_0 \equiv \frac{\rho_0}{\rho_{c,0}} = \sum_w
+        \frac{\rho_{w,0}}{\rho_{c,0}} \equiv \sum_w \Omega_w
+\end{equation}
+
+The adimensional quantities $\Omega_w$ are the \emph{density parameters}
+for each fluid component. Note that even though we have omitted the $0$
+subscript, the density parameters refer to the fraction of energy observed
+today, as the definition implies.
+
+The density parameters sum to:
+
+\begin{equation}
+        \sum_w \Omega_w = 1 + \frac{kc^2}{H^2_0} 
+\end{equation}
+
+as a consequence, if we live in a flat universe then we must have $\sum_w
+\Omega_w = 1$. Any excess energy density, with $\sum_w \Omega_w > 1$ means
+that we necessarily live in a positively curved universe with $k = +1$. Any
+deficit in energy, with $\sum_w \Omega_w < 1$ gives rise to a negatively
+curved $k = 1$ universe. Measuring the present day total energy density 
+$\rho_{\text{tot},0}$ and the Hubble constant $H_0$, gives us the
+opportunity to have knowledge of the spatial geometry of our universe. 
+
 \section{The CMB Radiation}
 
 \begin{figure}
