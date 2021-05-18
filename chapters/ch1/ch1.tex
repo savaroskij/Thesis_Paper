@@ -1478,6 +1478,132 @@ indeces are, $n_S \approx 1$ and $n_S \approx 0$.
 
 \textcolor{red}{Quanto andare a fondo qui?}
 
-
-
 \section{The CMB Polarization}
+
+Polarization in the cosmic microwave background was generated through
+Thomson scattering events occurred during recombination. The total
+scattering cross section of an incoming unpolarized radiation by an
+electron is given by
+
+\begin{equation}
+        \dv{\sigma}{\Omega} = \frac{3\sigma_T}{8\pi}
+        \abs{\vectorunit{\epsilon}' \vdot \vectorunit{\epsilon}}
+        \label{eq:thomson_csection}
+\end{equation}
+
+where $\sigma_T$ is the total Thomson scattering cross-section and the unit
+vectors $\vectorunit{\epsilon}$ and $\vectorunit{\epsilon}'$ lie in the
+plane perpendicular to the propagation direction of the incident radiation
+and are parallel to the scattered and incident polarization, respectively.
+
+\subsection{The Stokes Parameters}
+
+To understand under what conditions the outgoing radiation of a Thomson
+scattering event can be linearly polarized, it is convenient to introduce the
+Stokes parameters. Consider a monochromatic plane electromagnetic wave
+propagating in the $\vectorunit{z}$ direction. The field components are
+
+\begin{align}
+        E_x\qty(t) & = a_x\qty(t)\cos(\omega t - \phi_x) \\
+        E_y\qty(t) & = a_y\qty(t)\sin(\omega t - \phi_y).
+\end{align}
+
+If some correlation exists between the two components, the radiation is
+polarized.
+
+The Stoke parameters are defined as the following time averages:
+
+\begin{align}
+        I & \equiv \expval{a^2_x\qty(t)} + \expval{a^2_y\qty(t)} \\
+        Q & \equiv \expval{a^2_x\qty(t)} - \expval{a^2_y\qty(t)} \\
+        U & \equiv \expval{2a_x\qty(t)a_y\qty(t)
+        \cos(\theta_x\qty(t) - \theta_y\qty(t))} \\
+        V & \equiv \expval{2a_x\qty(t)a_y\qty(t)
+        \sin(\theta_x\qty(t) - \theta_y\qty(t))}
+\end{align}
+
+The parameter $I$ gives the intensity of the radiation, which corresponds
+to the black body radiation intensity. The other parameters, $Q$, $U$ and
+$V$ describes linear and circular polarization, respectively. The CMB
+radiation is not circularly polarized, therefore in the following
+dissertation we assume $V = 0$. I is a scalar quantity and does not depend
+on the frame reference system. Instead, $Q$ and $U$ depend on the
+orientation of the x and y axis.
+
+$Q$ and $U$ parameters, undergoing a rotation of the $x$-$y$ plane through
+an angle $\theta$, transform as
+
+\begin{align}
+        Q' & = Q\cos{2\theta} + U\sin{2\theta} \\
+        U' & = -Q\sin{2\theta} + U\cos{2\theta}.
+\end{align}
+
+This transformation is characteristic of the second rank tensor:
+
+\begin{equation}
+        P = \frac{1}{2} \mqty(Q & U \\
+                              U & -Q)
+\end{equation}
+
+An object invariant under an axis rotation through an angle of $\pi$.
+
+If now we consider a monoschromatic unpolarized incident plane wave of
+intensity $I'$ and cross sectional area $\sigma_B$, which is scattered in
+the $z$-axis direction, with the $y$-axis laying in the scattering plane,
+the $Q$ and $U$ Stokes parameters of the outgoing radiation follow from
+\autoref{eq:thomson_csection}:
+
+\begin{align}
+        Q\qty(\theta) & = \frac{3\sigma_T}{8\pi\sigma_B}I'\sin^2\theta
+        \label{eq:q_thomson_mono} \\
+        U\qty(\theta) & = 0 \label{eq:u_thomson_mono}
+\end{align}
+
+where $\theta$ is the angle between the outgoing and incoming wave.
+
+In the case of a generic incoming radiation field of intesity $I' =
+I\qty(\theta,\phi)$ we can perform an integration of
+\autoref{eq:q_thomson_mono} and \autoref{eq:u_thomson_mono} over all
+spatial directions, rotating all incoming to waves, so that the Stokes
+parameters for the outgoing radiation are defined with respect to a common
+frame reference system. The result, expressed in terms of the spin-2 object
+$Q - iU$, is
+
+\begin{equation}
+        (Q -iU)\qty(\vectorunit{z}) = \frac{3\sigma_T}{16\pi \sigma_B}
+        \int \dd{\Omega} \sin^2\theta e^{2i\phi}I'\qty(\theta,\phi)i.
+\end{equation}
+
+The incoming radiation field can be expanded in spherical harmonics as
+usual:
+
+\begin{equation}
+        I'\qty(\theta,\phi) = \sum^\infty_{l = 0}\sum^l_{m = -l}
+        a_{l,m} Y_{l,m}\qty(\theta,\phi).
+\end{equation}
+
+As a result, the linear polarization Stokes parameters become
+
+\begin{equation}
+        (Q - iU)\qty(\vectorunit{z}) = \frac{3\sigma_T}{4\pi\sigma_B}
+        \sqrt{\frac{2\pi}{15}} a_{2,2}.
+\end{equation}
+
+Consequently, linear polarization is generated provided that the \emph{quadrupole
+moment} of the incoming radiation is non-zero. This result is illustrated
+in \autoref{fig:thomson_scattering}.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=0.64\textwidth]{thomson_scattering}
+        \caption{Thomson scattering of quadrupole temperature anisotropies.
+        (A CMB polarization primer)}
+        \label{fig:thomson_scattering}
+\end{figure}
+
+Quadrupole anisotropies before recombination are rapidly damped away,
+because photons are strongly coupled with electrons in primordial plasma, so
+radiation can only posses a monopole and a dipole, correspondent to Doppler
+shift from peculiar velocity. A quadrupole moment is produced only
+\emph{during} recombination, as the mean free path of photons increases and
+reaches the appropriate length scale.
