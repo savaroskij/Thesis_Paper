@@ -3,16 +3,10 @@
 \section{The Expanding Universe and the \texorpdfstring{$\Lambda$}{LAMBDA-}CDM Model}
 \subsection{The Hubble's Law}\label{ss:hubbleslaw}
 
-In 1929, Edwin Hubble examined the relationship between the distances of
-some galaxies and their radial velocities, inferred from their \emph{redshifts},
-and formulated an empirical law, which states direct proportionality
-between these two quantities (\autoref{fig:hubbleslaw}):
-
-\begin{equation}\label{eq:hubble_law}
-        \vb{v} = H_0 \vb{d}
-\end{equation}
-
-where $H_0$ is the \emph{Hubble constant}.
+In 1929, Edwin Hubble had examined the relationship between the distances
+of some galaxies and their radial velocities, which were inferred from their
+\emph{redshifts}, and formulated an empirical law, which states direct
+proportionality between these two quantities (\autoref{fig:hubbleslaw}):
 
 \begin{figure}
         \centering
@@ -21,31 +15,36 @@ where $H_0$ is the \emph{Hubble constant}.
         \label{fig:hubbleslaw}
 \end{figure}
 
+\begin{equation}\label{eq:hubble_law}
+        \vb{v} = H_0 \vb{d},
+\end{equation}
+
+where $H_0$ is the \emph{Hubble constant}.
 The observed \emph{redshifts} could not be explained by the proper motion of
 the galaxies, instead this phenomenon was caused by the continuous expansion
-of our universe.
+of our Universe.
 
-An expanding universe was first theorized by Friedmann in 1922, before Hubble's
-observations, as a consequence of the field equations of the theory of the
-\emph{General Relativity} (GR). The starting point of Friedmann derivation was
-an elegant and powerful assumption about the structure of our universe:
-the \emph{Cosmological Principle}.
+The expanding Universe was first theorized by Friedmann as a consequence of
+the field equations of the theory of the \emph{General Relativity} (GR) in
+1922, before Hubble's observations. The starting point of Friedmann
+derivation was an elegant and powerful assumption about the structure of
+our Universe: the \emph{Cosmological Principle}.
 
 \subsection{The Cosmological Principle}\label{ss:cosmological_principle}
 
-The matter in the universe we observe is clustered in gravitationally bound
+The matter in the Universe we observe is clustered in gravitationally bound
 structures, but observations at large scale (\SI{> 100}{\mega\parsec}) shows
 that the place we call home appears to obey the \emph{Cosmological
 Principle}:
 
 \begin{principle}[Cosmological Principle]
-        On the largest scales, the universe is spatially homogeneous and isotropic.
+        On the largest scales, the Universe is spatially homogeneous and isotropic.
 \end{principle}
 
 Note that this principle is valid for every possible observer in the
-universe. We see an homogeneous and isotropic universe from our planet, and
-we believe that any other observer in the universe does: there's no special
-place in our universe.
+universe. We see an homogeneous and isotropic universe from our point of
+observation, and we believe that any other observer in the Universe does:
+there's no special place in our Universe.
 
 There are two main piece of evidence for the cosmological principle:
 
@@ -53,21 +52,26 @@ There are two main piece of evidence for the cosmological principle:
         \item The \emph{Cosmic Microwave Background Radiation} (CMB): an almost
         uniform sea of photons which fills all space and provides a snapshot of the
         universe at \num{\sim 380000} years after its birth. The CMB
-        presents small fluctuations in temperature with a characteristic
-        scale:
+        presents small fluctuations in temperature and polarization with a
+        characteristic scale:
 
         \begin{equation}
-                \frac{\var{T}}{T} \sim \num{e-5}
+                \frac{\var{T}}{T} \leq \num{e-5}
         \end{equation}
 
-        \item A relevant number of \emph{redshift surveys} show that the
-        distribution of stars looks increasingly smooth on larger scales.
+        \item A relevant number of \emph{redshift surveys}, as the
+        \emph{2dF Galaxy Redshift Survey} (2002); the \emph{Sloan Digital
+        Sky Survey} (2007) and the \emph{Galaxy And Mass Assembly} survey
+        (2008-2014), show that the distribution of stars looks increasingly
+        smooth on larger scales.
 \end{itemize}
 
-The acceptance of such a profound statement it's the prologue to the
-description of the geometry of \emph{spacetime}.
-
 \subsection{The FLRW Metric}\label{ss:flrw}
+
+The acceptance of the cosmological principle provides a constraint to the
+geometrical representation of the spacetime. There are several spacetime
+metrics we can choose to describe the geometry of our Universe, but this
+selection is reduced to those that adhere to the cosmological principle.
 
 Friedmann, Lema\^itre, Robertson and Walker during the 1920-1930s proved
 independently that the most generic metric based on the cosmological
@@ -141,6 +145,11 @@ and isotropic spacetime are either flat, spherical or hyperbolic.
 
 \subsection{The Comoving Distance and the Hubble Parameter}
 
+Although General Relativity allows one to formulate the laws of physics
+using arbitrary coordinates, some coordinate choices are more natural or
+easier to work with. \emph{Comoving coordinates} are an example of such a
+natural coordinate choice.
+
 Consider two points in a slice of space in the spacetime ($t = t_*$): $p_1$,
 $p_2$. The physical distance between them is calculated using the FLRW
 metric for a fixed time:
@@ -182,8 +191,13 @@ indicating that we live in an expanding universe.
 
 \subsection{The Dynamics of Spacetime}
 
-The evolution of the scale factor $a$ introduced in \autoref{ss:flrw} is
-governed by Einstein field equations of GR:
+The time evolution of the FLRW metric, and thus the expansion rate of our
+Universe, is determined by the evolution of the scale factor, $a\qty(t)$,
+introduced in \autoref{ss:flrw}. On the other hand, the theory of General
+Relativity provides a way to dynamically link the geometry of the spacetime
+to the energy and momentum of matter and radiation present in the Universe.
+Thus as expected, the evolution of the scale factor is governed by Einstein
+field equations of GR:
 
 \begin{equation}
         G_{\mu \nu} = \frac{8 \pi G}{c^2} T_{\mu \nu}
@@ -297,12 +311,12 @@ In the last equation we have defined:
 
 \begin{align}
         \rho_c\qty(t) & \equiv \frac{3H^2\qty(t)}{8\pi G} \\
-        \Omega\qty(t) & \equiv \frac{\rho_{\text{tot}}\qty(t)}{\rho_c\qty(t)}
+        \Omega\qty(t) & \equiv \frac{\rho_{\text{tot}}\qty(t)}{\rho_c\qty(t)}.
 \end{align}
 
 The function $\rho_c\qty(t)$ is known as the \emph{critical density}: it
 represents the energy density time evolution for a flat universe ($k = 0$).
-We note that in this case, the total energy density of the universe is
+We note that in this case, the total energy density of the Universe is
 directly related to the Hubble parameter.
 
 Evaluating \autoref{eq:friedmann_curvature} for $t = t_0$ and assuming a
@@ -336,21 +350,16 @@ that we necessarily live in a positively curved universe with $k = +1$. Any
 deficit in energy, with $\sum_w \Omega_w < 1$ gives rise to a negatively
 curved $k = 1$ universe. Measuring the present day total energy density
 $\rho_{\text{tot},0}$ and the Hubble constant $H_0$, gives us the
-opportunity to have knowledge of the spatial geometry of our universe.
+opportunity to have knowledge of the spatial geometry of our Universe.
 
 \subsection{The Components of the Cosmological Fluid}
 
 According to current theories and pieces of evidence, there are three
-entities that contribute to the current energy density of our universe:
-
-\begin{itemize}
-        \item Conventional matter or \emph{dust};
-        \item Radiation;
-        \item Dark Energy or \emph{cosmological constant}.
-\end{itemize}
-
+entities that contribute to the current energy density of our Universe:
+conventional matter or \emph{dust}; radiation and Dark Energy or
+\emph{cosmological constant}.
 To derive a solution for the time evolution of the scale factor $a\qty(t)$
-in our universe, it is essential to write a state equation
+in our Universe, it is essential to write a state equation
 $P\qty(\rho) = \rho$ for each one of these component:
 
 \begin{itemize}
@@ -358,12 +367,12 @@ $P\qty(\rho) = \rho$ for each one of these component:
         $P_m\qty(\rho_m) = 0$;
         \item For radiation we must impose a null trace for the energy-momentum
         tensor $T_{\mu \nu}$ in \autoref{eq:energy_momentum_tensor}: $P_r\qty(\rho_m)
-        = \frac{1}{3} \rho_r c^2$;
+        = \rho_r c^2/3$;
         \item For Dark Energy the equation of state is obtained
         substituting  $G_{\mu \nu} = -g_{\mu \nu} \Lambda$, with $\Lambda =
         \text{const.}$ and $\Lambda > 0$, in \autoref{eq:einstein}:
         $P_\Lambda\qty(\rho_\Lambda) = -\rho_\Lambda c^2$, $\rho_\Lambda =
-        \frac{\Lambda}{8\pi G}$.
+        \Lambda/8\pi G$.
 \end{itemize}
 
 The dependence on the scale factor for the energy densities characterized by
@@ -373,20 +382,20 @@ these state equations is found making use of the continuity equation
 \begin{align}
         \rho_m\qty(a) & = \rho_{m,0}a^{-3} \label{eq:rho_m} \\
         \rho_r\qty(a) & = \rho_{r,0}a^{-4} \label{eq:rho_r} \\
-        \rho_\Lambda\qty(a) & = \rho_{\Lambda,0} \label{eq:rho_lambda} \\
+        \rho_\Lambda\qty(a) & = \rho_{\Lambda,0} \label{eq:rho_lambda}. \\
 \end{align}
 
 The quantity $\Lambda$ is known as the \emph{cosmological constant} and the
 corresponding density $\rho_\Lambda$ is the \emph{vacuum energy density},
 associated with the \emph{zero-point energy} of the vacuum state. Note that
 Dark Energy has negative pressure $P_\Lambda = -\rho_\Lambda c^2$, and it
-does not dilute away as the universe expands.
+does not dilute away as the Universe expands.
 
-The total energy density of our universe is:
+The total energy density of our Universe is:
 
 \begin{equation}
         \rho_\text{tot}\qty(a) = \frac{\rho_{m,0}}{a^3} + \frac{\rho_{r,0}}{a^4} +
-        \rho_{\Lambda,0}
+        \rho_{\Lambda,0}.
 \end{equation}
 
 An expanding universe is radiation dominated at first, in a second phase
@@ -404,11 +413,11 @@ density is shown in \autoref{fig:density_evolution}.
 \end{figure}
 
 Given the total energy density we can solve the first Friedmann equation
-and obtain the evolution of the scale factor in our universe. The scale
+and obtain the evolution of the scale factor in our Universe. The scale
 factors for the three different space curvatures ($k = 0,\pm 1$) in the
 simple case of a matter dominated universe are sketched in
 \autoref{fig:scale_factor_evolution_matter}. In the case of an expanding
-flat or hyperbolic geometry ($k = 0,-1$) the universe expands for ever with:
+flat or hyperbolic geometry ($k = 0,-1$) the Universe expands for ever with:
 
 \begin{equation}
         \dot a\qty(t \rightarrow +\infty)
@@ -459,7 +468,7 @@ expansion ($\ddot a > 0$) when $t > 0$. In particular there's no
 Substituting the expressions for the energy densities of the components of
 the cosmological fluid (\autoref{eq:rho_m}, \autoref{eq:rho_r} and
 \autoref{eq:rho_lambda}) in \autoref{eq:friedmann_1} yields the second
-Friedmann equation for our universe:
+Friedmann equation for our Universe:
 
 \begin{equation}
         H^2\qty(t) = \frac{8\pi G}{3} \qty(\frac{\rho_{m,0}}{a^3\qty(t)} +
@@ -488,25 +497,26 @@ radiation.
 \section{The CMB Radiation}
 
 This section is devoted to the introduction of the Cosmic Microwave
-Background (CMB) Radiation. To understand what caused the CMB radiation to
-emerge, we start describing what we think happened in the universe from the
-first instants after the Big Bang to today.
+Background (CMB) Radiation. To understand what caused the presence of the
+cosmic microwave background radiation, we start describing
+what we think happened in the Universe from the first instants after the
+Big Bang to today.
 
 \subsection{A Brief Thermal History of Our Universe}\label{ss:brief_thermal_history}
 
 The essence of the hot Big Bang theory is simply to go back in time taking
-the temperature scaling $T \sim \frac{1}{a}$. As the solution for the scale
+the temperature scaling $T \sim 1/a$. As the solution for the scale
 factor suggests, as we go further back in time, more the temperature and
-the energy density of the universe increase and more species join the
+the energy density of the Universe increase and more species join the
 primordial plasma reaching the thermodynamic equilibrium. As we know in the
-early stages the universe was radiation dominated, so the temperature and
+early stages the Universe was radiation dominated, so the temperature and
 energy density decreased according to:
 
 \begin{equation}
         T\qty(t), \rho\qty(t) \propto t^{-\frac{1}{2}}
 \end{equation}
 
-A summary of some of the key events in the early history of the universe
+A summary of some of the key events in the early history of the Universe
 follows:
 
 \begin{itemize}
@@ -524,9 +534,9 @@ follows:
         high enough that hadrons and anti-hadrons pairs could form. Later
         new pairs were no longer produced and most of the hadrons and
         anti-hadrons annihilated. Due to the matter and anti-matter
-        asymmetry a small portion of hadrons remained in the universe.
+        asymmetry a small portion of hadrons remained in the Universe.
 
-        At this time the universe was filled with neutrons and protons in
+        At this time the Universe was filled with neutrons and protons in
         the ratio of:
 
         \begin{equation}
@@ -572,7 +582,7 @@ follows:
 
         \item \textbf{Nucleosynthesis:} \SI{3}{\minute}, \SI{e9}{\kelvin}
 
-        At this time the temperature and pressure of the universe allowed
+        At this time the temperature and pressure of the Universe allowed
         the stabilization of deuterium and the consequent formation of
         light nuclei, such as hydrogen and its isotopes
         (\SI{\sim 75}{\percent}) and helium (\SI{\sim 25}{\percent}).
@@ -580,32 +590,35 @@ follows:
         \item \textbf{Matter-Radiation Equality:} \SI{50000}{\year},
         \SI{8700}{\kelvin}
 
-        At this time the universe became matter dominated: the energy
+        At this time the Universe became matter dominated: the energy
         density of matter $\rho_m$ became equal to the energy density of
         radiation $\rho_r$ (\autoref{fig:density_evolution}).
 
         \item \textbf{Recombination and Last Scattering:} \SI{370000}{\year},
         \SI{3000}{\kelvin}
 
-        At this time the universe has cooled enough ($k_bT <<
+        At this time the Universe has cooled enough ($k_bT <<
         \SI{13.6}{\electronvolt}$) to allow the formation of the first
         neutral atoms. This event is known as \emph{recombination} and it is
         associated to the photons decoupling or \emph{last scattering}, that
-        refers to the mean free path of photons in the universe becoming
+        refers to the mean free path of photons in the Universe becoming
         infinite. Nowadays the last scattering photons are still propagating in
         space and we refer to them as the \emph{Cosmic Microwave Background}.
 
         \item \textbf{Matter-Dark Energy Equality:} \SI{e10}{\year},
         \SI{3.8}{\kelvin}
 
-        At this time the universe became dominated by Dark Matter: the
+        At this time the Universe became dominated by Dark Matter: the
         vacuum energy density $\rho_\Lambda$ became equal to the energy density of
         matter $\rho_m$ (\autoref{fig:density_evolution}), determining a
         phase of accelerated expansion.
 
         \item \textbf{Today:} \SI{1.38e10}{\year}, \SI{2.7}{\kelvin}
 
-        The epoch we live in.
+        Previously we have referred to this time as $t_0$: this is
+        the epoch we live in. Currently the Universe remains dominated by
+        Dark Energy, it is undergoing and will continue to undergo an exponential
+        expansion.
 \end{itemize}
 
 \subsection{The First Revelation of the CMB}
@@ -653,12 +666,12 @@ the quantum of action, the Planck constant. As mentioned in
 universe was \SI{\sim 3000}{\kelvin}, therefore, making use of the Wien
 Law:
 
-\begin{align}
-        \lambda_{\text{peak}} & = \frac{b}{T} \\
-        b & \approx \SI{2.897e-3}{\meter\kelvin}
-\end{align}
+\begin{equation}
+        \lambda_{\text{peak}} = \frac{b}{T}
+\end{equation}
 
-where $\lambda_{\text{peak}}$ is the wavelength at which the spectrum
+where $b \approx \SI{2.897e-3}{\meter\kelvin}$ and
+$\lambda_{\text{peak}}$ is the wavelength at which the spectrum
 peaks, we know that at recombination:
 
 \begin{equation}
@@ -758,20 +771,15 @@ Making use of two years of DMR data, the amplitude of temperature fluctuations
 was reported to be
 \SI{36 \pm 5}{\micro\kelvin} at \ang{7}, and
 \SI{30.5 \pm 2.7}{\micro\kelvin} when smoothed to \ang{10}.
-The sky maps obtained by DMR is showed in \autoref{fig:dmr_maps}.
+\autoref{fig:dmr_maps} represents DMR data from the \SI{53}{\giga\hertz}
+band on a scale from \SIrange{0}{4}{\kelvin}, showing the near-uniformity of the
+CMB brightness, on a scale intended to enhance the contrast due to
+the dipole anisotropy, and following subtraction of the dipole component.
 
 \begin{figure}
         \centering
-        \includegraphics[width=0.80\textwidth]{DMR_maps}
-        \caption{The following image is similar to the June 1992 Physics
-        Today cover picture, with the map including the dipole and Galaxy
-        on the top, the dipole removed map in the middle, and the reduced
-        map on the bottom. The dipole, a smooth variation between
-        relatively hot and relatively cold areas from the upper right to
-        the lower left, is due to the motion of the solar system relative
-        to distant matter in the universe. The signals attributed to this
-        variation are very small, only one thousandth the brightness of the
-        sky.}
+        \includegraphics[width=0.90\textwidth]{DMR_maps_2.pdf}
+        \caption{COBE-DMR CMB anisotropies sky maps.}
         \label{fig:dmr_maps}
 \end{figure}
 
@@ -925,7 +933,7 @@ The relevant quantities in the last equation are:
 \end{itemize}
 
 The other relevant scale length, in addition to the Jeans length scale is
-set by the expansion of the universe,
+set by the expansion of the Universe,
 
 \begin{equation}
         d_H \approx cH^{-1} = c^2 \sqrt{\frac{3}{8\pi G \bar \rho}}.
@@ -937,7 +945,7 @@ is a coherent wave and causality prohibits the formation of such perturbations
 in case of $\lambda > d_H$, since there is no time for information to cross
 this distance since the Big Bang.
 
-We know that at recombination our universe was matter dominated, so
+We know that at recombination our Universe was matter dominated, so
 
 \begin{align}
         a\qty(t) & \propto t^\frac{2}{3} \\
@@ -1023,7 +1031,7 @@ complex coefficients and $l$ is known as the \emph{multipole moment}.
 For every $l$ we have $2l + 1$ values for $m$.
 The measured absolute value of the $a_{l,m}$ coefficients represents the
 CMB temperature anisotropies at different angular separations $\beta \simeq
-\frac{\pi}{l}$. Large $l$ corresponds to small angles on the sky.
+\pi/l$. Large $l$ corresponds to small angles on the sky.
 
 The temperature contrast is a zero-mean field, therefore for the $a_{l,m}$
 coefficients we have that
@@ -1032,7 +1040,7 @@ coefficients we have that
         \expval{a_{l,m} a^*_{l',m'}} = 0
 \end{equation}
 
-where the angular brackets signify average over an ensamble of
+where the angular brackets stand for average over an ensamble of
 realizations. The statistical quantity we need to calculate the power
 spectrum of temperature fluctuations is the two-point correlation function
 
@@ -1048,7 +1056,7 @@ where is the Legendre polinomial of order $l$ and the $C_l$ coefficients
 are defined by
 
 \begin{equation}
-        C_l \delta_{l,l'} \delta_{m,m'} \equiv \expval{a_{l,m} a^*_{l',m'}}
+        C_l \delta_{l,l'} \delta_{m,m'} \equiv \expval{a_{l,m} a^*_{l',m'}}.
 \end{equation}
 
 The statistical rotational
@@ -1057,30 +1065,30 @@ $l$, which is associated to angular momentum. All the $2l + 1$ coefficients
 for a given $l$ have the same variance
 
 \begin{equation}
-        C_l = \frac{1}{2l + 1} \sum_m \expval{a_{l,m} a^*_{l',m'}}
+        C_l = \frac{1}{2l + 1} \sum_m \expval{a_{l,m} a^*_{l',m'}}.
 \end{equation}
 
 This means that the total statistical population for each $C_l$ has no more
 than $2l + 1$ samples. We can build an intuitive picture for this fact
-remembering that $\beta \simeq \frac{\pi}{l}$: as $l$ decreases, the size of
+remembering that $\beta \simeq \pi/l$: as $l$ decreases, the size of
 the patch of sky we are considering grows up, and given that we have only
 one sky to study, the total number of independent patches shrinks more and
 more. Such a limitation is known as \emph{cosmic variance} and defines the
 intrinsic uncertainty in the knowledge of the $C_l$ coefficients:
 
 \begin{equation}
-        \Delta C_l = C_l \sqrt{\frac{2}{2l + 1}}
+        \Delta C_l = C_l \sqrt{\frac{2}{2l + 1}}.
 \end{equation}
 
 \autoref{fig:planck_aps} shows the temperature contrast angular power
-spectrum derived from the sky map obtained from measures performed by the
+spectrum derived from the sky map measured by the
 Planck satellite (\autoref{fig:planck_cmb}). The coefficients
 
 \begin{equation}
         D_l \equiv \frac{l\qty(l + 1)C_l}{2\pi}
 \end{equation}
 
-are plotted as function of the multipole moment l.
+are plotted as function of the multipole moment $l$.
 
 \begin{figure}
         \centering
@@ -1174,7 +1182,7 @@ the Universe are:
 The $\Lambda$CDM cosmological model describes very well some of the
 cosmological observations, in particular the presence of the CMB black
 body radiation and the abundance of light elements in the Universe.
-Netherless, some fact about our universe linger unexplained.
+Netherless, some fact about our Universe linger unexplained.
 
 \subsection{Open Issues of the Big Bang Cosmology}\label{ss:issues}
 
@@ -1182,7 +1190,7 @@ The three fundamental issue unsolved by the Big Bang model follow:
 
 \begin{itemize}
         \item \textbf{Horizon problem:} observations of the cosmic
-        microwave background radiation shows that our universe is very
+        microwave background radiation shows that our Universe is very
         homogeneous and isotropic on the largest scales. In particular we
         know that zones of the Universe sitting at distance larger than the
         horizon during recombination and, for this reason, not causally
@@ -1226,7 +1234,7 @@ The comoving particle horizon is defined as
         \label{eq:horizons}
 \end{equation}
 
-and the quantity $d_{H,\text{co}}\qty(t) = \frac{c}{a\qty(t)H\qty(t)}$, which
+and the quantity $d_{H,\text{co}}\qty(t) = c/a\qty(t)H\qty(t)$, which
 appears in the second integral is the comoving apparent horizon.
 
 If particles are separated by a comoving distance greater than
@@ -1234,7 +1242,7 @@ $\chi_H\qty(t)$ at a certain time $t$, they could not have been in causal
 connection in the past. In turn, if the separating distance is more than
 $d_{H,\text{co}}$, the two particles can not communicate \emph{now}. It is
 possible that $\chi_H\qty(t)$ is much larger than $d_{H,\text{co}}$ now,
-so that certain particles in the universe cannot communicate at present
+so that certain particles in the Universe cannot communicate at present
 time, but were in causal contact early on. We see from \autoref{eq:horizons}
 that the condition for this to happen is a comoving apparent horizon much larger
 in the early Universe than now. Hence a phase of decreasing comoving
@@ -1297,7 +1305,7 @@ time derivative of the Hubble parameter in this way
 \end{equation}
 
 $\epsilon$ is known as the \emph{slow-roll parameter} and is defined as
-$\epsilon\qty(t) \equiv -\frac{\dot H\qty(t)}{H^2\qty(t)}$.
+$\epsilon\qty(t) \equiv -\dot H\qty(t)/H^2\qty(t)$.
 Therefore, for an accelerating phase to happen in the early universe is
 required that
 
@@ -1730,7 +1738,7 @@ Quadrupole anisotropies can be decomposed into:
         \item \textbf{Vector perturbations:} $l = 2, m = \pm 1$
 
         which are caused by vortical motions of the matter. These kind of
-        perturbations are damped by the expansion of the universe, because
+        perturbations are damped by the expansion of the Universe, because
         they are associated to motions that are not enhanced by gravity.
         They are not expected to leave an imprint in the CMB radiation.
 
