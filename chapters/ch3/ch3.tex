@@ -487,3 +487,55 @@ the context of this thesis to obtain estimates for atmospheric brightness
 temperatures.
 
 \section{Atmospheric Spatial Structures}
+
+As already mentioned in the introduction of the current chapter, water
+vapour is found in the atmosphere in highly variable concentrations and so
+it has a great influence on fluctuations in the values of the refractive
+index, $n_\nu$, and the absorption coefficient, $\alpha_\nu$. For frequncies
+below \SI{100}{\giga\hertz}, simple empirical expressions for those
+contribution are available. The refractivity, $N_\nu$, is defined as
+
+\begin{equation}
+        N_\nu = \num{e6}\qty(n_\nu - 1)
+\end{equation}
+
+and in this wavelength range is approximately a constant function of
+frequency, $N\qty(\nu) = N$, given by the Smith-Weintraub equation:
+
+\begin{equation}
+        N = 77\frac{P_d}{T} + 64.8\frac{P_v}{T} +
+        \num{3.776e5}\frac{P_v}{T^2}.
+\end{equation}
+
+Here $P_d$ is the partial vapour pressure of dry air in
+\si{\milli\bar}, $P_v$ is the partial wapter vapour pressure in the same
+unit measure and T is the physical atmosphere temperature in \si{\kelvin}.
+Fluctuations in the value of the refractive index as the air drift through
+the instrument beam cause variations in the path length from a source to
+the telescope. For CMB radiation experiments with beamsizes of a degree or
+more that observe at \si{\centi\meter} wavelengths, these effects are small
+and can be ignored.
+
+The low frequnecy contribution to $\alpha_\nu$ is governed by the
+\SI{22}{\giga\hertz} water vapour transition (see
+\autoref{fig:transmittance_teide}) and is given by that following simple
+expression, which also includes a corrective terms for wings of other
+lines:
+
+\begin{equation}
+        \alpha_\nu = \rho_v\nu^2\Delta \nu T^{-\frac{3}{2}}
+        \qty[\frac{7.18}{T} e^{-\frac{644}{T}}
+        \frac{1}{\qty(494.40190 - \nu^2)^2 + 4\nu^2\Delta \nu^2}
+        + \num{2.77e-8}]
+\end{equation}
+
+where
+
+\begin{equation}
+        \Delta \nu = 2.96\qty(\frac{P}{1013})\qty(\frac{300}{T})^{0.626}
+        \qty(1 + 0.018\frac{\rho_v T}{P})
+\end{equation}
+
+and $\rho_v$ is the water vapour density in \si{\gram\per\cubic\meter}, P
+is the pressure in \si{\milli\bar}, T is the atmospheric physical
+temperature.
