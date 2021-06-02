@@ -169,6 +169,99 @@ the last two equations, we have
         \label{eq:emission}
         \end{split}
 \end{equation}
+
+\subsection{The Radiative Transfer Equation}
+
+The effects of emission and absorption can be incorporated into a sigle
+equation giving the variation of specific intensity. From \autoref{eq:absorption}
+and \autoref{eq:emission} we have
+
+\begin{equation}
+        \dv{I_\nu}{r} = -\alpha_\nu I_\nu + j_\nu
+\end{equation}
+
+which is known as the \emph{radiative transfer equation}. This equation
+takes a particularly simple for if we realize the change of variable
+
+\begin{equation}
+        \begin{split}
+                r \rightarrow \tau_\nu\qty(r) & \equiv \int^r_{r_0}
+                \dd{r'}\alpha_\nu\qty(r') \\
+                \dd{\tau_\nu} & = \alpha_\nu \dd{r}
+        \end{split}
+\end{equation}
+
+where $\tau_\nu$ is known as the \emph{optical depth} or \emph{opacity}.
+The transfer equation can now be divided by $\alpha_\nu$ and written as
+
+\begin{equation}
+        \dv{I_\nu\qty(\tau_\nu)}{\tau_\nu} = -I_\nu(\tau_\nu) +
+        S_\nu\qty(\tau_\nu)
+        \label{eq:radiative_transfer}
+\end{equation}
+
+where the function $S_\nu\qty(\tau_\nu)$ is known as the as the \emph{source
+function} and is defined as
+
+\begin{equation}
+        S_\nu(\tau_\nu) \equiv
+        \frac{j_\nu\qty(\tau_\nu)}{\alpha_\nu\qty(\tau_\nu)}.
+\end{equation}
+
+The source function and the opacity are convenient quantities in radiative
+transfer theory, because they allow to reveal more clearly the intervals
+along a ray that influence propagation of radiation the most.
+
+\autoref{eq:radiative_transfer} can be now solved by regarding all
+quantities as a function of the optical depth. First we multiply each side
+of the equation by the positive quantity $e^{\tau_\nu}$:
+
+\begin{equation}
+        \dv{I_\nu\qty(\tau_\nu)}{\tau_\nu}e^{\tau_\nu} =
+        -I_\nu\qty(\tau_\nu)e^{\tau_\nu} +
+        S_\nu\qty(\tau_\nu)e^{\tau_\nu}
+\end{equation}
+
+then we integrate along a vertical path through the atmosphere:
+
+\begin{equation}
+        \begin{split}
+                & \int^{\tau_{A,\nu}}_0 \dd{\tau_\nu}
+                \dv{I_\nu\qty(\tau_\nu)}{\tau_\nu} e^{\tau_\nu} =
+                -\int^{\tau_{A,\nu}}_0 \dd{\tau_\nu}
+                I_\nu\qty(\tau_\nu) e^{\tau_\nu} +
+                \int^{\tau_{A,\nu}}_0 \dd{\tau_\nu}
+                S_\nu\qty(\tau_\nu) e^{\tau_\nu} \\
+                & \eval{I_\nu\qty(\tau_\nu) e^\tau}^{\tau_{A,\nu}}_0
+                -\int^{\tau_{A,\nu}}_0 \dd{\tau_\nu}
+                I_\nu\qty(\tau_\nu) e^{\tau_\nu} = \\
+                & = -\int^{\tau_{A,\nu}}_0 \dd{\tau_\nu}
+                I_\nu\qty(\tau_\nu) e^{\tau_\nu} +
+                \int^{\tau_{A,\nu}}_0 \dd{\tau_\nu}
+                S_\nu\qty(\tau_\nu) e^{\tau_\nu} \\
+                & I_\nu\qty(\tau_{A,\nu}) e^{\tau_{A,\nu}} -I_\nu\qty(0) =
+                \int^{\tau_{A,\nu}}_0 \dd{\tau_\nu}
+                S_\nu\qty(\tau_\nu) e^{\tau_\nu}
+        \end{split}
+\end{equation}
+
+where integration by parts has been used in the right-hand side of the
+equation and the quantity $\tau_{A,\nu}$ is the total opacity of the
+traversed medium. If the last equation is divided by the positive factor
+$e^{\tau_{A,\nu}}$ and terms are remanaged, the following equation is
+obtained:
+
+\begin{equation}
+        I_\nu\qty(\tau_{A,\nu}) = I_\nu\qty(0) e^{-\tau_{A,\nu}} +
+        \int^{\tau_{A,\nu}}_0 \dd{\tau_\nu}
+        S_\nu\qty(\tau_\nu) e^{-\qty(\tau_{A,\nu} - \tau_\nu)}.
+\end{equation}
+
+This is known as the \emph{formal solution} of the radiative transfer
+equation. The term $I_\nu\qty(0) e^{-\tau_{A,\nu}}$ represents the initial
+intensity diminished by absorption and the second term in the sum stands
+for the integrated source diminished by absorption.
+
 particle velocities within it corresponds to the \emph{Maxwell-Boltzmann}
 distribution,
 
