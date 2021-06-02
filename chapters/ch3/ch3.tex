@@ -539,3 +539,128 @@ where
 and $\rho_v$ is the water vapour density in \si{\gram\per\cubic\meter}, P
 is the pressure in \si{\milli\bar}, T is the atmospheric physical
 temperature.
+
+\subsection{Absorption Coefficient Fluctuations}
+
+Radiative transfer theory allows us to estimate the fluctuations
+in the antenna temperature measured by a certain instrument, which in turn
+are caused by fluctuations in the absorption coefficient, $\alpha_\nu$.
+\autoref{eq:radiative_thermal} can be rewritten in terms of the path length
+travelled in the dispersive medium, reverting the change of variable $r
+\rightarrow \tau_\nu$:
+
+\begin{equation}
+        T_\text{atm} = T_b - T_b\qty(0) e^{-\tau_{A,\nu}} =
+        \int^R_0 \dd{r} \alpha_\nu\qty(r) T\qty(r) e^{-\tau_\nu}
+        \label{eq:radiative_atm}
+\end{equation}
+
+where $T_\text{atm}$ is the atmospheric brightness temperature, which is
+obtained subtracting from the total brighness temperature, $T_b =
+T_\text{sky}$, the contribution from the cosmic radiations diminished by
+the atmospheric absorption. If the effects of the clouds are ignored,
+assuming that only clear sky observations will be used for CMB radiation
+observation, the total atmopsheric opacity is small for low frequencies:
+$\tau_{A,\nu} \sim \num{e-2}$. Consequently, fluctuations in atmospheric
+brightness temperature arising from variations in $\tau_\nu$ constitute a
+second order effect, when compared to fluctuations in the absorption
+coefficient. Therefore, from now on, we assume that $e^{-\tau_\nu} \simeq
+1$.
+
+The \emph{effective area}, $A_\text{eff}$, of an instrument is defined as
+
+\begin{equation}
+        A_\text{eff}\qty(\nu) = \frac{P\qty(\nu)}{F\qty(\nu)}
+\end{equation}
+
+where $P_\qty(\nu)$ is the power per unit frequency measured by the
+antenna and $S\qty(\nu)$ is the power per unit area and unit frequency emitted
+from the source.
+From \autoref{eq:radiative_atm} we deduce that the contribution to the
+antenna temperature measured by an istrument of effective area
+$A_\text{eff}$ is, pointing in direction $\vectorunit{r}_s$ from a small
+element of path length $\dd{r}$ through the atmosphere at $\vb{r}$ is
+
+\begin{equation}
+        \dd{T_\text{A}} = \frac{1}{\lambda^2} A_{\text{eff},\nu}
+        \qty(\vectorunit{r}_s,\vb{r}) \alpha_\nu\qty(\vb{r}) T\qty(\vb{r})
+        \dd{\Omega}\dd{r}.
+\end{equation}
+
+Integrating over all the atmosphere yields
+
+\begin{equation}
+        T_\text{A} = \frac{1}{\lambda^2} \int_V \frac{\dd{V}}{r^2}
+        A_{\text{eff},\nu} \qty(\vectorunit{r}_s,\vb{r})
+        \alpha_\nu\qty(\vb{r}) T\qty(\vb{r}).
+\end{equation}
+
+From semplicity is now assumed that the instrument is pointing at the
+zenith. An instrument not pointing at the zenith will be looking through a
+larger airmass and so the size of fluctuations will be increased.
+The airmass $m\qty(\theta_\text{zth})$ ranges from \num{1} at the zenith to
+about \num{40} at the horizon and can be computed for any zenith angle
+using the following formula (Errard):
+
+\begin{equation}
+        m\qty(\theta_\text{zth}) \propto
+        \frac{1}{\cos \theta_\text{zth} + 0.50572
+        \qty(96.07995 - \theta_\text{zth}[\text{deg}])^{-1.6364}}.
+\end{equation}
+
+A change of variables to cartesian coordinates results in the following
+expression for the antenna temperature:
+
+\begin{equation}
+        T_\text{A} = \frac{1}{\lambda^2} \int^{z_u}_0 \int^{x_2}_{x_1}
+        \int^{y_2}_{y_1} \frac{\dd{x}\dd{y}\dd{z}}{x^2 + y^2 + z^2}
+        A_{\text{eff},\nu}\qty(x,y,z)
+        \alpha_\nu\qty(x,y,z) T\qty(x,y,z)
+\end{equation}
+
+where we are performing the integration over a volume delimited by the
+points $x_1$, $x_2$, $y_1$, $y_2$, 0, $z_u$. $z = 0$ corresponds to
+the ground; $z_u$ is the height of the atmosphere; $x_i$ and $y_i$ set the
+limits of the box in the horizontal directions. Beyond this coordinates the
+contribute to the antenna temperature from an element of the atmosphere
+become negligible.
+
+If the beam is assumed to be narrow and the temperature to be a function
+of the height only, $T\qty(x,y,z) \equiv T\qty(z)$, the last equation
+becomes
+
+\begin{equation}
+        T_\text{A} = \frac{1}{\lambda^2} \int^{z_u}_{z_c}
+        \iint^\infty_{-\infty} \frac{\dd{x}\dd{y}\dd{z}}{z^2}
+        A_{\text{eff},\nu}\qty(x,y,z)
+        \alpha_\nu\qty(x,y,z) T\qty(z)
+        \label{eq:fluctuations_t_antenna}
+\end{equation}
+
+where $z_c$ is a cut off value which assures that the narrow beam
+condition, $x,y \ll z$, is satisfied over the whole integration domain.
+The gain drops rapidly for $z < z_c$ and the effect of imposing an
+arbitrary cutoff is negligible.
+
+The mean squared fluctuations in antenna temperature due to variations in
+the absorption coefficients are
+
+\begin{equation}
+        \begin{split}
+                \expval{\var{T^2_\text{A}}} = & \frac{1}{\lambda^2}
+                \int^{z_u}_{z_c}\iint^\infty_{-\infty}
+                \int^{z_u}_{z_c}\iint^\infty_{-\infty}
+                \frac{\dd{x_1}\dd{y_1}\dd{z_1}}{z^2_1}
+                \frac{\dd{x_2}\dd{y_2}\dd{z_2}}{z^2_2} \times \\
+                & \times A_{\text{eff},\nu}\qty(x_1,y_1,z_1)
+                A_{\text{eff},\nu}\qty(x_2,y_2,z_2) \times \\
+                & \times \expval{\var{\alpha_\nu}\qty(x_1,y_1,z_1)
+                \var{\alpha_\nu}\qty(x_2,y_2,z_2)}
+                T\qty(z_1)T\qty(z_1).
+        \end{split}
+        \label{eq:rms_t_antenna}
+\end{equation}
+
+Consequently the complexity in the calculation of atmospheric brightness
+temperature fluctuations is transferred to the correlation function for
+fluctuations in the absorption coefficient.
