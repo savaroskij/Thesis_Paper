@@ -664,3 +664,105 @@ the absorption coefficients are
 Consequently the complexity in the calculation of atmospheric brightness
 temperature fluctuations is transferred to the correlation function for
 fluctuations in the absorption coefficient.
+
+\subsection{The Turbulent Structure of the Atmosphere}\label{ss:turbulent_structure}
+
+In literature the turbulent structure of the atmosphere is assumed to be
+described by the \emph{Kolmogorov-Taylor model} in which the turbulence has
+a Kolmogorov spatial spectrum and the spatial features remain fixed as the
+atmosphere is drifted through the beam by wind. This latter assumption is
+known as the \emph{Taylor approximation} and ignores any effects of
+variation of wind-speed with height or any convective motions.
+The fluctuations in atmospheric brightness temperature are related to the
+structure fuction of fluctuations in the absorption coefficient:
+
+\begin{equation}
+        \begin{split}
+                \mathcal{D}_\alpha\qty(\vb{r}_1,\vb{r}_2) & =
+                \expval{\qty[\alpha_\nu\qty(\vb{r}_1),\alpha_\nu\qty(\vb{r}_2)]} =
+                \\
+                & = B_\alpha\qty(\vb{r}_1,\vb{r}_1) -
+                2B_\alpha\qty(\vb{r}_1,\vb{r}_2) + B_\alpha\qty(\vb{r}_2,\vb{r}_2)
+        \end{split}
+\end{equation}
+
+where
+
+\begin{equation}
+        B_\alpha\qty(\vb{r}_1,\vb{r}_2) =
+        \expval{\alpha_\nu\qty(\vb{r}_1,\vb{r}_2)}.
+\end{equation}
+
+If the turbolence is locally homogeneous and isotropic, the corrlation
+function $B_\alpha\qty(\vb{r}_1,\vb{r}_2)$ can be written as the product of
+a squared amplitude, witch depends on the coordinates, and a function that
+depends only on the separation between the two points of interest (Tatarski):
+
+\begin{equation}
+        B_\alpha\qty(\vb{r}_1,\vb{r}_2) = \frac{1}{2}
+        C^2_\alpha\qty(\abs{\vb{r}_1 + \vb{r}_2})
+        L^{\frac{2}{3}}_0 b_\alpha\qty(\abs{\vb{r}_1 - \vb{r}_2}),\quad
+        l_0 \ll \abs{\vb{r}_1 - \vb{r}_2} \ll L_0
+\end{equation}
+
+where $b_\alpha\qty(\abs{\vb{r}_1 - \vb{r}_2})$ is a normalized correlation
+function and
+
+\begin{equation}
+        b_\alpha\qty(\abs{\vb{r}_1 - \vb{r}_2}) \propto
+        \abs{\vb{r}_1 - \vb{r}_2}^\frac{2}{3}.
+\end{equation}
+
+The parameters $l_0$ and $L_0$ are the inner and outer distance scales over
+which the $2/3$ law holds. Measurements of $L_0$ fluctuations in the
+optical and radio regime shows that $L_0 \sim \SI{e1}{\meter}$. However, large
+uncertainties in the value of the outer scale must be take into account,
+this parameter strongly depends on weather conditions.
+
+The function $b_\alpha\qty(\abs{\vb{r}_1 - \vb{r}_2})$ can be related to a
+spherically symmetric power spectrum $\phi\qty(k)$ by
+
+\begin{equation}
+        b_\alpha\qty(\Delta r) \propto \frac{1}{\Delta r}
+        \int^{k_\text{max}}_{k_0} \dd{k} k \phi\qty(k) \sin(k\Delta r)
+\end{equation}
+
+where $\phi\qty(k) \propto k^{11/3}$ is the Kolmogorov model, $k_0 \sim
+1/L_0$, $k_\text{max} \sim 1/l_0$ and $\Delta r = \abs{\vb{r}_1 -
+\vb{r}_2}$. \autoref{fig:kt_spectrum} shows the depence of the Kolmogorov
+normalized correlation function on the outer scale $L_0$.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{kt_spectrum}
+        \caption{Normalized Kolmogorov correlation function.}
+        \label{fig:kt_spectrum}
+\end{figure}
+
+In the radio regime, the squared amplitude appearing in the absorption
+coefficient correlation function is related to the atmospheric water vapour
+(Tatarski) content by
+
+\begin{equation}
+        C^2_\alpha = a L^\frac{4}{3}_0 \qty(\fdv{\alpha_\nu}{q}
+        \dv{q}{z})^2
+\end{equation}
+
+where $q = \rho_v/1.62p$ is the specific umidity and $a$ is a constant.
+Thus, the height dependence of $C^2_\alpha$ is strongly influenced by the
+height distribution of water vapour and is difficult to model. Here we
+assume a simple model assuming that $C^2_\alpha \propto \rho_v$. The height
+dependence of water vapour density is assumed to be approximated by an
+exeponential distribution:
+
+\begin{equation}
+        \rho_v\qty(z) = \rho_{v,0} \exp(-\frac{z}{z_0})
+\end{equation}
+
+where $\rho_{v,0}$ is the ground water vapour density and $z_0$ is a scale
+height for the exponential decay. Therefore, the amplitude function for the
+absorption coefficient correlation function is
+
+\begin{equation}
+        C^2_\alpha = C^2_0\exp(-\frac{z}{z_0}).
+\end{equation}
