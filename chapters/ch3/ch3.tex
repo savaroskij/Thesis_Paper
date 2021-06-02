@@ -902,3 +902,113 @@ at high and dry sites, bacause of the amplitude factor $C^2_\alpha \propto
         on the outher scale of turbolence.}
         \label{fig:rms_t_outher_scale}
 \end{figure}
+
+\subsection{The Temporal Power Spectrum of Fluctuations in Antenna
+Temperature}
+
+To make realistic predictions of the effects of atmospheric emission, it is
+now necessary to consider the temporal behaviour of the atmopsheric signal.
+We derive here the temporal power spectrum for the same reference system
+presented in the previus subsection: a single dish instrument with beamsize
+of \and{;30;}, fixed and
+pointing at the zenith.
+
+The temporal power spectrum of atmospheric emission will depend on the
+speed at which the atmosphere in blwon through the instrument beam by the
+wind. It is convenient to select coordinate system coomoving with the
+atmosphere, with the $x$-direction corresponding to the wind direction. The
+fluctuations in antenna temperature at a given time $t$ are obtained using
+\autoref{eq:fluctuations_t_antenna}:
+
+\begin{equation}
+        \var{T_\text{A}} = \frac{1}{\lambda^2} \int^{z_u}_{z_c}
+        \iint^\infty_{-\infty} \frac{\dd{x}\dd{y}\dd{z}}{z^2}
+        A_{\text{eff},\nu}\qty(x - vt,y,z)
+        \var{\alpha_\nu\qty(x,y,z) T\qty(z)}
+\end{equation}
+
+where $v$ is the wind speed in the $z$-direction. An expression for the
+autocorrelation of the antenna temperature time fluctuations is derived
+making use of the same assumptions and substitutions described in the
+previous subsection:
+
+\begin{equation}
+        \begin{split}
+                \expval{\var{T_A\qty(t)}\var{T_A\qty(t + t_*)}} = &
+                \frac{L^{\frac{2}{3}}_0}{2\pi} \int^{z_u}_{z_c}
+                \frac{\dd{Z}}{w^2\qty(Z)} C^2_\alpha\qty(Z)T^2\qty(Z) \times
+                \\ \times
+                & \iiint^\infty_{-\infty} b_\alpha\qty(\xi_x,\xi_y,\xi_z)
+                \exp[-\frac{\qty(\xi_x + vt_*)^2 + \xi^2_y}{w^2\qty(Z)}]
+        \end{split}
+\end{equation}
+
+where, in particular,
+
+\begin{align}
+         \xi_x & = x_1 - x_2 \\
+         \xi_y & = y_1 - y_2 \\
+         \xi_z & = z_1 - z_2 \\
+         Z & = \frac{z_1 + z_2}{2}.
+\end{align}
+
+The power spectrum is obtained calculating the Fourier transform of this
+expression:
+
+\begin{equation}
+        S\qty(\omega) = \frac{1}{\sqrt{2\pi}} \int^\infty_\infty \dd{t_*}
+        e^{-i\omega t_*} \expval{\var{T_A\qty(t)}\var{T_A\qty(t + t_*)}}
+\end{equation}
+
+where $\omega$ is an angular frequency. In two important limiting cases,
+corresponding to large and small outher scales, the
+Fourier transform of the
+autocorrelation can be written as a product of two terms (see Appendix),
+$S\qty(\omega) = I\qty(\omega/v)\Phi\qty(\omega/v)$. Where
+$I\qty(\omega/v)$ is the instrumental filter on the temporal power spectrum,
+which is the same in both of the cases,
+and $\Phi\qty(\omega,v)$ is the power spectrum itself. In particular, if
+$b_\alpha\qty(\xi_x,\xi_y,\xi_z)$ is taken as the Kolmogorov normalized
+correlation function,
+
+\begin{itemize}
+        \item If $w(Z) \gg L_0$:
+
+        \begin{equation}
+                \Phi\qty(\frac{\omega}{v}) \propto
+                        \begin{cases}
+                                \qty(\frac{\omega}{v})^{\frac{11}{3}} & \qif
+                                \frac{1}{L_0} \ll \frac{\omega}{v}
+                                \ll \frac{1}{l_0} \\
+                                K & \qif \frac{\omega}{v} \ll \frac{1}{L_0}
+                        \end{cases}
+        \end{equation}
+
+        \item If $w\qty(Z) \ll L_0$:
+
+        \begin{equation}
+                \Phi\qty(\frac{\omega}{v}) \propto
+                        \begin{cases}
+                                \qty(\frac{\omega}{v})^{\frac{8}{3}} & \qif
+                                \frac{1}{L_0} \ll \frac{\omega}{v}
+                                \ll \frac{1}{l_0} \\
+                                K' & \qif \frac{\omega}{v} \ll \frac{1}{L_0}
+                        \end{cases}
+        \end{equation}
+\end{itemize}
+
+where $K$ and $K'$ are constants. The calculated power spectra for these
+two limiting cases are showed in \autoref{fig:t_antenna_ps}. They were
+obtained choosing $L_0 \sim \SI{1}{\meter}$ and $L_0 ~ \SI{100}{\meter}$,
+respectively. For the more realistic case of $L_0 \sim \SI{10}{\meter}$,
+emission at low altitude will contribute a spectrum with a $-8/3$ index and
+emission at high altutudes will contribute a $-11/3$ index.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{t_antenna_ps}
+        \caption{Power spectra of the fluctautions in antenna temperature
+        for a single dish system in the two limiting cases of large and
+        small outher scale.}
+        \label{fig:t_antenna_ps}
+\end{figure}
