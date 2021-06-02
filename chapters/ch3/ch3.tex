@@ -75,6 +75,114 @@ From \autoref{eq:kk_relations_1} and \autoref{eq:kk_relations_2} follows that
 the refractive index and the absorption coefficient are note independent
 quantities.
 
+\subsection{Essential Quantities in Radiative Transfer Theory}
+
+When the scale of a system greatly exceed the wavelength of propagating
+radiation, we can consider radiation to travel in straight line, called
+\emph{rays}. Starting from this observation we can devise a theory of
+propagating rays, knwon as the \emph{radiative transfer theory}.
+
+We consider an infinitesimal area $\dd{A}$ normal to the direction of a
+specific ray and we take into account all the rays passing through $\dd{A}$
+whose direction is whithin an infinitesimal solid angle $\dd{\Omega}$ of
+the given ray (see \autoref{fig:rays_geometry}). The energy crossing
+$\dd{A}$ in an infinitesimal time $\dd{t}$, in a frequency range $\dd{\nu}$
+is
+
+\begin{equation}
+        \dd{E} \equiv
+        I\qty(\vb{x},\Omega,\nu)\dd{A}dd{\Omega}\dd{\nu}\dd{t}
+\end{equation}
+
+which defines the \emph{specififc intensity}, $I\qty(\vb{x},\Omega,\nu) =
+I_\nu$.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{rays_geometry}
+        \caption{Geometry for normally incident rays.}
+        \label{fig:rays_geometry}
+\end{figure}
+
+The absorption coefficient $\alpha\qty(\nu) = \alpha_\nu$, introduced in the
+previus section, represents the loss of intensity in a beam as it travels an
+infinitesimal distance $\dd{r}$ in a dispersive medium. As the radiation
+proceeds in the material, it runs into a random distribution of absorbers,
+each presenting a cross section $\sigma_\nu$, of number density $n$. If we
+assume that the mean interparticle distance is large in comparison to the
+linear scale of the cross section, that is $n^{-\frac{1}{3}} \gg
+\sqrt{\sigma_\nu}$, the total energy absorbed out of a beam passing
+through a infinitesimal area $\dd{A}$ within a solid angle $\dd{\Omega}$ is
+
+\begin{equation}
+        \dd{E} = I_\nu \sigma_\nu n \dd{V} \dd{\Omega} \dd{\nu} \dd{t}
+\end{equation}
+
+where $\sigma_\nu n \dd{V} = \sigma_\nu n \dd{A} \dd{r}$ is the total
+absorbing area presented by absorbers. The loss in energy, by definition,
+can be expressed in terms of specifc brightness:
+
+\begin{equation}
+        \dd{E} = -\dd{I_\nu} \dd{A} \dd{\Omega} \dd{\nu} \dd{t}.
+\end{equation}
+
+Therefore if we combine the last two equations, we obtain
+
+\begin{equation}
+        \dv{I_\nu}{r} = -\sigma_\nu n I_\nu
+        \label{eq:absorption}
+\end{equation}
+
+where $\sigma_\nu n = \alpha_\nu$. Note that absorption in
+\autoref{eq:absorption} includes both \emph{true absorption} and
+\emph{stimulated emission}, because both are proportional to the intensity
+of the incoming radiation. Thus, $\alpha$ can be a positive or a negative
+quantity.
+
+The spontaneous emission, on the other hand, is independent of the
+specific intensity of the beam. In the contest of radiative transfer theory
+the quantity linked to this phenomenon is the \emph{spontaneous emission
+coefficient} $j$, which is defined as the energy emitted
+per unit time per unit solid angle and per unit volume:
+
+\begin{equation}
+        \dd{E} \equiv j\dd{V}\dd{\Omega}\dd{t}.
+\end{equation}
+
+A \emph{monochromatic spontaneous emission coefficient}, $j\qty(\nu) =
+j_\nu$, can also be defined as
+
+\begin{equation}
+        j \equiv j_\nu \dd{\nu}.
+\end{equation}
+
+From now on we will refer to this quantity simply as the \emph{emission
+coefficient}.
+A beam of cross section $\dd{A}$, travelling an infinitesimal distance
+$\dd{r}$, goes through a volume $\dd{V} = \dd{A} \dd{r}$. Therefore, from
+the last two equations, we have
+
+\begin{equation}
+        \begin{split}
+        \frac{\dd{E}}{\dd{A}\dd{\Omega}\dd{\nu}\dd{t}} & = j_\nu \dd{r} \\
+        \dv{I_\nu}{r} & = j_\nu
+        \label{eq:emission}
+        \end{split}
+\end{equation}
+particle velocities within it corresponds to the \emph{Maxwell-Boltzmann}
+distribution,
+
+\begin{equation}
+        p\qty(v) = \qty(\frac{m_*}{2\pi K_b T})^{3/2}
+        \exp(-\frac{m_* v^2}{2 K_b T})
+\end{equation}
+
+where $m_*$ is a reference mass for particles in the atmosphere.
+This means that in principle we can split the atmosphere in an arbitrary
+number of vertical layers, assuming the thermodynamic temperature is
+constant within each one.  The radiative transfer equation can then be
+written down and solved for every layer and the solutions connected. This
+constitutes a simplified view of the numerical approach we have adopted in
 the context of this thesis to obtain estimates for atmospheric brightness
 temperatures.
 
