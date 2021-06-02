@@ -262,6 +262,101 @@ equation. The term $I_\nu\qty(0) e^{-\tau_{A,\nu}}$ represents the initial
 intensity diminished by absorption and the second term in the sum stands
 for the integrated source diminished by absorption.
 
+\subsection{A Solution for Thermal Sources}
+
+Thermal radiation is radiation emitted by matter in thermodynamic
+equilibrium. When radiation is itself in thermodynamic equilibrium we
+speak about \emph{black body radiation}, whose nature was already described
+in \autoref{ss:cmb_bb}.
+
+For black body radiation we have
+
+\begin{equation}
+        I_\nu \equiv B_\nu\qty(T_\text{phys})
+\end{equation}
+
+where $T_\text{phys}$ is the physical temperature of the radiation and of the
+emitter and $B_\nu\qty(T_\text{phys})$ is the black body spectrum introduced
+in \autoref{ss:cmb_bb},
+
+\begin{equation}
+        B_\nu\qty(T) = \frac{2h\nu^3}{c^2}
+        \frac{1}{\exp(\frac{h\nu}{K_b T}) - 1}.
+\end{equation}
+
+This means that for black body radiation $I_\nu$ is an universal function
+of $T$ and $\nu$, independent of the properties of the emitting body.
+
+Kirchhoff's law states that the source function of a body in thermodynamic
+equilibrium coincides with a black body spectrum
+
+\begin{align}
+        S_\nu & = B_\nu\qty(T_\text{phys}) \\
+        j_\nu & = B_\nu\qty(T_\text{phys}) \alpha_\nu
+\end{align}
+
+where $T_\text{phys}$ is the physical temperature of the radiant body,
+which from now on will be referred to simply as T.
+
+The solution of the radiative transfer equation in the case of thermal
+radiation is obtained from the formal solution by substitution of the
+correct source function:
+
+\begin{equation}
+        I_\nu\qty(\tau_{A,\nu}) = I_\nu\qty(0) e^{-\tau_{A,\nu}} +
+        \int^{\tau_{A,\nu}}_0 \dd{\tau_\nu} B_\nu\qty(T\qty(\tau_\nu))
+        e^{-\qty(\tau_{A,\nu} - \tau_\nu)}.
+        \label{eq:radiative_thermal}
+\end{equation}
+
+A further approximation can be made to simplify this result.
+The exponential term in the Planck law can be expanded as
+
+\begin{equation}
+       \exp(\frac{h\nu}{K_b T}) = 1 + \frac{h\nu}{K_b T} + \order{\nu^2}.
+\end{equation}
+
+Therefore, for $\frac{h \nu}{K_b T}$, we obtain the \emph{Rayleigh-Jeans
+approximation law}:
+
+\begin{equation}
+        B_\nu\qty(T) \approx \frac{2\nu^2}{c^2} K_b T.
+\end{equation}
+
+This relation is commonly used in astrophysics to characterize the
+brightness of a radiation at a certain frequency. For any value value of
+$I_\nu$ a corresponding \emph{brightness temperature} temperature can be
+defined as
+
+\begin{equation}
+        I_\nu \equiv B_\nu\qty(T_b)
+\end{equation}
+
+or assuming that the Rayleigh-Jeans approximation is valid,
+
+\begin{equation}
+        T_b \equiv = \frac{c^2}{2\nu^2k} I_\nu.
+\end{equation}
+
+So, \autoref{eq:radiative_thermal} can be rewritten as
+
+\begin{equation}
+        T_b = T_b\qty(0) e^{-\tau_{A,\nu}} +
+        \int^{\tau_{A,\nu}}_0 \dd{\tau_\nu} T\qty(\tau_\nu)
+        e^{-\qty(\tau_{A,\nu} - \tau_\nu)}.
+\end{equation}
+
+The solution of this equation in the case of constant temperature along the
+optical path, $T\qty(\tau_\nu) = T = \text{const.}$ is
+
+\begin{equation}
+        T_b = T_b\qty(0) e^{-\tau_{A,\nu}} + T\qty(1 -
+        e^{-\tau_{A,\nu}}).
+\end{equation}
+
+If the opacity is large, the brightness temperature of the radiation
+approaches the temperature of the medium.
+
 particle velocities within it corresponds to the \emph{Maxwell-Boltzmann}
 distribution,
 
