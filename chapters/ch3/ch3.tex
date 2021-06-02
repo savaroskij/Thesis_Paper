@@ -357,6 +357,118 @@ optical path, $T\qty(\tau_\nu) = T = \text{const.}$ is
 If the opacity is large, the brightness temperature of the radiation
 approaches the temperature of the medium.
 
+\subsection{Local Thermodynamic Equilibrium}
+
+It is possible to rewrite the radiative transfer equation in terms of
+microscopic quantities. The theorical framework for the simple case of a
+medium composed of emitters and absorbers characterized by two energy
+levels was established by Einstein in
+1917, in his famous article about the quantum theory of radiation.
+The transfer equation in terms of Einstein coefficients reads
+
+\begin{equation}
+        \dv{I_\nu}{r} = -\frac{h\nu}{4\pi}\qty(n_1 B_{12} -
+        n_2 B_{21})\phi\qty(\nu)I_\nu +
+        \frac{h\nu}{4\pi} n_2 A_{21}\phi\qty(\nu)
+\end{equation}
+
+where
+
+\begin{itemize}
+        \item $n_1$ and $n_2$ are the number densities of atoms in energy
+        levels 1 and 2, with $E_2 = E_1 + h\nu_0$;
+        \item $B_{12}$ and $B_{21}$ are the Einstein absorption and
+        stimulated emission coefficients, respectively;
+        \item $A_{21}$ is the Einstein stimulated emission coefficient;
+        \item and $\phi\qty(\nu)$ is the \emph{line profile function},
+        which accounts for the fact that the energy difference $h\nu_0$i
+        is not infinitely sharp. The line profile function is peaked at
+        $\nu = \nu_0$ and is taken to be normalized:
+
+        \begin{equation}
+                \int^\infty_0 \phi\qty(\nu) = 1.
+        \end{equation}
+
+\end{itemize}
+
+A comparison of this equation with \autoref{eq:radiative_transfer} allows
+to obtain
+
+\begin{align}
+        \alpha_\nu & = \frac{h\nu}{4\pi}\qty(n_1 B_{12} -
+        n_2 B_{21})\phi\qty(\nu) \\
+        S_\nu & = \frac{n_2 A_{21}}{n_1 B_{12} - n_2 B_{21}}
+\end{align}
+
+which are the expressions for the absorption coefficient and the source
+fuction in terms of microscopic quantities.
+
+Using the Einstein \emph{detailed balance relations} for absorption and
+emission
+
+\begin{align}
+        g_1 B_{12} & = g_2 B_{21} \\
+        A_{21} & = \frac{2h\nu^3}{c^2} B_{21}
+\end{align}
+
+where $g_1$ and $g_2$ are statistical weights for energy level 1 and 2,
+respectively, the absorption coefficient and the source function can be
+rewritten as
+
+\begin{align}
+        \alpha_\nu & = \frac{h\nu}{4\pi} n_1 B_{12}
+        \qty(1 - \frac{g_1 n_2}{g_2 n_1})\phi\qty(\nu)\\
+        S_\nu & = \frac{2h\nu^3}{c^2}\qty(\frac{g_2 n_1}{g_1 n_2} - 1)^{-1}.
+        \label{eq:gen_kirchhoff_law}
+\end{align}
+
+\autoref{eq:gen_kirchhoff_law} is known as the \emph{generalized Kirchhoff
+law} and is valid even out of thermodinamic equilibrium. For a thermalized
+system the number density for a certain energy level $i$, $n_i$, is
+proportional to the \emph{Boltzmann dustribution} and to its degeneracy
+number, $g_i$,
+
+\begin{equation}
+        n_i \propto \frac{g_i}{Q} \exp(-\frac{E_i}{K_b T})
+\end{equation}
+
+where
+
+\begin{equation}
+        Q \equiv \sum_j \exp(-\frac{E_j}{K_b T})
+\end{equation}
+
+is the \emph{canonical partition function}. The j index in the sum runs
+over all states that are accessible to the to system. Therefore, in the
+case of our two levels system we have that
+
+\begin{equation}
+        \frac{n_1}{n_2} = \frac{g_1 \exp(-\frac{E}{K_b T})}{
+        g_2 \exp(-\frac{E + h\nu_0}{K_b T})} =
+        \frac{g_1}{g_2} \exp(\frac{h\nu_0}{K_b T})
+\end{equation}
+
+and the expression for the absorption coefficient and the source function
+become
+
+\begin{align}
+        \alpha_\nu & = \frac{h\nu}{4\pi} n_1 B_{12}
+        \qty[1 - \exp(-\frac{h\nu}{K_b T})]\phi\qty(\nu)\\
+        S_\nu & = \frac{2h\nu^3}{c^2}\qty[\exp(\frac{h\nu}{K_b T}) - 1]^{-1}
+        = B_\nu\qty(T).
+\end{align}
+
+This thermal value for the source function is just a statement of the
+Kirchhoff law. In this case matter is in thermal equilibrium with
+itself but not necessarily with radiation, so it is said to be in \emph{local
+thermodynamic equilibrium} (LTE). The atmosphere is in fact a dispersive
+medium in local thermodinamic equilibrium: cosmic electromagnetic waves
+such as solar radiation, the CMB, and radiations from the galaxy propagate
+through it, but they are not in thermodinamic equilibrium with the medium.
+
+Of course our atmosphere is not an ensamble of two levels emitters and
+absorbers, like the one we have presented above. Instead, it is in local
+thermodinamic equilibrium in a classical sense: the local distribution of
 particle velocities within it corresponds to the \emph{Maxwell-Boltzmann}
 distribution,
 
