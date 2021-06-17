@@ -1,4 +1,4 @@
-\chapter{The Atmospheric Emission Model}
+\chapter{The Atmospheric Emission Model}\label{ch:atm_model}
 
 Ground-based experiments have been playing and will continue to play a
 prominent role in the observation of the cosmic microwave background
@@ -100,7 +100,7 @@ I_\nu$.
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{rays_geometry}
-        \caption{Geometry for normally incident rays.}
+        \caption{Geometry for normally incident rays (B. Rybicki).}
         \label{fig:rays_geometry}
 \end{figure}
 
@@ -170,7 +170,7 @@ the last two equations, we have
         \end{split}
 \end{equation}
 
-\subsection{The Radiative Transfer Equation}
+\subsection{The Radiative Transfer Equation}\label{ss:radiative_transfer_eq}
 
 The effects of emission and absorption can be incorporated into a sigle
 equation giving the variation of specific intensity. From \autoref{eq:absorption}
@@ -352,6 +352,7 @@ optical path, $T\qty(\tau_\nu) = T = \text{const.}$ is
 \begin{equation}
         T_b = T_b\qty(0) e^{-\tau_{A,\nu}} + T\qty(1 -
         e^{-\tau_{A,\nu}}).
+        \label{eq:rte_solution_thermal}
 \end{equation}
 
 If the opacity is large, the brightness temperature of the radiation
