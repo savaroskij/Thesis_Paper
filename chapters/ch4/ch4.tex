@@ -1,6 +1,55 @@
-\chapter{The Atmospheric Statistical Picture}
+\chapter{The Atmospheric Statistical Picture}\label{ch:statistical_picture}
+
+In this chapter a method to build a \emph{statistical picture} of the
+atmosphere is presented. First the ERA5 dataset is introduced: this
+constitutes the set of statistical populations for the relevant meteorological
+parameters that we have choosen to achieve this result; then the statistical
+picture of the atmosphere is defined and the described in details; finally,
+the mathematical objects we have used to describe expected daily and annual
+variations of meteorological parameters at Pico del Teide are analyzed.
+
+These results form the basis to get an estimate of the atmosphere
+brightness temperature in the microwave range. This contribution, and its
+seasonal variations as well, will be studied in the following chapters.
 
 \section{The ERA5 Dataset}
+
+As we have discussed in \autoref{ch:atm_model}, to calculate the extra load
+caused by atmospheric effects, we must solve the radiative transfer equation
+in the case of a dispersive medium at local thermodynamic equilibrium. The
+solution depends on the physical properties of the medium. In particular,
+it is determined by its physical temperature, $T$, and absorption
+coefficient, $\alpha_\nu$. In turn, these quantities depends on a set a
+meteorological parameters, which undergo seasonal variations.
+
+In order to create a reliable statistical representation of these daily and
+annual variations, we employed the ERA-5 dataset by the \emph{European
+Centre for Medium-Range Weather Forecasts} (ECMWF). ECMWF uses forecast
+models and data assimilation systems to \emph{reanalyse} archived
+meteorological observations, creating global datasets describing the
+recent history of the atmosphere, land surface, and oceans. In particular,
+ERA5 provides hourly estimates of a large number of atmospheric, land and
+oceanic climate variables. The data cover the whole Earth surface and
+resolve the atmosphere using \num{137} levels from the surface up to a
+height of \SI{80}{\kilo\meter}. ERA5 reanalysis relies on the \emph{Global
+Circulation Model} (GCM) algorithm (McGuffie, Henderson-Sellers) making use
+of the historical measures as forcing terms into GCM simulations to produce
+data homogeneously gridded characterized by high spatial and temporal
+resolution.
+
+\autoref{fig:pwv_canary_islands} shows PWV distribution from ERA5 dataset
+in Canary Island for the twelfth hour of the first day of the 1980. The
+archipelago in covered by a grid of \num{30} by \num{30} \si{\kilo\meter}
+\emph{pixels}  (\ang{0.25} by \ang{0.25} in geographic coordinate system).
+As expected, precipitable water vapour takes its lowest values for
+continental lands, its greatest values for pixels covering ocean and
+intermediate values in correspondence of islands. \autoref{fig:pwv_tenerife}
+focuses on Tenerife islands, showing that the whole site is covered by only four
+pixels, which are delimited by a fuchsia perimeter in the figure.
+In the following chapters we will prove that ERA5 spatial
+resolution is in fact not enough to describe the specific meteorological
+conditions at Pico del Teide, and at observation sites found on
+small islands in general.
 
 \begin{figure}
         \centering
@@ -16,7 +65,77 @@
         \label{fig:pwv_tenerife}
 \end{figure}
 
-\section{The CDFs \texttt{.fits} file}
+\subsection{The Set of Relevant Meteorological Parameters}
+
+Climate reanalysis data ranging from January the 1th 1979 to November
+the 21th 2020 have been acquired by means of the ECMWF Web API, for a total of
+\num{367200} hours in UTC. Downloaded data concern only one of the pixels found in
+\autoref{fig:pwv_tenerife}: the one including the territory of Teide
+observatory, which in the figure is enclosed by a yellow
+square.
+
+The relevant parameters, essential to provide a complete description of our
+atmosphere, have been selected, for a total of seven quantities:
+
+\begin{itemize}
+        \item \textbf{total column cloud liquid water} (\textbf{tclw}):
+
+        the amount of liquid water contained within cloud
+        droplets in a column extending from the surface of the Earth to the
+        top of the atmosphere, measure in \si{\kilo\gram\per\square\meter}.
+        Rain water droplets, which are much larger
+        in size (and mass), are not included in this parameter;
+
+        \item \textbf{total column cloud ice water} (\textbf{tciw}):
+
+        the amount of ice contained within clouds in a column extending
+        from the surface of the Earth to the top of the atmosphere,
+        measured in \si{\kilo\gram\per\square\meter}. Snow
+        (aggregated ice crystals) is not included in this parameter;
+
+        \item \textbf{total column water vapour} (\textbf{tcwv}) or \textbf{precipitable
+        water vapour} (\textbf{PWV}):
+
+        the total amount of water vapour in a column
+        extending from the surface of the Earth to the top of the
+        atmosphere, measured in \si{\kilo\gram\per\square\meter};
+
+        \item \textbf{skin temperature} (\textbf{skt}):
+
+        the temperature of the surface of the Earth, measured in
+        \si{\kelvin};
+
+        \item \textbf{surface pressure} (\textbf{sp}):
+
+        the pressure of the atmosphere on the surface of land, sea and
+        in-land water, measured in \si{\pascal};
+
+        \item \textbf{10 meter temperature} (\textbf{T10M}):
+
+        this parameter is not present in the ERA5 database, then it has
+        been deduced from the \emph{2 meter temperature} (2t) parameter
+        assuming a linear decrease in troposphere temperature of
+        \SI{6.5e-3}{\kelvin\per\meter}. The 2t parameter represents the
+        temperature of air at \SI{2}{\meter} above the surface of land, sea
+        or in-land waters;
+
+        \item \textbf{10 meter V wind component} (\textbf{10v}):
+
+        the northward component of the 10m wind. It is the horizontal speed
+        of air moving towards the north, at a height of ten meters above
+        the surface of the Earth, measured in \si{\meter\per\second};
+
+        \item \textbf{10 meter U wind component} (\textbf{10u}):
+
+        like the latter parameter, but for the eastward component of the
+        wind speed.
+\end{itemize}
+
+The totality of these meteorological parameters is necessary to describe
+atmospheric radiative contribution and spatial structures. However, the
+skin temperature ($T_s$), the surface pressure ($P_s)$ and the precipitable
+water vapour (PWV) are enough to provide a first estimate of the extra
+white noise load on detectors.
 
 \begin{figure}
         \centering
