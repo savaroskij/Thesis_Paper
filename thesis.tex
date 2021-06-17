@@ -3,6 +3,9 @@
 \usepackage[a-1a]{pdfx}
 \usepackage{hyperref}
 \usepackage[T1]{fontenc}
+% pass = use book standard geometry.
+% package included for newgeometry in titlepage
+\usepackage[pass]{geometry}
 \usepackage[separate-uncertainty=true]{siunitx}
 \DeclareSIUnit{\parsec}{pc}
 \DeclareSIUnit\year{yr}
@@ -29,9 +32,15 @@
 \date{\today}
 
 \begin{document}
+
+\hypersetup{pageanchor=false}
+\input{./chapters/titlepage/titlepage.tex}
+\thispagestyle{empty}
+
 \frontmatter
 
-\maketitle
+\hypersetup{pageanchor=true}
+
 \include{./chapters/acknowledgements/acknowledgements}
 \tableofcontents
 \listoffigures
