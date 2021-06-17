@@ -137,12 +137,119 @@ skin temperature ($T_s$), the surface pressure ($P_s)$ and the precipitable
 water vapour (PWV) are enough to provide a first estimate of the extra
 white noise load on detectors.
 
+\section{The CDFs \texttt{.fits} file}\label{s:CDF_fits_file}
+
+The term \emph{atmospheric statistical picture}, which has been previously
+introduced, designates a set of \emph{cumulative distribution functions} (CDF).
+Given a real-valued random variable $X$, its CDF, $F_X\qty(x)$, represents the
+probability that $X$ takes a value less than or equal to $x$.
+If, in addition, $X$ is continuous and $\rho_X\qty(x)$ is its probability density
+function, we can express the CDF as
+
+\begin{equation}
+        F_X\qty(x) = \int^x_{-\infty}\dd{x'} \rho_X\qty(x').
+\end{equation}
+
+Therefore, it follows that
+
+\begin{equation}
+        \rho_X\qty(x) = \dv{F_X\qty(x)}{x}
+\end{equation}
+
+meaning that every statistical property of $X$ can be calculated starting
+from its cumulative distribution function.
+
+The CDFs for each one of the relevant meteorological parameters can be
+calculated by application of a sorting algorithm to a statistical
+population of data. Making use of this method, CDFs for every hour of a
+typical day of each month of the year have been
+calculated starting from the acquired ERA5 datasets, for a total of
+\num{288} cumulative distribution functions for each parameter.
+As an example, the CDFs for the PWD at Pico del Teide are shown in
+\autoref{fig:pwv_monthly_cdfs}.
+
 \begin{figure}
         \centering
-        \includegraphics[width=0.83\textwidth]{PWV_Monthly_CDFs}
-        \caption{PWV Monthly CDFs}
+        \includegraphics[width=0.76\textwidth]{PWV_Monthly_CDFs}
+        \caption{Cumulative distribution functions for every hour of a
+        typical day of each month of the year for the PWD parameter at Pico
+        del Teide. Months are represented using different colors and
+        probability is expressed in terms of \emph{confidence level}.}
         \label{fig:pwv_monthly_cdfs}
 \end{figure}
+
+CDFs data have been subsequently decimated and saved in \texttt{.fits} file
+format. We will refer to this representation simply as the \emph{CDFs
+\texttt{.fits} file}. The structure of the latter
+follows:
+
+\begin{Verbatim}[fontsize=\scriptsize]
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU       4   ()
+  1                1 BinTableHDU     30   24R x 8C   [101D, 101D, 101D, 101D, 101D, 101D, 101D, 101D]
+  2                1 BinTableHDU     30   24R x 8C   [101D, 101D, 101D, 101D, 101D, 101D, 101D, 101D]
+  3                1 BinTableHDU     30   24R x 8C   [101D, 101D, 101D, 101D, 101D, 101D, 101D, 101D]
+  4                1 BinTableHDU     30   24R x 8C   [101D, 101D, 101D, 101D, 101D, 101D, 101D, 101D]
+  5                1 BinTableHDU     30   24R x 8C   [101D, 101D, 101D, 101D, 101D, 101D, 101D, 101D]
+  6                1 BinTableHDU     30   24R x 8C   [101D, 101D, 101D, 101D, 101D, 101D, 101D, 101D]
+  7                1 BinTableHDU     30   24R x 8C   [101D, 101D, 101D, 101D, 101D, 101D, 101D, 101D]
+  8                1 BinTableHDU     30   24R x 8C   [101D, 101D, 101D, 101D, 101D, 101D, 101D, 101D]
+  9                1 BinTableHDU     30   24R x 8C   [101D, 101D, 101D, 101D, 101D, 101D, 101D, 101D]
+ 10                1 BinTableHDU     30   24R x 8C   [101D, 101D, 101D, 101D, 101D, 101D, 101D, 101D]
+ 11                1 BinTableHDU     30   24R x 8C   [101D, 101D, 101D, 101D, 101D, 101D, 101D, 101D]
+ 12                1 BinTableHDU     30   24R x 8C   [101D, 101D, 101D, 101D, 101D, 101D, 101D, 101D]
+None
+\end{Verbatim}
+
+The CDFs \texttt{.fits} file includes \num{12} $24 \times 8$ binary tables:
+one table for each month of the year. As an example, header information for
+the January table is shown:
+
+\begin{Verbatim}
+XTENSION= 'BINTABLE'           / binary table extension
+BITPIX  =                    8 / array data type
+NAXIS   =                    2 / number of array dimensions
+NAXIS1  =                 6464 / length of dimension 1
+NAXIS2  =                   24 / length of dimension 2
+PCOUNT  =                    0 / number of group parameters
+GCOUNT  =                    1 / number of groups
+TFIELDS =                    8 / number of table fields
+TTYPE1  = 'TQL     '
+TFORM1  = '101D    '
+TTYPE2  = 'TQI     '
+TFORM2  = '101D    '
+TTYPE3  = 'TQV     '
+TFORM3  = '101D    '
+TTYPE4  = 'TS      '
+TFORM4  = '101D    '
+TTYPE5  = 'PS      '
+TFORM5  = '101D    '
+TTYPE6  = 'T10M    '
+TFORM6  = '101D    '
+TTYPE7  = 'V10M    '
+TFORM7  = '101D    '
+TTYPE8  = 'U10M    '
+TFORM8  = '101D    '
+MONTH   =                    0
+PROBSTRT=                  0.0
+PROBSTOP=                  1.0
+PROBSTEP=                 0.01
+NSTEP   =                  101
+SOURCE  = 'ERA5 data from 1979 to 2020'
+\end{Verbatim}
+
+As can be observed, every binary table has \num{8} columns, one for each
+relevant meteorological parameter. Every column is a matrix of $101 \times
+24$ double size floating point ordered values, one data for each
+percentile, representing a discretization of a CDF function.  The CDFs
+\texttt{.fits} file is rather light (\SI{\sim 2}{\mega\byte}) and can be
+employed by instrumental simulations frameworks such as
+\emph{TOAST}\footnote{\url{https://github.com/hpc4cmb/toast}},
+\emph{QUBIC\_Soft} \footnote{\url{https://github.com/qubicsoft/qubic}} and
+\emph{Stripeline}
+\footnote{\url{https://github.com/lspestrip/Stripeline.jl}} in order to
+produce simulations ground-based experiments observations. Furthermore,
+this method can be adapted for use at any site.
 
 \section{The Seasonal Matrices}
 
