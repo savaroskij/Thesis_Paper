@@ -680,7 +680,8 @@ structure fuction of fluctuations in the absorption coefficient:
 \begin{equation}
         \begin{split}
                 \mathcal{D}_\alpha\qty(\vb{r}_1,\vb{r}_2) & =
-                \expval{\qty[\alpha_\nu\qty(\vb{r}_1),\alpha_\nu\qty(\vb{r}_2)]} =
+                \expval{\qty[\alpha_\nu\qty(\vb{r}_1) -
+                \alpha_\nu\qty(\vb{r}_2)]^2} =
                 \\
                 & = B_\alpha\qty(\vb{r}_1,\vb{r}_1) -
                 2B_\alpha\qty(\vb{r}_1,\vb{r}_2) + B_\alpha\qty(\vb{r}_2,\vb{r}_2)
@@ -691,7 +692,7 @@ where
 
 \begin{equation}
         B_\alpha\qty(\vb{r}_1,\vb{r}_2) =
-        \expval{\alpha_\nu\qty(\vb{r}_1,\vb{r}_2)}.
+        \expval{\alpha_\nu\qty(\vb{r}_1)\alpha_\nu\qty(\vb{r}_2)}.
 \end{equation}
 
 If the turbolence is locally homogeneous and isotropic, the corrlation
