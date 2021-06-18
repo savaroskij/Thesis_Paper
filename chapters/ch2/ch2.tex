@@ -38,17 +38,49 @@ The LSPE experiment will be operative by the end of the year 2022.
 
 \section{The Strip Instrument}
 
-\begin{figure}
-        \centering
-        \includegraphics[width=\textwidth]{LSPE-Strip-optical-system}
-        \caption{LSPE/Strip Optical System}
-        \label{fig:lspe-strip_optical_system}
-\end{figure}
+Strip was initially designed as a balloon-borne experiment, but has been
+recently reconverted into a ground based experiment. The instrument will be
+mounted on a \emph{Crossed-Dragone} telescope with an angular resolution of
+\ang{;20;}, equipped with a \SI{1.5}{\meter} primiry mirror (See
+\autoref{fig:lspe-strip_optical_system}).
 
 \begin{figure}
         \centering
-        \includegraphics[width=\textwidth]{strip-focal-plane}
-        \caption{Strip focal plane}
+        \includegraphics[width=\textwidth]{LSPE-Strip-optical-system}
+        \caption{LSPE/Strip optical system.}
+        \label{fig:lspe-strip_optical_system}
+\end{figure}
+
+The radiation is focused onto the window of a cryostat, which cools the
+focal plane down to \SI{20}{\kelvin}.
+
+The focal plane of Strip consist of two arrays of coherent
+polarimeters:
+
+\begin{itemize}
+        \item \textbf{Q-band Channel:} an array of \num{49} polarimeters
+        operating at \SI{43}{\giga\hertz} (See
+        \autoref{fig:strip_focal_plane}). This channel is designed to
+        conduct astrophysical measurements, even if atmospheric observations
+        are possible as well.
+
+        \item \textbf{W-band Channel:} an array of \num{6} detectors
+        operating at \SI{95}{\giga\hertz}. This channel is not suitable to
+        detect the signal from the CMB, due to its poor sensitivity. It
+        will be used to monitor and charactherize the intensity and
+        polarization of atmospheric emission.
+\end{itemize}
+
+The receivers are based on the design developed for the QUIET ground-based
+experiment and are able to simultaneously detect the Q and U Stokes
+parameters of the CMB polarized signal. The whole array of detectors will
+be placed in the focal region of the telescope, ensuring no obstruction of
+the field of view.
+
+\begin{figure}
+        \centering
+        \includegraphics[width=0.80\textwidth]{strip-focal-plane}
+        \caption{Strip focal plane (Q-band)}
         \label{fig:strip_focal_plane}
 \end{figure}
 
