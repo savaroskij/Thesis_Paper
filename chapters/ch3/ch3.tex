@@ -4,12 +4,14 @@ In the current chapter the atmopsheric emission model is presented. First,
 the equation describing atmospheric radiative transfer is introduced and
 solved, for the simple case of a thermal system. Then, the atmospheric
 turbulent structure and its effects on a ground-based radiometer are
-discussed.
+discussed. The atmospheric model by Church is used as reference
+\autocite{church1995predicting}.
 
 \section{Atmospheric Radiative Transfer}
 
-The atmosphere can be viewed as a dielectric medium, whose effects on the
-incoming electromagnetic radiation are charactherized by the complex permittivity
+The atmosphere can be viewed as a dielectric medium
+\autocite{church1995predicting}, whose effects on the incoming
+electromagnetic radiation are charactherized by the complex permittivity
 
 \begin{equation}
         \epsilon\qty(\nu) = \epsilon_r\qty(\nu) + i\epsilon_i\qty(\nu)
@@ -32,16 +34,16 @@ The variable $s = \sigma + i 2\pi\nu$ is the complex frequency and $\sigma$
 is the \emph{Neper frequency}.
 
 As is shown in \autoref{fig:transmittance_teide}, contributions to the
-atmospheric complex permittivity arise principally from
-oxigen and water vapour molecules. Water vapour is responsible for most of
-the continuum absorption in the \SIrange{400}{500}{\giga\hertz} frequency
-range. The broad absorption oxigen band around \SI{60}{\giga\hertz} and the
-oxigen line at \SI{119}{\giga\hertz} contribute to very strong absorption,
-as the water vapour lines at \SIlist{22;183;325;380}{\giga\hertz} do. We will
-show that the most problematic features of the atmospheric absorption spectrum
-regarding the Q-band channels of the Strip telescope are in fact the
-\SI{22}{\giga\hertz} water vapour line and the \SI{\sim 60}{\giga\hertz}
-oxigen plateau.
+atmospheric complex permittivity arise principally from oxigen and water
+vapour molecules \autocite{errard2015modeling}. Water vapour is responsible
+for most of the continuum absorption in the \SIrange{400}{500}{\giga\hertz}
+frequency range. The broad absorption oxigen band around
+\SI{60}{\giga\hertz} and the oxigen line at \SI{119}{\giga\hertz}
+contribute to very strong absorption, as the water vapour lines at
+\SIlist{22;183;325;380}{\giga\hertz} do. We will show that the most
+problematic features of the atmospheric absorption spectrum regarding the
+Q-band channels of the Strip telescope are in fact the \SI{22}{\giga\hertz}
+water vapour line and the \SI{\sim 60}{\giga\hertz} oxigen plateau.
 
 \begin{figure}
         \centering
@@ -70,8 +72,9 @@ quantities.
 
 When the scale of a system greatly exceed the wavelength of propagating
 radiation, we can consider radiation to travel in straight line, called
-\emph{rays}. Starting from this observation we can devise a theory of
-propagating rays, knwon as the \emph{radiative transfer theory}.
+\emph{rays} \autocite{rybicki2008radiative}. Starting from this observation
+we can devise a theory of propagating rays, knwon as the \emph{radiative
+transfer theory}.
 
 We consider an infinitesimal area $\dd{A}$ normal to the direction of a
 specific ray and we take into account all the rays passing through $\dd{A}$
@@ -91,7 +94,8 @@ I_\nu$.
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{rays_geometry}
-        \caption{Geometry for normally incident rays (B. Rybicki).}
+        \caption{Geometry for normally incident rays
+        \autocite{rybicki2008radiative}.}
         \label{fig:rays_geometry}
 \end{figure}
 
@@ -182,7 +186,8 @@ takes a particularly simple for if we realize the change of variable
         \end{split}
 \end{equation}
 
-where $\tau_\nu$ is known as the \emph{optical depth} or \emph{opacity}.
+where $\tau_\nu$ is known as the \emph{optical depth} or \emph{opacity}
+\autocite{rybicki2008radiative}.
 The transfer equation can now be divided by $\alpha_\nu$ and written as
 
 \begin{equation}
@@ -308,7 +313,7 @@ The exponential term in the Planck law can be expanded as
 \end{equation}
 
 Therefore, for $\frac{h \nu}{K_b T}$, we obtain the \emph{Rayleigh-Jeans
-approximation law}:
+approximation law} (see for example \cite{condon2016essential}):
 
 \begin{equation}
         B_\nu\qty(T) \approx \frac{2\nu^2}{c^2} K_b T.
@@ -354,8 +359,8 @@ approaches the temperature of the medium.
 It is possible to rewrite the radiative transfer equation in terms of
 microscopic quantities. The theorical framework for the simple case of a
 medium composed of emitters and absorbers characterized by two energy
-levels was established by Einstein in
-1917, in his famous article about the quantum theory of radiation.
+levels was established by Einstein \autocite{einstein1917the},
+in his famous article about the quantum theory of radiation.
 The transfer equation in terms of Einstein coefficients reads
 
 \begin{equation}
@@ -396,7 +401,7 @@ which are the expressions for the absorption coefficient and the source
 fuction in terms of microscopic quantities.
 
 Using the Einstein \emph{detailed balance relations} for absorption and
-emission
+emission (see for example \cite{rybicki2008radiative})
 
 \begin{align}
         g_1 B_{12} & = g_2 B_{21} \\
@@ -480,7 +485,7 @@ temperatures.
 
 \section{Atmospheric Spatial Structures}
 
-As already mentioned in the introduction of the current chapter, water
+As already mentioned in \autoref{ss:atmosphere_problem}, water
 vapour is found in the atmosphere in highly variable concentrations and so
 it has a great influence on fluctuations in the values of the refractive
 index, $n_\nu$, and the absorption coefficient, $\alpha_\nu$. For frequncies
@@ -492,7 +497,8 @@ contribution are available. The refractivity, $N_\nu$, is defined as
 \end{equation}
 
 and in this wavelength range is approximately a constant function of
-frequency, $N\qty(\nu) = N$, given by the Smith-Weintraub equation:
+frequency, $N\qty(\nu) = N$, given by the Smith-Weintraub equation
+\autocite{smith1953constants}:
 
 \begin{equation}
         N = 77\frac{P_d}{T} + 64.8\frac{P_v}{T} +
@@ -506,13 +512,13 @@ Fluctuations in the value of the refractive index as the air drift through
 the instrument beam cause variations in the path length from a source to
 the telescope. For CMB radiation experiments with beamsizes of a degree or
 more that observe at \si{\centi\meter} wavelengths, these effects are small
-and can be ignored.
+and can be ignored \autocite{church1995predicting}.
 
 The low frequnecy contribution to $\alpha_\nu$ is governed by the
 \SI{22}{\giga\hertz} water vapour transition (see
 \autoref{fig:transmittance_teide}) and is given by that following simple
 expression, which also includes a corrective terms for wings of other
-lines:
+lines \autocite{waters19762}:
 
 \begin{equation}
         \alpha_\nu = \rho_v\nu^2\Delta \nu T^{-\frac{3}{2}}
@@ -529,7 +535,7 @@ where
 \end{equation}
 
 and $\rho_v$ is the water vapour density in \si{\gram\per\cubic\meter}, P
-is the pressure in \si{\milli\bar}, T is the atmospheric physical
+is the air pressure expressed \si{\milli\bar}, T is the atmospheric physical
 temperature.
 
 \subsection{Absorption Coefficient Fluctuations}
@@ -570,8 +576,8 @@ antenna and $S\qty(\nu)$ is the power per unit area and unit frequency emitted
 from the source.
 From \autoref{eq:radiative_atm} we deduce that the contribution to the
 antenna temperature measured by an istrument of effective area
-$A_\text{eff}$ is, pointing in direction $\vectorunit{r}_s$ from a small
-element of path length $\dd{r}$ through the atmosphere at $\vb{r}$ is
+$A_\text{eff}$, pointing in the direction of the unit vector $\vectorunit{r}_s$ from an infinitesimal
+element of path length $\dd{r}$ through the atmosphere at the position $\vb{r}$ is
 
 \begin{equation}
         \dd{T_\text{A}} = \frac{1}{\lambda^2} A_{\text{eff},\nu}
@@ -579,7 +585,7 @@ element of path length $\dd{r}$ through the atmosphere at $\vb{r}$ is
         \dd{\Omega}\dd{r}.
 \end{equation}
 
-Integrating over all the atmosphere yields
+If we integrate over all the volume of atmosphere we obtain:
 
 \begin{equation}
         T_\text{A} = \frac{1}{\lambda^2} \int_V \frac{\dd{V}}{r^2}
@@ -587,12 +593,12 @@ Integrating over all the atmosphere yields
         \alpha_\nu\qty(\vb{r}) T\qty(\vb{r}).
 \end{equation}
 
-From semplicity is now assumed that the instrument is pointing at the
+We assume now that the instrument is pointing at the
 zenith. An instrument not pointing at the zenith will be looking through a
 larger airmass and so the size of fluctuations will be increased.
 The airmass $m\qty(\theta_\text{zth})$ ranges from \num{1} at the zenith to
 about \num{40} at the horizon and can be computed for any zenith angle
-using the following formula (Errard):
+using the following empirical formula \autocite{errard2015modeling}:
 
 \begin{equation}
         m\qty(\theta_\text{zth}) \propto
@@ -634,7 +640,7 @@ condition, $x,y \ll z$, is satisfied over the whole integration domain.
 The gain drops rapidly for $z < z_c$ and the effect of imposing an
 arbitrary cutoff is negligible.
 
-The mean squared fluctuations in antenna temperature due to variations in
+The random mean squared fluctuations in antenna temperature due to variations in
 the absorption coefficients are
 
 \begin{equation}
@@ -662,9 +668,10 @@ fluctuations in the absorption coefficient.
 In literature the turbulent structure of the atmosphere is assumed to be
 described by the \emph{Kolmogorov-Taylor model} in which the turbulence has
 a Kolmogorov spatial spectrum and the spatial features remain fixed as the
-atmosphere is drifted through the beam by wind. This latter assumption is
-known as the \emph{Taylor approximation} and ignores any effects of
-variation of wind-speed with height or any convective motions.
+atmosphere is drifted through the beam by wind. This assumption is
+known as the \emph{Taylor approximation} and excludes any effects of
+variation of the speed of wind with height or any convective motions
+\autocite{church1995predicting}.
 The fluctuations in atmospheric brightness temperature are related to the
 structure fuction of fluctuations in the absorption coefficient:
 
@@ -686,10 +693,11 @@ where
         \expval{\alpha_\nu\qty(\vb{r}_1)\alpha_\nu\qty(\vb{r}_2)}.
 \end{equation}
 
-If the turbolence is locally homogeneous and isotropic, the corrlation
+Assuming that turbolence is locally homogeneous and isotropic, the correlation
 function $B_\alpha\qty(\vb{r}_1,\vb{r}_2)$ can be written as the product of
 a squared amplitude, witch depends on the coordinates, and a function that
-depends only on the separation between the two points of interest (Tatarski):
+depends only on the separation between the two points of interest
+\autocite{tatarski2016wave}:
 
 \begin{equation}
         B_\alpha\qty(\vb{r}_1,\vb{r}_2) = \frac{1}{2}
@@ -698,32 +706,34 @@ depends only on the separation between the two points of interest (Tatarski):
         l_0 \ll \abs{\vb{r}_1 - \vb{r}_2} \ll L_0
 \end{equation}
 
-where $b_\alpha\qty(\abs{\vb{r}_1 - \vb{r}_2})$ is a normalized correlation
-function and
+where $b_\alpha\qty(\abs{\vb{r}_1 - \vb{r}_2})$ is the normalized version
+of the correlation function and
 
 \begin{equation}
         b_\alpha\qty(\abs{\vb{r}_1 - \vb{r}_2}) \propto
         \abs{\vb{r}_1 - \vb{r}_2}^\frac{2}{3}.
 \end{equation}
 
-The parameters $l_0$ and $L_0$ are the inner and outer distance scales over
-which the $2/3$ law holds. Measurements of $L_0$ fluctuations in the
-optical and radio regime shows that $L_0 \sim \SI{e1}{\meter}$. However, large
-uncertainties in the value of the outer scale must be take into account,
-this parameter strongly depends on weather conditions.
+The parameters $l_0$ and $L_0$ are typical the inner and outer distance
+scales of the atmospheric structures over which the $2/3$ law holds.
+Measurements of $L_0$ fluctuations in the optical and radio regime shows
+that $L_0 \sim \SI{e1}{\meter}$. However, large uncertainties in the value
+of the outer scale must be expected, this parameter strongly
+depends on weather conditions.
 
-The function $b_\alpha\qty(\abs{\vb{r}_1 - \vb{r}_2})$ can be related to a
-spherically symmetric power spectrum $\phi\qty(k)$ by
+The normalized Kolmogorov correlation function, $b_\alpha\qty(\abs{\vb{r}_1 - \vb{r}_2})$ can be related to a
+spherically symmetric power spectrum $\phi\qty(k)$:
 
 \begin{equation}
         b_\alpha\qty(\Delta r) \propto \frac{1}{\Delta r}
         \int^{k_\text{max}}_{k_0} \dd{k} k \phi\qty(k) \sin(k\Delta r)
 \end{equation}
 
-where $\phi\qty(k) \propto k^{11/3}$ is the Kolmogorov model, $k_0 \sim
-1/L_0$, $k_\text{max} \sim 1/l_0$ and $\Delta r = \abs{\vb{r}_1 -
-\vb{r}_2}$. \autoref{fig:kt_spectrum} shows the depence of the Kolmogorov
-normalized correlation function on the outer scale $L_0$.
+where $\phi\qty(k) \propto k^{11/3}$ represents the Kolmogorov model, $k_0
+\sim 1/L_0$, $k_\text{max} \sim 1/l_0$ and $\Delta r = \abs{\vb{r}_1 -
+\vb{r}_2}$ \autocite{tatarski2016wave}. \autoref{fig:kt_spectrum} shows the
+depence of the Kolmogorov normalized correlation function on the outer
+scale $L_0$.
 
 \begin{figure}
         \centering
@@ -734,17 +744,18 @@ normalized correlation function on the outer scale $L_0$.
 
 In the radio regime, the squared amplitude appearing in the absorption
 coefficient correlation function is related to the atmospheric water vapour
-(Tatarski) content by
+content by
 
 \begin{equation}
         C^2_\alpha = a L^\frac{4}{3}_0 \qty(\fdv{\alpha_\nu}{q}
         \dv{q}{z})^2
 \end{equation}
 
-where $q = \rho_v/1.62p$ is the specific umidity and $a$ is a constant.
-Thus, the height dependence of $C^2_\alpha$ is strongly influenced by the
-height distribution of water vapour and is difficult to model. Here we
-assume a simple model assuming that $C^2_\alpha \propto \rho_v$. The height
+where $a$ is a positive constant and $q = \rho_v/1.62p$ is the specific umidity
+\autocite{tatarski2016wave}.  Thus, the height dependence of $C^2_\alpha$
+is strongly influenced by the height distribution of water vapour. This
+dependence is difficult to model and here we follow Church assuming a
+simple model: $C^2_\alpha \propto \rho_v$. The height
 dependence of water vapour density is assumed to be approximated by an
 exeponential distribution:
 
@@ -769,6 +780,7 @@ system, making the further assumption that the beam patter as a function of
 height can be described by the propagation of a single Gaussian mode.
 In this case the electronic field propagating in the $z$-direction is the
 simplest eigenfunction of the \emph{Huygens integral operator}
+\autocite{belanger1991beam}
 
 \begin{equation}
         \begin{split}
@@ -780,7 +792,8 @@ simplest eigenfunction of the \emph{Huygens integral operator}
         \end{split}
 \end{equation}
 
-which is known as the gaussian \emph{Laguerre-Gauss mode}:
+which is known as the gaussian \emph{Laguerre-Gauss mode}
+\autocite{alda2003laser}:
 
 \begin{equation}
         E\qty(x,y,z) = E_0 \frac{w_0}{w\qty(z)} e^{-ikz + i\zeta\qty(z)}
@@ -805,7 +818,7 @@ maximum of the beam by
 \end{equation}
 
 It can be shown that in this case the effective area of a dish pointing in
-the $z$-direction is
+the $z$-direction is \autocite{church1995predicting}
 
 \begin{equation}
         A_{\text{eff},\nu} = \frac{2\lambda^2 z^2}{\pi w^2\qty(z)}
@@ -861,13 +874,13 @@ convenient changes of variables. The result is
         \qty(1 + \frac{w^2\qty(Z)}{2L^2})^{-1}
 \end{equation}
 
-where $Z = \qty(z_1 + z_2)/2$.
+where $Z = \qty(z_1 + z_2)/2$i \autocite{church1995predicting}.
 
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{kt-gaussian_comparison_2}
         \caption{Kolmogorov/Gaussian normalized correlation fucntion
-        comparison}
+        comparison.}
         \label{fig:kt-gaussian_comparison_2}
 \end{figure}
 
@@ -883,9 +896,9 @@ contributes to an extra amount of white noise load on detectors. For a
 typical outher scale of \SI{e1}{\meter} the noise temperature is estimated
 to be \SI{\sim e1}{\milli\kelvin}.
 
-Of course a significant reduction in the atmpspheric
-noise can be achieved by operation
-at high and dry sites, bacause of the amplitude factor $C^2_\alpha \propto
+A significant reduction in the atmospheric
+random fluctuations can be achieved deploying instruments
+at dry, high altitudde sites, because of the amplitude factor $C^2_\alpha \propto
 \exp(-z/z_0)$ appearing in the integral.
 
 \begin{figure}
@@ -901,15 +914,15 @@ Temperature}
 
 To make realistic predictions of the effects of atmospheric emission, it is
 now necessary to consider the temporal behaviour of the atmopsheric signal.
-We derive here the temporal power spectrum for the same reference system
+We derive here the temporal power spectrum for the same model system
 presented in the previus subsection: a single dish instrument with beamsize
 of \ang{;30;}, fixed and
 pointing at the zenith.
 
 The temporal power spectrum of atmospheric emission will depend on the
-speed at which the atmosphere in blwon through the instrument beam by the
+speed at which the atmosphere in dragged through the instrument beam by the
 wind. It is convenient to select coordinate system coomoving with the
-atmosphere, with the $x$-direction corresponding to the wind direction. The
+atmosphere. We choose the $x$-direction to be the wind direction. The
 fluctuations in antenna temperature at a given time $t$ are obtained using
 \autoref{eq:fluctuations_t_antenna}:
 
@@ -945,8 +958,8 @@ where, in particular,
          Z & = \frac{z_1 + z_2}{2}.
 \end{align}
 
-The power spectrum is obtained calculating the Fourier transform of this
-expression:
+The power spectrum is obtained calculating the Fourier transform of the
+latter expression:
 
 \begin{equation}
         S\qty(\omega) = \frac{1}{\sqrt{2\pi}} \int^\infty_\infty \dd{t_*}
@@ -954,15 +967,14 @@ expression:
 \end{equation}
 
 where $\omega$ is an angular frequency. In two important limiting cases,
-corresponding to large and small outher scales, the
-Fourier transform of the
-autocorrelation can be written as a product of two terms (see Appendix),
-$S\qty(\omega) = I\qty(\omega/v)\Phi\qty(\omega/v)$. Where
-$I\qty(\omega/v)$ is the instrumental filter on the temporal power spectrum,
-which is the same in both of the cases,
-and $\Phi\qty(\omega,v)$ is the power spectrum itself. In particular, if
-$b_\alpha\qty(\xi_x,\xi_y,\xi_z)$ is taken as the Kolmogorov normalized
-correlation function,
+corresponding to large and small outher scales, the Fourier transform of
+the autocorrelation can be written as a product of two terms (see
+\cite{church1995predicting}), $S\qty(\omega) =
+I\qty(\omega/v)\Phi\qty(\omega/v)$. Where $I\qty(\omega/v)$ is the
+instrumental filter on the temporal power spectrum, which is the same in
+both of the cases, and $\Phi\qty(\omega,v)$ is the power spectrum itself.
+In particular, if $b_\alpha\qty(\xi_x,\xi_y,\xi_z)$ is taken as the
+Kolmogorov normalized correlation function,
 
 \begin{itemize}
         \item If $w(Z) \gg L_0$:
@@ -993,9 +1005,9 @@ correlation function,
 where $K$ and $K'$ are constants. The calculated power spectra for these
 two limiting cases are showed in \autoref{fig:t_antenna_ps}. They were
 obtained choosing $L_0 \sim \SI{1}{\meter}$ and $L_0 ~ \SI{100}{\meter}$,
-respectively. For the more realistic case of $L_0 \sim \SI{10}{\meter}$,
-emission at low altitude will contribute a spectrum with a $-8/3$ index and
-emission at high altutudes will contribute a $-11/3$ index.
+respectively. In the real situation $L_0 \sim \SI{10}{\meter}$, so emission
+at low altitude will contribute a spectrum with a $-8/3$ index and that at
+high altitudes with a $-11/3$ index.
 
 \begin{figure}
         \centering
