@@ -178,6 +178,28 @@ simulated with CAL. As it can be seen, they stand in proximity of the
 blue line, confirming the validity of the calibration technique at least
 for the MFI central frequencies.
 
+\section{QUIJOTE Data and Calibrated Simulations}
+
+The calibration coefficient defined in the previous section can be used to
+correct \autoref{eq:tatm_formula}, which have been employed to calculate
+atmospheric brightness temperatures with CAL:
+
+\begin{equation}
+        T_\text{atm}\qty(\nu) = k\qty(\nu)\qty[T_\text{sky}\qty(\nu) -
+        T_\text{CMB}\qty(\nu)e^{-\tau_A\qty(\nu)}].
+        \label{eq:tatm_formula_calibrated}
+\end{equation}
+
+\autoref{fig:quijote_sim_calibrated} shows the same comparison that has
+been presented in \autoref{fig:quijote_sim}, but atmospheric brightness
+temperatures obtained using \autoref{eq:tatm_formula_calibrated} are now
+included. At a first glance, the calibrated simulations appear to be
+compatible with QUIJOTE-MFI measurements.
+\autoref{fig:quijote_sim_calibrated_residuals_boxplot} represents the
+boxplot of the residuals for each frequency channel. The expectation values
+of the distributions of residuals are compatible with zero for every
+frequency within a \SI{95}{\percent} confidence level.
+
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{QUIJOTE-Sim_calibrated}
@@ -186,3 +208,25 @@ for the MFI central frequencies.
         \label{fig:quijote_sim_calibrated}
 \end{figure}
 
+\begin{figure}
+        \centering
+        \includegraphics[width=0.93\textwidth]{QUIJOTE-Sim_calibrated_residuals_boxplot}
+        \caption{Residuals for QUIJOTE-MFI measurements and
+        CAL simulated data with calibration applied.}
+        \label{fig:quijote_sim_calibrated_residuals_boxplot}
+\end{figure}
+
+However, our simulations can not reproduce fluctuations in atmospheric
+brightness temperature and asymmetry in its distribution, which are
+observed in particular for the \SI{19}{\giga\hertz} channel.  These
+features appear to be more relevant for higher frequencies, approaching the
+\SI{22}{\giga\hertz} water vapour absorption line. This suggests that the
+dispersion in brightness temperature could be caused by the turbulent
+structure of water vapour in the atmosphere, which has been discussed in
+\autoref{ss:turbulent_structure}. It's easy to identify the white noise
+contribution of the atmosphere at 19 GHz, but the presence of atmospheric
+brightness fluctuations indicates that the atmosphere, at higher frequency,
+is very complicated to model and the effects of the turbulent structures of
+the water vapor are significant.  In conclusion, we can
+estimate the average white noise contributions of the atmosphere but there
+is another correlated contribute left to figure out.
