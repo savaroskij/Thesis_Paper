@@ -8,6 +8,10 @@
 \usepackage[pass]{geometry}
 % empty pages without numbering
 \usepackage{emptypage}
+
+\usepackage[backend=bibtex,style=authoryear]{biblatex}
+\addbibresource{./bibliography.bib}
+
 \usepackage[separate-uncertainty=true]{siunitx}
 \DeclareSIUnit{\parsec}{pc}
 \DeclareSIUnit\year{yr}
@@ -85,5 +89,10 @@
 \include{./chapters/appendix_a/appendix_a}
 
 \backmatter
+
+% print references
+\nocite{*}
+\printbibliography[heading=bibintoc,title={References}]
+
 
 \end{document}
