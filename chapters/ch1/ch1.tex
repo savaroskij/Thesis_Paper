@@ -1,7 +1,18 @@
 \chapter{The Cosmic Microwave Background}\label{ch:cmb}
 
+This chapter provides an introduction to the cosmic microwave background
+radiation.
+
+The standard cosmological model of our Universe is introduced first. Then,
+the origin and relevant features of the CMB are covered. Next, the open
+issues of the standard cosmological model and a widely accepted solution,
+the inflationary paradigm, are discussed.  Finally, an introduction to the
+theory of the CMB polarization is provided and state-of-the-art
+perspectives and issues in ground-bases observations of the CMB
+polarization anisotropies are presented.
+
 \section{The Expanding Universe and the \texorpdfstring{$\Lambda$}{LAMBDA-}CDM Model}
-\subsection{The Hubble's Law}\label{ss:hubbleslaw}
+\subsection{The Hubble Law}\label{ss:hubbleslaw}
 
 In 1929, Edwin Hubble had examined the relationship between the distances
 of some galaxies and their radial velocities \autocite{hubble1929relation},
@@ -12,7 +23,9 @@ quantities (\autoref{fig:hubbleslaw}):
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{hubbleslaw}
-        \caption{Hubbles Law}
+        \caption{Observed linear relation between distance and velocity of extra
+        galactic nebulae from which the Hubble law was derived
+        \autocite{hubble1929relation}.}
         \label{fig:hubbleslaw}
 \end{figure}
 
@@ -21,9 +34,9 @@ quantities (\autoref{fig:hubbleslaw}):
 \end{equation}
 
 where $H_0$ is the \emph{Hubble constant}.
-The observed \emph{redshifts} could not be explained by the proper motion of
-the galaxies, instead this phenomenon was caused by the continuous expansion
-of our Universe.
+The measured \emph{redshifts} could not be explained by the proper motion
+of the galaxies, and Hubble explained the data as the effect of the
+continuous expansion of our Universe.
 
 The expanding Universe was first theorized by Friedmann as a consequence of
 the field equations of the theory of the \emph{General Relativity} (GR) in
@@ -53,8 +66,8 @@ There are two main piece of evidence for the cosmological principle:
         \item The \emph{Cosmic Microwave Background Radiation} (CMB): an almost
         uniform sea of photons which fills all space and provides a snapshot of the
         universe at \num{\sim 380000} years after its birth. The CMB
-        presents small fluctuations in temperature and polarization with a
-        characteristic scale:
+        is homogeneous and isotropic, with intensity fluctuations of the
+        order of
 
         \begin{equation}
                 \frac{\var{T}}{T} \leq \num{e-5}
@@ -141,13 +154,13 @@ where $t_0$ is the present time and the function $f_k$ becomes:
                         \end{cases}
         \end{equation}
 
-We can immediately note that the valid geometry for an homogeneous
-and isotropic spacetime are either flat, spherical or hyperbolic.
+The valid geometry for an homogeneous
+and isotropic spacetime is either flat, spherical or hyperbolic.
 
 \subsection{The Comoving Distance and the Hubble Parameter}
 
 Although General Relativity allows one to formulate the laws of physics
-using arbitrary coordinates, some coordinate choices are more natural or
+using arbitrary coordinates, some choices are more natural or
 easier to work with. \emph{Comoving coordinates} are an example of such a
 natural coordinate choice.
 
@@ -248,7 +261,7 @@ conservation of the energy-momentum tensor:
         \partial_\mu T^{\mu \nu} = 0
 \end{equation}
 
-It's the \emph{continuity equation}, which express the conservation of energy in a
+It's the \emph{continuity equation}, which expresses the conservation of energy in a
 cosmological setting:
 
 \begin{equation}
@@ -349,7 +362,7 @@ as a consequence, if we live in a flat universe then we must have $\sum_w
 \Omega_w = 1$. Any excess energy density, with $\sum_w \Omega_w > 1$ means
 that we necessarily live in a positively curved universe with $k = +1$. Any
 deficit in energy, with $\sum_w \Omega_w < 1$ gives rise to a negatively
-curved $k = 1$ universe. Measuring the present day total energy density
+curved $k = 1$ universe. Knowing the present day total energy density
 $\rho_{\text{tot},0}$ and the Hubble constant $H_0$, gives us the
 opportunity to have knowledge of the spatial geometry of our Universe.
 
@@ -377,7 +390,7 @@ $P\qty(\rho) = \rho$ for each one of these component:
 \end{itemize}
 
 The dependence on the scale factor for the energy densities characterized by
-these state equations is found making use of the continuity equation
+these state equations is found using the continuity equation
 (\autoref{eq:continuity}):
 
 \begin{align}
@@ -399,26 +412,28 @@ The total energy density of our Universe is:
         \rho_{\Lambda,0}.
 \end{equation}
 
-An expanding universe is radiation dominated at first, in a second phase
+An expanding universe is radiation-dominated at first, in a second phase
 its expansion is driven by matter and at last by Dark Energy. In fact every
 universe characterized by a non-zero cosmological constant ($\Lambda \neq
 0$) will be ultimately become dominated by the vacuum energy density
-$\rho_\Lambda$. A plot of the evolution of the three kinds of energy
-density is shown in \autoref{fig:density_evolution}.
+$\rho_\Lambda$. We show a plot of the evolution of the three kinds of energy
+density in \autoref{fig:density_evolution}.
 
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{density_evolution}
-        \caption{Energy density evolution.}
+        \caption{Energy density evolution as a function of the scale factor
+        for the three different components of the cosmological fluid.}
         \label{fig:density_evolution}
 \end{figure}
 
 Given the total energy density we can solve the first Friedmann equation
-and obtain the evolution of the scale factor in our Universe. The scale
-factors for the three different space curvatures ($k = 0,\pm 1$) in the
-simple case of a matter dominated universe are sketched in
+and obtain the evolution of the scale factor in our Universe. We report a
+sketch of the scale factors for the three different space curvatures ($k =
+0,\pm 1$) in the simple case of a matter-dominated universe in
 \autoref{fig:scale_factor_evolution_matter}. In the case of an expanding
-flat or hyperbolic geometry ($k = 0,-1$) the Universe expands for ever with:
+flat or hyperbolic geometry ($k = 0,-1$) the Universe expands for ever
+with:
 
 \begin{equation}
         \dot a\qty(t \rightarrow +\infty)
@@ -440,11 +455,11 @@ This event is known as \emph{Big Crunch}.
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{scale_factor_evolution_matter}
-        \caption{Scale factor evolution in a matter dominated universe.}
+        \caption{Scale factor evolution in a matter-dominated universe.}
         \label{fig:scale_factor_evolution_matter}
 \end{figure}
 
-In the case of Dark Energy dominated universe every possible solution for
+In the case of Dark Energy-dominated universe every possible solution for
 each one of the three space curvatures describes the same spacetime, but with
 different coordinates. This spacetime is known as \emph{de Sitter space}.
 The evolution of the scale factor for this kind of universe is shown in
@@ -468,8 +483,8 @@ expansion ($\ddot a > 0$) when $t > 0$. In particular there's no
 
 Substituting the expressions for the energy densities of the components of
 the cosmological fluid (\autoref{eq:rho_m}, \autoref{eq:rho_r} and
-\autoref{eq:rho_lambda}) in \autoref{eq:friedmann_1} yields the second
-Friedmann equation for our Universe:
+\autoref{eq:rho_lambda}) in \autoref{eq:friedmann_1} we obtain the second
+Friedmann equation:
 
 \begin{equation}
         H^2\qty(t) = \frac{8\pi G}{3} \qty(\frac{\rho_{m,0}}{a^3\qty(t)} +
@@ -477,48 +492,51 @@ Friedmann equation for our Universe:
         \frac{k\qty(t) c^2}{a^2\qty(t)}
 \end{equation}
 
-If the first term in the right-hand side is multiplied and
-divided by the squared hubble constant $H^2_0$, the equation is parametrized
-by the density parameters $\Omega_w$:
+If we multiply and divide the first term in the right-hand side by the
+squared hubble constant $H^2_0$, the equation is parametrized by the
+density parameters $\Omega_w$:
 
 \begin{equation}
         H^2\qty(t) = H^2_0 \qty(\frac{\Omega_m}{a^3\qty(t)} +
         \frac{\Omega_r}{a^4\qty(t)} + \Omega_\Lambda) -
         \frac{k\qty(t) c^2}{a^2\qty(t)}
+        \label{eq:lambdacdm_model}
 \end{equation}
 
-The collection of the numbers $\Omega_m$, $\Omega_r$, $\Omega_\Lambda$ and
-$k$ goes by the name of the \emph{$\Lambda$CMD model}, with $\Lambda$
-denoting the cosmological constant and CMD denoting \emph{cold dark matter}.
-The great interest in the study of the Cosmic Microwave Background resides
-in the fact that the values of the parameters of the $\Lambda$CMD
-cosmological model can be extracted from observations of this relic
-radiation.
+We call the model described by \autoref{eq:lambdacdm_model} $\Lambda$CDM
+model, with $\Lambda$ denoting the cosmological constant and CDM denoting
+\emph{cold dark matter}. The great interest in the study of the Cosmic
+Microwave Background resides in the fact that the values of the parameters
+of the $\Lambda$CDM cosmological model can be extracted from observations
+of this relic radiation.
 
 \section{The CMB Radiation}
 
-This section is devoted to the introduction of the Cosmic Microwave
-Background (CMB) Radiation. To understand what caused the presence of the
-cosmic microwave background radiation, we start describing
-what we think happened in the Universe from the first instants after the
-Big Bang to today.
+In this section we introduce the the Cosmic Microwave
+Background (CMB) Radiation, a relic microwave signal that fills the entire
+space and provides direct information on the conditions of the universe
+when it was only \SI{380000}{\year} old. To understand the origin of this
+radiation, we need to summarize our understanding of the thermal history of
+our universe.
 
 \subsection{A Brief Thermal History of Our Universe}\label{ss:brief_thermal_history}
 
 The essence of the hot Big Bang theory is simply to go back in time taking
-the temperature scaling $T \sim 1/a$. As the solution for the scale
-factor suggests, as we go further back in time, more the temperature and
-the energy density of the Universe increase and more species join the
-primordial plasma reaching the thermodynamic equilibrium. As we know in the
-early stages the Universe was radiation dominated, so the temperature and
-energy density decreased according to:
+the temperature scaling $T \sim 1/a$. As the solution for the scale factor
+suggests, the further we go back in time, more the temperature and the
+energy density of the Universe increase and more species join the
+primordial plasma reaching the thermodynamic equilibrium. As we know, the
+Universe was radiation-dominated in its early stages. If we solve the
+Friedmann equations for a matter dominated universe, we find that
+temperature and energy density decrease according to (see for example
+\cite{tong2019lectures}):
 
 \begin{equation}
         T\qty(t), \rho\qty(t) \propto t^{-\frac{1}{2}}
 \end{equation}
 
 A summary of some of the key events in the early history of the Universe
-follows:
+is the following:
 
 \begin{itemize}
         \item \textbf{Electroweak phase transition:} \SI{e-12}{\second},
@@ -564,8 +582,8 @@ follows:
         At this time neutrinos decoupled from the primordial plasma and
         began to travel freely into space. As neutrinos rarely interact
         with matter, they still exist today as the Cosmic
-        Neutrino Background (C$\nu$B), analogous to the much later Cosmic
-        Microwave Background emitted during recombination.
+        Neutrino Background (C$\nu$B), similarly to Cosmic
+        Microwave Background emitted much later during recombination.
 
         \item \textbf{$e^-e^+$ Annihilation:} \SI{6}{\second},
         \SI{5e9}{\kelvin}
@@ -577,7 +595,7 @@ follows:
                 2\gamma \rightleftharpoons e^- + e^+
         \end{equation}
 
-        fell out of equilibrium. The left $e^-e^+$ pairs annihilated and,
+        fell out of equilibrium. The remaining $e^-e^+$ pairs annihilated and,
         due to the matter and anti-matter asymmetry, just a small portion
         of electrons survived.
 
@@ -591,7 +609,7 @@ follows:
         \item \textbf{Matter-Radiation Equality:} \SI{50000}{\year},
         \SI{8700}{\kelvin}
 
-        At this time the Universe became matter dominated: the energy
+        At this time the Universe became matter-dominated: the energy
         density of matter $\rho_m$ became equal to the energy density of
         radiation $\rho_r$ (\autoref{fig:density_evolution}).
 
@@ -618,8 +636,7 @@ follows:
 
         Previously we have referred to this time as $t_0$: this is
         the epoch we live in. Currently the Universe remains dominated by
-        Dark Energy, it is undergoing and will continue to undergo an exponential
-        expansion.
+        Dark Energy, and is expanding exponentially.
 \end{itemize}
 
 \subsection{The First Revelation of the CMB}
@@ -758,80 +775,78 @@ for every $\theta$ and $\phi$ on the sky, $0 \leq \theta \leq \pi$,
 $0 \leq \phi \leq 2\pi$.
 
 Sachs and Wolfe in 1967 had theorized first the presence of temperature
-anisotropies in the CMB spectrum at large angular scales. Later
-anisotropies were linked to the quantum oscillations in primordial plasma,
-but the instruments used before the 90s were not sensible enough to carry
-out useful measures of this phenomenon.
+anisotropies in the CMB spectrum on large angular scales
+\autocite{sachs1967perturbations}. Later anisotropies were linked to the
+quantum oscillations in the primordial plasma, but the instruments used before
+the 90s were not sensitive enough to detect this signal. 
 
-The \emph{Differential Microwave Radiometer} (DMR) instrument onboard the
+The \emph{Differential Microwave Radiometer} (DMR) instrument on board the
 COBE satellite was the first experiment to map the CMB temperature
-anisotropies.The instrument consists of six differential microwave
-radiometers, two nearly independent channels that operate at each of three
+anisotropies \autocite{bennett1996four}. The instrument consisted of six
+differential microwave radiometers operating at three different
 frequencies: \SI{ 31.5}{\giga\hertz}, \num{53}, and \SI{90}{\giga\hertz}.
-Making use of two years of DMR data, the amplitude of temperature fluctuations
-was reported to be
-\SI{36 \pm 5}{\micro\kelvin} at \ang{7}, and
-\SI{30.5 \pm 2.7}{\micro\kelvin} when smoothed to \ang{10}.
-\autoref{fig:dmr_maps} represents DMR data from the \SI{53}{\giga\hertz}
-band on a scale from \SIrange{0}{4}{\kelvin}, showing the near-uniformity of the
-CMB brightness, on a scale intended to enhance the contrast due to
-the dipole anisotropy, and following subtraction of the dipole component.
+Two years of DMR data, allowed the team to measure temperature fluctuations
+of \SI{36 \pm 5}{\micro\kelvin} at \ang{7}, and \SI{30.5 \pm
+2.7}{\micro\kelvin} when smoothed to \ang{10}.  \autoref{fig:dmr_maps}
+represents DMR data from the \SI{53}{\giga\hertz} band on a scale from
+\SIrange{0}{4}{\kelvin}, showing the near-uniformity of the CMB brightness,
+on a scale intended to enhance the contrast due to the dipole anisotropy,
+and following subtraction of the dipole component.
 
 \begin{figure}
         \centering
         \includegraphics[width=0.90\textwidth]{DMR_maps_2.pdf}
-        \caption{COBE-DMR CMB anisotropies sky maps.}
+        \caption{COBE-DMR CMB anisotropies sky maps \autocite{Lambda}.}
         \label{fig:dmr_maps}
 \end{figure}
 
 The second generation of CMB experiments was represented by the
-\emph{Wilkinson Microwave Anisotropy Probe} (WMAP). The WMAP mission was
-designed to acquire a \ang{;13;} FWHM resolution full sky
-map of the temperature anisotropy of the cosmic microwave background
-radiation. WMAP observed the microwave sky for \num{9} years in \num{5}
-bands. The skymap data products derived from the WMAP observations have
-\num{45} times the sensitivity and \num{33} times the angular resolution
-of the COBE-DMR mission.
+\emph{Wilkinson Microwave Anisotropy Probe} (WMAP)
+\autocite{spergel2003first}. The WMAP mission was designed to acquire a
+\ang{;13;} FWHM resolution full sky map of the temperature anisotropy of
+the cosmic microwave background radiation. WMAP observed the microwave sky
+for \num{9} years in \num{5} bands. The data products derived from the WMAP
+observations have \num{45} times the sensitivity and \num{33} times the
+angular resolution of the COBE-DMR mission.
 
-\emph{Planck} was the third generation of space-based cosmic microwave background
-experiments, after NASA's COBE and NASA's WMAP. It was also the third
-Medium-Sized Mission (M3) of European Space Agency's (ESA's) Horizon 2000
-Scientific Program. The basic scientific goal of the Planck mission is to
-measure CMB anisotropies at all angular scales larger than \ang{;10;}
-over the entire sky with a precision of \num{\sim 2} parts per million.
-The model payload consisted of a \SI{1.5}{\meter} off-axis telescope with
-two focal plane arrays of detectors sharing the focal plane. Low frequencies
-were covered by \num{56} tuned radio receivers sensitive to
-\SIrange{30}{100}{\giga\hertz}, while high frequencies were be covered by
-\num{56} bolometers sensitive to \SIrange{100}{850}{\giga\hertz}.
-The Planck mission permitted the extraction of the most precise map of the
-CMB temperature anisotropies, to date. This map is depicted in
-\autoref{fig:planck_cmb}.
+\emph{Planck} was the third CMB satellite funded by the European Space
+Agency's (ESA) \autocite{mandolesi2002planck}. The main scientific goal of
+the Planck mission was to measure CMB anisotropies at all angular scales
+larger than \ang{;10;} over the entire sky with a precision of \num{\sim 2}
+parts per million.  The payload consisted of a \SI{1.5}{\meter} off-axis
+telescope with two instruments sharing the focal plane. Low frequencies
+were covered by \num{44} microwave coherent receivers covering the
+frequencies bands at \SIlist{30;44;70}{\giga\hertz}, while high frequencies
+were be covered by \num{52} bolometric detectors in \num{6} frequencies
+bands from \SIrange{100}{857}{\giga\hertz}.  The Planck mission permitted
+the extraction of the most precise map of the CMB temperature anisotropies,
+to date. This map is depicted in \autoref{fig:planck_cmb}.
 
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{Planck_CMB}
-        \caption{CMB Anisotropies Planck}
+        \caption{Map of CMB temperature anisotropies measured by Planck
+        \autocite{adam2016planck}.}
         \label{fig:planck_cmb}
 \end{figure}
 
-A comparison of the results obtained by COBE, WMAP, and Plank is showed in
+We show a comparison of the results obtained by COBE, WMAP, and Planck in
 \autoref{fig:cobe_wmap_planck_comparison}.
 
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{cobe_wmap_planck_comparison}
-        \caption{COBE, WMAP, and Plank results comparison.}
+        \caption{COBE, WMAP, and Planck results comparison.}
         \label{fig:cobe_wmap_planck_comparison}
 \end{figure}
 
 \subsection{Density Fluctuations}
 
-The CMB radiation anisotropies contain an imprint of the anisotropies at
-the time of recombination and, if traced back in time, they can be
-interpreted as a signature of the perturbations in the primordial plasma.
-Precise measures of the CMB anisotropies pattern let us discriminate
-between different cosmological models.
+The CMB radiation anisotropies contain an imprint of the density
+anisotropies at the time of recombination and, if traced back in time, they
+can be interpreted as a signature of the perturbations in the primordial
+plasma.  Precise measures of the CMB anisotropies pattern let us
+discriminate between different cosmological models.
 
 The perturbations in the early universe were adiabatic, that is, the
 perturbations in all components of the cosmological fluid are proportional.
@@ -899,7 +914,7 @@ for a perfect fluid in an expanding spacetime:
         \delta\qty(\vb{\chi},t) = 0
 \end{equation}
 
-which in Fourier space become
+which in Fourier space becomes
 
 \begin{equation}
         \ddot \delta\qty(\vb{k},t) + 2H\qty(t)\dot \delta\qty(\vb{k},t) -
@@ -946,7 +961,7 @@ is a coherent wave and causality prohibits the formation of such perturbations
 in case of $\lambda > d_H$, since there is no time for information to cross
 this distance since the Big Bang.
 
-We know that at recombination our Universe was matter dominated, so
+We know that at recombination our Universe was matter-dominated, so
 
 \begin{align}
         a\qty(t) & \propto t^\frac{2}{3} \\
@@ -1010,7 +1025,7 @@ at recombination exhibits the matter power spectrum.
 \subsection{Angular Power Spectrum of the CMB Temperature Anisotropies}
 
 Every observer in the Universe sees the CMB as coming from a spherical
-surface centered in the observer. The radius of the spherical shell is
+surface centered in himself. The radius of the spherical shell is
 equal to the distance traveled by a photon since it was last scattered.
 For this reason the aforementioned shell is called the \emph{last
 scattering surface}. Therefore, to describe the CMB temperature
@@ -1024,7 +1039,7 @@ of the generalized Fourier series expansion
 \begin{equation}
         \frac{\var{T\qty(\theta,\phi)}}{\bar T} =
         \sum^\infty_{l=0}\sum^l_{m=-l} a_{l,m}
-        Y_{m,l}\qty(\theta,\phi)
+        Y_{l,m}\qty(\theta,\phi)
 \end{equation}
 
 where $Y_{l,m}\qty(\theta,\phi)$ are the spherical harmonics, $a_{l,m}$ are
@@ -1100,7 +1115,7 @@ are plotted as function of the multipole moment $l$.
 
 For small values of $l$ we notice a plateau, caused by the Sachs-Wolfe
 effect. At larger $l$, the spectrum exhibits a distinctive patterns of
-patterns of peaks and troughs, an evidence of acoustic oscillation in the
+peaks and troughs, an evidence of acoustic oscillation in the
 early Universe.
 
 Data in the graph are well fitted by the standard
@@ -1118,7 +1133,7 @@ the Universe are:
 
         \item \textbf{Acoustic scale:} it is the characteristic angular
         scale of the fluctuations in CMB. This parameter is constrained by
-        the position of the acoustic peaks. Plank observations yielded
+        the position of the acoustic peaks. Planck observations yielded
 
         \begin{equation}
                 \theta_* = \ang{0.59636 \pm 0.00025}.
@@ -1202,7 +1217,7 @@ The three fundamental issue unsolved by the Big Bang model follow:
 
         \item \textbf{Flatness problem:} current observations show a very
         flat universe, but the solutions of Friedmann equations for a
-        radiation dominated universe describes flat curvature as a rather
+        radiation-dominated universe describes flat curvature as a rather
         unstable condition. To explain the current spatially flat geometry
         we need to introduce ad hoc initial conditions in the model.
 
@@ -1371,7 +1386,7 @@ field equation of motion
 
 Assuming the FLRW metric for $g_{\mu \nu}$ and that we are working with an
 homogeneous field $\phi\qty(\vb{\chi},t) \equiv \phi\qty(t)$, the equation
-of motion become
+of motion becomes
 
 \begin{equation}
         \ddot \phi + 3H \dot\phi + V'\qty(\phi) = 0
@@ -1431,7 +1446,7 @@ only if $\ddot \phi\qty(t)$ is small enough,
 
 \autoref{eq:sr_condition_1} and \autoref{eq:sr_condition_2} are known as
 \emph{slow-roll conditions}. Under them the equation of motion for the
-scalar inflation field and the first Friedmann equation become
+scalar inflation field and the first Friedmann equation becomes
 
 \begin{align}
         \dot\phi \approx & -\frac{V'\qty(\phi)}{3H}  \\
@@ -1766,7 +1781,7 @@ paradigm.
 \section{CMB Ground-Based Experiments}\label{s:cmb_ground_based}
 
 Polarization anisotropies of the cosmic microwave background have been
-observed in full sky surveys by the WMAP and Plank satellites. In addition
+observed in full sky surveys by the WMAP and Planck satellites. In addition
 several ground-based experiments have been designed and deployed in the
 last decade, in order to costrain the tensor-to-scalar ratio, $r$, to ever
 lower values. Some relevant examples are QUIET, Polarbear, CLASS and ACT,
