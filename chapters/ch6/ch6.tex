@@ -72,6 +72,40 @@ true values for Pico del Teide.
 
 \section{The Calibration Coefficient}
 
+To mitigate part of the issues presented in the previous section, we have
+employed atmospheric vertical profiles acquired by balloon probes at Pico
+del Teide during the year 2018. These vertical profiles reflects the true
+weather conditions near the observation site, but are characterized by low
+temporal resolution. This is because balloon probes needs approximately
+\num{12} hours to measure a whole atmospheric vertical profile. Therefore,
+no more than two vertical profiles per day can be acquired.
+
+
+The free and open source computer program \emph{Atmospheric
+Model}\footnote{\url{https://zenodo.org/record/3406483}} (S. Paine) (AM) has
+been used to compute sky brightness temperatures starting from the  median
+annual vertical atmospheric profile for the year 2018. AM is a tool for
+radiative transfer computations at microwave to submillimeter wavelengths.
+Spectra which can be computed with AM include thermal emission, absorption,
+transmission, and excess delay. Median annual values of $T_\text{sky}$ has
+been obtained in the frequency range from \SIrange{10}{50}{\giga\hertz},
+with a frequency step of \SI{0.1}{\giga\hertz}.
+
+To compare this result with sky brightness temperatures from CAL,
+statistical populations of \num{2736000} elements for the relevant
+meteorological parameters have been computedr. As before, we have
+initialized the \texttt{Weather} method with the CDFs \texttt{.fits} file
+for Pico del Teide. The extracted values of PWV, $T_s$ and $P_s$, which are
+showed in \autoref{fig:teide_annual_distributions}, are homogeneously
+distributed among the months of the year and the hours of the day.
+Expectation values for the meteorological parameters were computed from the
+corresponding statistical populations using the same estimator choosen for
+balloon vertical profiles. The annual median values and corresponding
+standard errors for PWV, $T_s$ and $P_s$ are presented in
+\autoref{tab:median_meteo_cal}.  These values have been used as input for
+the \texttt{atm\_atmospheric\_loading} function to attain values of $T_\text{sky}$
+in the appropriate frequency range.
+
 \begin{figure}
         \centering
         \includegraphics[width=0.93\textwidth]{Teide_Annual_Distributions}
@@ -80,12 +114,56 @@ true values for Pico del Teide.
         \label{fig:teide_annual_distributions}
 \end{figure}
 
+\begin{table}
+        \renewcommand{\arraystretch}{1.5}
+        \centering
+        \begin{tabular}{p{5cm} r}
+                \hline
+                Parameter & Median  \\
+                \hline
+                \hline
+                PWV \dotfill & \SI{12.3491 \pm 0.0029}{\kilo\gram\per\square\meter} \\
+                $T_s$ \dotfill& \SI{289.0434 \pm 0.0025}{\kelvin} \\
+                $P_s$ \dotfill &  \SI{92766.55 \pm 0.21}{\pascal} \\
+                \noalign{\smallskip}
+                \hline
+        \end{tabular}
+        \caption{CAL median values of relevant meteorological parameters.}
+        \label{tab:median_meteo_cal}
+\end{table}
+
+The sky brightness temperatures that have been computed making use of CAL
+and AM are plotted as a function of $\nu$ in
+\autoref{fig:am_cal_comparison}. As expected, the $T_\text{sky}$
+from CAL assumes an higher value than that computed with the AM computer
+program, when evaluated at the same
+frequency. The distance between the two curves becomes particularly
+significant near the \SI{22}{\giga\hertz} water vapour absorption line.
+
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{AM_CAL_Comparison}
         \caption{AM/CAL sky brightness temperatures comparison.}
         \label{fig:am_cal_comparison}
 \end{figure}
+
+We can now introduce a calibration coefficient, $k\qty(\nu)$, to correct
+higher values in atmospheric brightness temperature computed by CAL, which
+are caused by the excess in total column water vapour in ERA5 data for
+the pixel in which the observation site is located. The coefficient is defined as
+
+\begin{equation}
+        k_\nu \equiv  k\qty(\nu) \equiv
+        \frac{T^\text{AM}_\text{atm}\qty(\nu)}{
+        T^\text{CAL}_\text{atm}\qty(\nu)}
+\end{equation}
+
+It must be noted that $k_\nu$ is assumed to be time independent. This means
+that we think that weather conditions are homogeneous across the pixel, and
+non-homogeneity in meteorological parameters at a fixed time only depends
+on quantities which are not time dependent, such altitude and distance from
+the ocean. The calibration coefficient as a function of frequency is showed
+in \autoref{fig:calibration_coefficient_quijote}.
 
 \begin{figure}
         \centering
@@ -94,7 +172,11 @@ true values for Pico del Teide.
         \label{fig:calibration_coefficient_quijote}
 \end{figure}
 
-\section{Comparison with Calibrated Data}
+The red dots in the figure represent the ratios between the median values of
+atmospheric brightness temperatures measured by QUIJOTE-MFI and those of data
+simulated with CAL. As it can be seen, they stand in proximity of the
+blue line, confirming the validity of the calibration technique at least
+for the MFI central frequencies.
 
 \begin{figure}
         \centering
