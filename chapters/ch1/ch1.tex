@@ -16,9 +16,11 @@ polarization anisotropies are presented.
 
 In 1929, Edwin Hubble had examined the relationship between the distances
 of some galaxies and their radial velocities \autocite{hubble1929relation},
-which were inferred from their \emph{redshifts}, and formulated an
-empirical law, which states direct proportionality between these two
-quantities (\autoref{fig:hubbleslaw}):
+which were inferred by Slipher
+\autocite{slipher1913radial}\autocite{slipher1915spectrographic} from the
+corresponding \emph{redshifts}, and formulated an empirical law, which
+states direct proportionality between these two quantities
+(\autoref{fig:hubbleslaw}):
 
 \begin{figure}
         \centering
@@ -74,10 +76,10 @@ There are two main piece of evidence for the cosmological principle:
         \end{equation}
 
         \item A relevant number of \emph{redshift surveys}, as the
-        \emph{2dF Galaxy Redshift Survey} (2002); the \emph{Sloan Digital
-        Sky Survey} (2007) and the \emph{Galaxy And Mass Assembly} survey
-        (2008-2014), show that the distribution of stars looks increasingly
-        smooth on larger scales.
+        \emph{2dF Galaxy Redshift Survey} \autocite{colless20012df}; the \emph{Sloan Digital
+        Sky Survey} \autocite{york2000sloan} and the \emph{Galaxy And Mass Assembly} survey
+        \autocite{driver2011galaxy}, show that the distribution of galaxies looks increasingly
+        smooth on large scales.
 \end{itemize}
 
 \subsection{The FLRW Metric}\label{ss:flrw}
@@ -89,7 +91,8 @@ selection is reduced to those that adhere to the cosmological principle.
 
 Friedmann, Lema\^itre, Robertson and Walker during the 1920-1930s proved
 independently that the most generic metric based on the cosmological
-principle is the Friedmann-Lema\^itre-Robertson-Walker (FLRW) metric:
+principle is the Friedmann-Lema\^itre-Robertson-Walker (FLRW) metric
+(see for example \cite{dodelson2003modern}):
 
 \begin{equation}
         \dd{s}^2 = -c^2\dd{t^2} + a\qty(t)^2\qty[\dd{\chi}^2 +
@@ -197,7 +200,8 @@ where $v_{\text{phys}}$ is the physical or proper velocity and the function:
         \label{eq:hubble_parameter}
 \end{equation}
 
-is called the \emph{Hubble parameter} and its present day value $H\qty(t_0)
+is called the \emph{Hubble parameter} (see for example
+\cite{weinberg2008cosmology}) and its present day value $H\qty(t_0)
 \equiv H_0$ is the \emph{Hubble's constant}, introduced in
 \autoref{ss:hubbleslaw}. The Hubble's constant is a cosmological
 parameter of our standard cosmological model and has a positive value,
@@ -241,7 +245,7 @@ fluid, which can be completely characterized by its density and pressure:
 Substituting \autoref{eq:flrw} and \autoref{eq:energy_momentum_tensor} in
 \autoref{eq:einstein}, the field equations reduces to two equations for the
 time evolution of the scale factor, known as \emph{Friedmann equations} and
-written by Friedmann himself in 1922:
+written by Friedmann himself \autocite{friedman1922krummung}:
 
 \begin{align}
         \qty(\frac{\dot a\qty(t)}{a\qty(t)})^2 & = \frac{8\pi G}{3} \rho\qty(t)
@@ -368,10 +372,10 @@ opportunity to have knowledge of the spatial geometry of our Universe.
 
 \subsection{The Components of the Cosmological Fluid}
 
-According to current theories and pieces of evidence, there are three
-entities that contribute to the current energy density of our Universe:
-conventional matter or \emph{dust}; radiation and Dark Energy or
-\emph{cosmological constant}.
+According to current theories and data, there are three
+contributions to the current energy density of our Universe:
+barionic and dark matter or \emph{dust}; radiation and Dark Energy
+\autocite{tong2019lectures}.
 To derive a solution for the time evolution of the scale factor $a\qty(t)$
 in our Universe, it is essential to write a state equation
 $P\qty(\rho) = \rho$ for each one of these component:
@@ -450,7 +454,7 @@ time $t_{\text{bc}}$ with:
         a\qty(t_{\text{bc}}) = 0
 \end{equation}
 
-This event is known as \emph{Big Crunch}.
+This event is known as \emph{Big Crunch} \autocite{tong2019lectures}.
 
 \begin{figure}
         \centering
@@ -645,23 +649,26 @@ The Cosmic Microwave Background was first predicted in 1984 by Ralph Alpher
 and Robert Herman, who also provided a first estimation of its brightness
 temperature (\SI{\sim 5}{\kelvin}).
 
-Andrew McKellar in 1941 used spectroscopic observations of the cyano radical
-absorption lines in star spectra to detect a rotational temperature of
-interstellar molecules. However McKellar failed to provide a cosmological
-interpretation for these observations.
+Andrew McKellar in 1941 used spectroscopic observations of the cyano
+radical absorption lines in star spectra to detect a rotational temperature
+of interstellar molecules \autocite{mckellar1941molecular}. However
+McKellar failed to provide a cosmological interpretation for these
+observations.
 
-In 1964 Arno Penzias and Robert Wilson were working at Bell Laboratories
-on a microwave horn antenna (\autoref{fig:horn_antenna_pw}) originally used by
-the Bell telephone companies for satellite communication.
-To their surprise they found a background noise which did not depend on the
+In 1964 Arno Penzias and Robert Wilson were working at Bell Laboratories on
+a microwave horn antenna (\autoref{fig:horn_antenna_pw}) originally used by
+the Bell telephone companies for satellite communication.  To their
+surprise they found a background noise which did not depend on the
 direction, with a temperature that they measure to be between
-\SI{2.5}{\kelvin} and \SI{4.5}{\kelvin}. They were observing the CMB
-radiation and for this discovery they were awarded the Nobel Prize in 1978.
+\SI{2.5}{\kelvin} and \SI{4.5}{\kelvin} \autocite{penzias1965measurement}.
+They were observing the CMB radiation and for this discovery they were
+awarded the Nobel Prize in 1978.
 
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{Horn_Antenna_PW}
-        \caption{Penzias and Wilson's microwave horn antenna.}
+        \caption{Penzias and Wilson's microwave horn antenna
+        \autocite{NASA_grin}.}
         \label{fig:horn_antenna_pw}
 \end{figure}
 
@@ -748,16 +755,18 @@ peak frequency of the spectrum have changed according to
         \approx \SI{70}{\giga\hertz}
 \end{align}
 
-The spectrum of the CMB was measured with high accuracy
-(see \autoref{fig:cmb_spectrum_cobe})
-by the \emph{Far infrared Absolute Spectrometer} (FIRAS) instrument onboard
-the \emph{Cosmic Background Explorer} (COBE) satellite: it is a near
+The spectrum of the CMB was measured with high accuracy (see
+\autoref{fig:cmb_spectrum_cobe}) by the \emph{Far infrared Absolute
+Spectrometer} (FIRAS) instrument onboard the \emph{Cosmic Background
+Explorer} (COBE) satellite \autocite{mather1994measurement}: it is a nearly
 perfect black body spectrum at $T = \SI{2.7260 \pm 0.0013}{\kelvin}$
 
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{CMB_Spectrum_COBE}
-        \caption{CMB Spectrum COBE}
+        \caption{The nearly perfect black body spectrum of the cosmic
+        microwave background measured by the COBE satellite
+        \autocite{Lambda}.}
         \label{fig:cmb_spectrum_cobe}
 \end{figure}
 
@@ -992,7 +1001,7 @@ point on the last scattering surface.
 The slight change in the gravitational potential results in a modification
 of the local expansion rate of the Universe. We refer to this phenomenon as
 the \emph{Sachs-Wolfe effect}. This gives an extra contribution in
-temperature contrast,
+temperature contrast \autocite{white1996sachs},
 
 \begin{equation}
         \frac{\var{T\qty(\vu{n})}}{\bar T} =
@@ -1059,6 +1068,7 @@ coefficients we have that
 where the angular brackets stand for average over an ensamble of
 realizations. The statistical quantity we need to calculate the power
 spectrum of temperature fluctuations is the two-point correlation function
+\autocite{hu2002cosmic}:
 
 \begin{equation}
         \frac{\expval{\var{T\qty(\theta,\phi)} \var{T\qty(\theta',\phi')}}}
@@ -1109,7 +1119,7 @@ are plotted as function of the multipole moment $l$.
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{planck_aps}
-        \caption{Plank angular power spectrum}
+        \caption{Planck angular power spectrum \autocite{ade2016planck}.}
         \label{fig:planck_aps}
 \end{figure}
 
@@ -1119,8 +1129,8 @@ peaks and troughs, an evidence of acoustic oscillation in the
 early Universe.
 
 Data in the graph are well fitted by the standard
-$\Lambda$CMD model. The main cosmological parameters defining this model of
-the Universe are:
+$\Lambda$CDM model. The main cosmological parameters defining this model of
+the Universe are \autocite{ade2016planck}:
 
 \begin{itemize}
         \item \textbf{Hubble constant:} it describes the expansion rate of
@@ -1234,7 +1244,7 @@ The issues presented in \autoref{ss:issues} can be solved introducing a
 phase of accelerated expansion in the early universe, between
 \SIlist{e-36;e-34}{\second} after the Big Bang. This idea is known as
 \emph{inflation} or \emph{inflationary paradigm} and it was introduces by
-Alan Guth in 1981.
+Alan Guth \autocite{guth1981inflationary}.
 
 \subsection{A Solution to Flatness and Horizon Problems}
 
@@ -1364,8 +1374,9 @@ The action associated to the a scalar field weakly coupled to gravity is
 \end{equation}
 
 where $S_{EH}\qty[g]$ is the gravitational Einstein-Hilbert action and
-$S[g,\phi]$ is generic action for a scalar field. The explicit shapes of
-these action action terms are
+$S[g,\phi]$ is generic action for a scalar field
+\autocite{baumann2009tasi}. The explicit shapes of these action action
+terms are
 
 \begin{align}
         S_{EH}[g] & = \frac{1}{16\pi G} \int \sqrt{-g} R \dd[4]{\chi} \\
@@ -1480,7 +1491,7 @@ inflation. An example of inflaton potential is shown in
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{inflaton_potential}
-        \caption{Example of inflaton potential}
+        \caption{Example of inflaton potential \autocite{baumann2009tasi}.}
         \label{fig:inflaton_potential}
 \end{figure}
 
@@ -1530,9 +1541,9 @@ background radiation.
 \section{The CMB Polarization}
 
 Polarization in the cosmic microwave background was generated through
-Thomson scattering events occurred during recombination. The total
-scattering cross section of an incoming unpolarized radiation by an
-electron is given by
+Thomson scattering events occurred during recombination
+\autocite{kosowsky1999introduction}. The total scattering cross section of
+an incoming unpolarized radiation by an electron is given by
 
 \begin{equation}
         \dv{\sigma}{\Omega} = \frac{3\sigma_T}{8\pi}
@@ -1616,7 +1627,7 @@ I\qty(\theta,\phi)$ we can perform an integration of
 spatial directions, rotating all incoming to waves, so that the Stokes
 parameters for the outgoing radiation are defined with respect to a common
 frame reference system. The result, expressed in terms of the spin-2 object
-$Q - iU$, is
+$Q - iU$, is \autocite{kosowsky1999introduction}
 
 \begin{equation}
         (Q -iU)\qty(\vectorunit{z}) = \frac{3\sigma_T}{16\pi \sigma_B}
@@ -1646,7 +1657,7 @@ in \autoref{fig:thomson_scattering}.
         \centering
         \includegraphics[width=0.64\textwidth]{thomson_scattering}
         \caption{Thomson scattering of quadrupole temperature anisotropies.
-        (A CMB polarization primer)}
+        \autocite{hu1997cmb}.}
         \label{fig:thomson_scattering}
 \end{figure}
 
@@ -1708,7 +1719,7 @@ transformation, as illustrated in \autoref{fig:eb_modes_patterns}
 \begin{figure}
         \centering
         \includegraphics[width=0.9\textwidth]{eb_modes_patterns}
-        \caption{E- and B-modes patterns (CMB polarization primer)}
+        \caption{E- and B-modes patterns \autocite{hu1997cmb}.}
         \label{fig:eb_modes_patterns}.
 \end{figure}
 
@@ -1784,33 +1795,40 @@ Polarization anisotropies of the cosmic microwave background have been
 observed in full sky surveys by the WMAP and Planck satellites. In addition
 several ground-based experiments have been designed and deployed in the
 last decade, in order to costrain the tensor-to-scalar ratio, $r$, to ever
-lower values. Some relevant examples are QUIET, Polarbear, CLASS and ACT,
-in the Atacama Desert (Chile), and BICEP/Keck and SPT in the
-Antartica.
+lower values. Some relevant examples are QUIET
+\autocite{quiet2010first}\autocite{araujo2012second}, Polarbear
+\autocite{kermish2012polarbear}, CLASS \autocite{essinger2014class} and ACT
+\autocite{kosowsky2003atacama}, in the Atacama Desert (Chile), and
+BICEP/Keck \autocite{ade2018measurements} and SPT \autocite{ruhl2004south}
+in the Antartica.
 
-More experiments, such as  Simons Observatory, GroundBIRD, QUBIC, BICEP
-Array and LSPE, are being designed for future for the purpose to detect the
-B-modes signal.
+More experiments, such as  Simons Observatory
+\autocite{galitzki2018simons}, GroundBIRD \autocite{tajima2012groundbird},
+QUBIC \autocite{battistelli2011qubic}, BICEP Array \autocite{hui2018bicep}
+and LSPE \autocite{aiola2012large}\autocite{addamo2020large}, are being
+designed for future for the purpose to detect the B-modes signal.
 
 Ground based CMB experiments are classified into stages according to the
 number of avaiable detectors. Current most ambitius projects are Stage III
 (\num{\sim 10000} detectors) experiments.
 
-The CMB Stage 4 (\num{\sim 100000} detectors) experiment (CMB-S4) consists
-of several dedicated telescopes equipped with highly sensitive
-superconducting cameras. These instruments will spend seven years listening
-to the microwave sky, operating at the South Pole, the Atacama Desert, and
-possibly northern hemisphere sites, and will provide a dramatic leap
-forward in our understanding of the fundamental nature of space and time
-and the evolution of the Universe. \autoref{fig:cmb-s4_polarization_status}
-shows the current state of the temperature and polarization anisotropy
-measurements and the expected improvements with CMB-S4.
+The CMB Stage 4 (\num{\sim 100000} detectors) experiment
+\autocite{abazajian2020cmb} consists of several dedicated telescopes
+equipped with highly sensitive superconducting cameras. These instruments
+will spend seven years listening to the microwave sky, operating at the
+South Pole, the Atacama Desert, and possibly northern hemisphere sites, and
+will provide a dramatic leap forward in our understanding of the
+fundamental nature of space and time and the evolution of the Universe.
+\autoref{fig:cmb-s4_polarization_status} shows the current state of the
+temperature and polarization anisotropy measurements and the expected
+improvements with CMB-S4.
 
 \begin{figure}
         \centering
         \includegraphics[width=0.96\textwidth]{CMB-S4_polarization_status}
         \caption{Current measurements of the angular power spectrum of the
-        CMB temperature and polarization anisotropy (CMB-S4 Science Book).}
+        CMB temperature and polarization anisotropy
+        \autocite{abazajian2016cmb}.}
         \label{fig:cmb-s4_polarization_status}
 \end{figure}
 
@@ -1828,22 +1846,26 @@ addition, ground-based telescopes can advantage of a relatively long life,
 because they can be repaired and upgraded on site.  However, these
 instruments must deal with atmospheric effects.
 
-The atmospheric radiation is almost unpolarized, therefore it does not
-contribute directly to the signal acquired by instrumentation designed to
-measure polarized sources, like the coherent polarimeters of the Strip
-telescope. However, atmospheric emission can contribute to detected
-polarized signal through instrumental Stokes leakeage of I into Q and U.
+The atmospheric radiation is almost unpolarized
+\autocite{hanany2003polarization}, therefore it does not contribute
+directly to the signal acquired by instrumentation designed to measure
+polarized sources, like the coherent polarimeters of the Strip telescope.
+However, atmospheric emission can contribute to detected polarized signal
+through instrumental Stokes leakeage of I into Q and U
+\autocite{arnold2010design}.
 
-In addition, residual atmospheric emission inevitably increases the
-optical power incident on the detectors and therefore their noise level.
-Lastly, temporal variations in emission, caused by variable water vapour
-content, contribute low frequency correlated noise to the signal.
+In addition, residual atmospheric emission inevitably increases the optical
+power incident on the detectors and therefore their noise level
+\autocite{bersanelli1995effects}.  Lastly, temporal variations in emission,
+caused by variable water vapour content, contribute low frequency
+correlated noise to the signal \autocite{church1995predicting}.
 
 Amplitude and correlation of atmospheric fluctuations depend on both the
 scanning strategy and the meteorological conditions at the time of
 observation, such as the wind direction and speed, precipitable water
 vapour content, surface temperature and pressure.  This atmospheric
 contamination results in an additional white and spatially correlated noise
-in the time stream of any detector. This can affect not only the effective
-noise level of the entire instrument but also the rate at which this noise
-level decreases when the number of deployed detectors grows.
+in time ordered data of any detector. This can affect not only the
+effective noise level of the entire instrument but also the rate at which
+this noise level decreases when the number of deployed detectors grows
+\autocite{errard2015modeling}.
