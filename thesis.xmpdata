@@ -78,14 +78,19 @@
 
 
 
-\Title        {The Title Goes Here}
+\Title        {Atmospheric Effects in Ground-Based Observations of the
+Cosmic Microwave Background}
 
 \Author       {Matteo Savatteri}
 
 \Copyright    {Copyright \copyright\ 2021 - Matteo Savatteri}
 
-\Keywords     {some keyword\sep
-               another keyword\sep
-               some more keywords}
+\Keywords     {CMB\sep
+               Anisotropies\sep
+               Polarization\sep
+               Atmospheric Effects\sep
+               LSPE\sep
+               Strip\sep}
+
 
 \Subject      {This is where you put the abstract.}
