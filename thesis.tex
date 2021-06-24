@@ -55,7 +55,12 @@
 \hypersetup{pageanchor=true}
 
 \include{./chapters/acknowledgements/acknowledgements}
+
+% change interline space for toc only
+\renewcommand{\baselinestretch}{1.25}\normalsize
 \tableofcontents
+\renewcommand{\baselinestretch}{1.0}\normalsize
+
 \listoffigures
 \listoftables
 
