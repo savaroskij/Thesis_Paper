@@ -1,13 +1,12 @@
 \chapter{Atmospheric Temperatures Variations}\label{ch:atm_variations}
 
-The present chapter is devoted to the presentation of the numerical methods
-and tools that has been adopted to calculate estimates of atmospsheric
-brighness temperatures at our observation site. The CMB Atmospheric
-Library, the software library that has been employed to perform
-montecarlo simulations of the meteorological parameters and to solve the
-radiative transfer equation, is introduced first. Then, our numerical
-results, the seasonal matrices for atmospheric brightness
-temperatures, are presented and discussed.
+In the current chapter we present the numerical methods and tools
+implemented to estimate atmospsheric brighness temperatures at our
+observation site. We introduce the CMB Atmospheric Library first. This is
+the software library that has been employed to perform montecarlo
+simulations of the meteorological parameters and to solve the radiative
+transfer equation. Then, we present and discuss our numerical results: the
+seasonal matrices of atmospheric brightness temperatures.
 
 \section{The CMB Atmospheric Library}
 
@@ -21,34 +20,35 @@ framework, making it and independent module, which can be exploited by
 different CMB ground-based experiments. The CMB Atmospheric Library core is
 written in \texttt{C++} programming language, in order to maintain high
 performance.  However, \texttt{Python} programming language bindings are
-provided to simplify its integration in experiments making use of
-\texttt{Python} based pipelines.
+provided to simplify its integration in \texttt{Python} based simulation
+pipelines.
 
-CAL can be used to solve the atmospheric radiative transfer equation, which
-has been discussed in \autoref{ss:radiative_transfer_eq}. To this end, the
-library ships with
+CAL can be used to solve the atmospheric radiative transfer equation
+(discussed in \autoref{ss:radiative_transfer_eq}). To this end, the library
+ships with
 \emph{libaatm}\footnote{\url{https://github.com/hpc4cmb/libaatm}}, a
 repackaged version of the \emph{Alma Atmospheric Transmission at Microwaves
 Tools} (cit pardo), a model of the longwave atmospheric spectrum based on
 broadband measurements and calculations. The model is fully applicable from
 \SIrange{0}{2}{\tera\hertz} while including lines up to
-\SI{10}{\tera\hertz}. Its primary goal is to simulate the
-millimeter and submillimeter regions accessible from the ground.
-libaatm discretize the atmosphere in a finite number of vertical
-layers, from sea level to the tropopause, by a predefined internal profile.
-Then, the radiative transfer equation is solved for each layer and
-solutions are connected.
+\SI{10}{\tera\hertz}. Its primary goal is to simulate the millimeter and
+submillimeter regions accessible from the ground.  libaatm discretizes the
+atmosphere in a finite number of vertical layers, from sea level to the
+tropopause, by a predefined internal profile. Then, the radiative transfer
+equation is solved for each layer and the obtained solutions are connected,
+by requiring continuity conditions to be satisfied at the boundaries
+between different layers.
 
 \subsection{CAL Relevant Methods}
 
-The relevant methods which are provided by CAL and have been used in this
-work follow:
+Here we describe the relevant methods which are provided by CAL and we have
+used in this work:
 
 \begin{itemize}
         \item \texttt{Weather}:
 
-        This class can be initialized with the CDFs \texttt{.fits} file, which
-        has been described in \autoref{s:CDF_fits_file}. It takes in input
+        This class can be initialized with the CDFs \texttt{.fits} file,
+        described in \autoref{s:CDF_fits_file}. It takes in input
         an UTC time structure with time resolution of \num{1} hour and
         returns pseudo-random realizations of meteorological parameters,
         determined by the probability distributions derived from the input
@@ -65,19 +65,18 @@ work follow:
 
         \item \texttt{atm\_absorption\_coefficient}:
 
-        As the latter one, this function solves the radiative transfer equation,
-        but the total absorption coefficient,
+        As the latter, this function solves the radiative transfer equation,
+        but it returns the total absorption coefficient,
 
         \begin{equation}
                 \alpha_A\qty(\nu) = 1 - e^{-\tau_A\qty(\nu)}
         \end{equation}
 
-        for the specified atmosphere realization at a given frequency is
-        returned.
+        for the specified atmosphere realization at a given frequency.
 \end{itemize}
 
-These three objects hides a significant implementation complexity, but are
-simple in use. They can be jointly used to produce montecarlo simulations of
+These three objects hide a significant implementation complexity, but are
+simple in use. They can be jointly used to produce Monte Carlo simulations of
 atmospheric brightness temperature at Pico del Teide, or at any other site
 of interest.
 
@@ -132,9 +131,9 @@ obtained by calculation of standard deviation of the mean, in the case of
 the first estimator, and making use of a bootstrapping technique, from the
 samples, in the case of the second one.
 
-Our results are showed in \autoref{fig:tatm_nocal} and
-\autoref{fig:tatm_matrices_nocal}. Median daily variations in atmospheric
-brightness temperature for each month of the year are showed in
+Our results are shown in \autoref{fig:tatm_nocal} and
+\autoref{fig:tatm_matrices_nocal}. Median daily variations in the
+atmosphere brightness temperature for each month of the year are shown in
 \autoref{fig:tatm_nocal}. The corresponding seasonal matrices, showing mean
 and median seasonal variations in $T_\text{atm}$, are represented in
 \autoref{fig:tatm_nocal}.
