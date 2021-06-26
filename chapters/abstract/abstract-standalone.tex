@@ -34,39 +34,48 @@ radiations, such as galactic foregrounds and atmospheric emission.
 
 Atmospheric effects represents a major concern for ground-based CMB
 polarization experiments. Despite being almost unpolarized, atmospheric
-emission increases optical loading on the detectors, amplifying their white
-noise level. In addition, its fluctuations, which depend on both the sky
-scanning strategy and the properties of the atmosphere at time of
+emission increases the optical loading on the detectors, amplifying their
+white noise level. In addition, its fluctuations, which depend on both the
+sky scanning strategy and the properties of the atmosphere at the time of
 observations, such as wind speed and water vapour content, introduce
 spatial and temporal correlations between detected signals.
 
-In my thesis I present a novel approach to produce a statistical model of
-atmospheric emission, starting from climate reanalysis provided by the
-\emph{European Centre for Medium-Range Weather Forecasts} and atmospheric
-vertical profiles acquired by balloon probes. This model can be used
-to simulate the atmospheric brightness temperature (TATM) and its seasonal
-variations at an arbitrary observation site. It can be stored in a
+The \emph{Large Scale Polarization Explorer} (LSPE) is a next generation
+CMB polarization experiment. It has been funded by the \emph{Italian Space
+Agency} and aims to provide a smaller upper limit to the intensity of
+B-modes. The Strip instrument is the ground-based telescope of the LSPE
+project. It will be deployed to the ``Observatorio del Teide'', in
+Tenerife, by the end of 2022.
+
+In my thesis I have followed a novel approach to produce a statistical
+model of the atmospheric emission, starting from climate reanalysis
+provided by the \emph{European Centre for Medium-Range Weather Forecasts}
+and atmospheric vertical profiles acquired by balloon probes. This model
+can be used to simulate the atmospheric brightness temperature and its
+seasonal variations at an arbitrary observation site. It can be stored in a
 \num{\sim 2} MB \texttt{.fits} file and can be easily integrated into
 simulation pipelines for CMB experiments.
 
-I compare my numerical results with atmospheric brightness temperatures
-measured during the years 2012-2015 by the \emph{Multi-Frequency
-Instrument} (MFI) of the QUIJOTE project, which have been deployed to the
-``Observatorio del Teide'', in Tenerife by the ``Instituto de
-Astrof\'fisica de Canarias''. Through the use of a calibration technique
-based on atmospheric vertical profiles acquired at ``Pico del Teide'', I
-obtain simulated values of TATM at \SIlist{11;13;17;19}{\giga\hertz}, which
-are compatible with MFI data at a \SI{95}{\percent} confidence level.
+By applying this method to the observing site of LSPE/Strip, I have
+produced a forecast of the median daily and annual excursion of the
+atmospheric brightness temperature at \SI{43}{\giga\hertz} for the Q-band
+polarimeters of the Strip telescope.
 
-In addition, I produce a forecast of the median daily and annual excursion
-of atmospheric brightness temperature at \SI{43}{\giga\hertz} for the
-Q-band polarimeters of the Strip telescope of the \emph{Large Scale
-Polarization Explorer} experiment. This project has been funded by the
-\emph{Italian Space Agency} and aims to provide a smaller upper limit to
-the intensity of B-modes.  \textcolor{red}{(Trovo molto complicato
-introdurre qui il tensor-to-scalar-ratio, pu\o` andar bene quello che ho
-scritto?i)}.  The Strip telescope is currently under testing
-\textcolor{red}{(All'UNIBO?)} and will join the QUIJOTE MFI, TGI and FGI
-telescopes at the Observatorio del Teide by the end of 2022.
+In addition, I have compared my numerical results with atmospheric
+brightness temperatures measured during the years 2012-2015 by the
+\emph{Multi-Frequency Instrument} (MFI) of the QUIJOTE project, which have
+been installed to the same site of LSPE/Strip by the ``Instituto de
+Astrof\'isica de Canarias''. Through the use of a calibration technique
+based on atmospheric vertical profiles acquired on site, I obtain simulated
+values of atmospheric brightness temperatures at
+\SIlist{11;13;17;19}{\giga\hertz}, which are compatible with MFI data at a
+\SI{95}{\percent} confidence level.
+
+The statistical model of atmospheric emission I present in my thesis is
+just the starting point to provide a complete representation of the
+atmosphere in the microwaves range. More meteorological parameters, such as
+wind speed components, can and must be included into the model in order to
+take accounts of the atmospheric turbulent structure and the resulting
+correlated noise contribution.
 
 \end{document}
