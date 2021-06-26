@@ -4,7 +4,7 @@ In this chapter a method to build a \emph{statistical picture} of the
 atmosphere is presented. First the ERA5 dataset is introduced: this
 constitutes the set of statistical populations for the relevant meteorological
 parameters that we have choosen to achieve this result; then the statistical
-picture of the atmosphere is defined and the described in details; finally,
+picture of the atmosphere is defined and described in details; finally,
 the mathematical objects we have used to describe expected daily and annual
 variations of meteorological parameters at Pico del Teide are analyzed.
 
@@ -19,42 +19,43 @@ caused by atmospheric effects, we must solve the radiative transfer equation
 in the case of a dispersive medium at local thermodynamic equilibrium. The
 solution depends on the physical properties of the medium. In particular,
 it is determined by its physical temperature, $T$, and absorption
-coefficient, $\alpha_\nu$. In turn, these quantities depends on a set a
+coefficient, $\alpha_\nu$. In turn, these quantities depend on a set a
 meteorological parameters, which undergo seasonal variations.
 
 In order to create a reliable statistical representation of these daily and
-annual variations, we employed the ERA-5 dataset by the \emph{European
-Centre for Medium-Range Weather Forecasts} (ECMWF). ECMWF uses forecast
-models and data assimilation systems to \emph{reanalyse} archived
-meteorological observations, creating global datasets describing the
-recent history of the atmosphere, land surface, and oceans. In particular,
-ERA5 provides hourly estimates of a large number of atmospheric, land and
-oceanic climate variables. The data cover the whole Earth surface and
-resolve the atmosphere using \num{137} levels from the surface up to a
-height of \SI{80}{\kilo\meter}. ERA5 reanalysis relies on the \emph{Global
-Circulation Model} (GCM) algorithm (McGuffie, Henderson-Sellers) making use
-of the historical measures as forcing terms into GCM simulations to produce
-data homogeneously gridded characterized by high spatial and temporal
-resolution.
+annual variations, we employed the ERA5 dataset \autocite{hersbach2020era5}
+by the \emph{European Centre for Medium-Range Weather Forecasts}
+(ECMWF)\footnote{\url{https://www.ecmwf.int/}}. ECMWF uses forecast models
+and data assimilation systems to \emph{reanalyse} archived meteorological
+observations, creating global datasets describing the recent history of the
+atmosphere, land surface, and oceans. In particular, the ERA5 dataset
+contain estimates of a large number of atmospheric, land and oceanic
+climate variables, with hourly resolution. The data cover the whole Earth
+surface and are defined in \num{137} levels from the surface up to a height
+of \SI{80}{\kilo\meter}\footnote{We have acquired this information from
+\url{https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/era5}.}.
+The ERA5 reanalysis relies on the \emph{Global Circulation Model} (GCM)
+algorithm \autocite{mcguffie2014climate} and uses the historical measures
+as forcing terms into GCM simulations to produce data homogeneously gridded
+and characterized by high spatial and temporal resolution.
 
-\autoref{fig:pwv_canary_islands} shows PWV distribution from ERA5 dataset
-in Canary Island for the twelfth hour of the first day of the 1980. The
-archipelago in covered by a grid of \num{30} by \num{30} \si{\kilo\meter}
-\emph{pixels}  (\ang{0.25} by \ang{0.25} in geographic coordinate system).
-As expected, precipitable water vapour takes its lowest values for
-continental lands, its greatest values for pixels covering ocean and
-intermediate values in correspondence of islands. \autoref{fig:pwv_tenerife}
-focuses on Tenerife islands, showing that the whole site is covered by only four
-pixels, which are delimited by a fuchsia perimeter in the figure.
-In the following chapters we will prove that ERA5 spatial
-resolution is in fact not enough to describe the specific meteorological
-conditions at Pico del Teide, and at observation sites found on
-small islands in general.
+\autoref{fig:pwv_canary_islands} shows the PWV distribution from ERA5
+dataset above the Canary Islands for the twelfth hour of the first day of
+the 1980. The archipelago in covered by a grid of \num{30} by \num{30}
+\si{\kilo\meter} \emph{pixels}  (\ang{0.25} by \ang{0.25} in geographic
+coordinate system).  As expected, precipitable water vapour is lowest above
+the continental lands, highest over the ocean and intermediate over the
+islands. \autoref{fig:pwv_tenerife} focuses on the island of Tenerife,
+which is covered by only four pixels, delimited by a fuchsia perimeter in
+the figure.  In the following chapters we will prove that ERA5 spatial
+resolution is, in fact, not enough to describe in detail the specific
+meteorological conditions at Pico del Teide, and at observation sites found
+on small islands in general.
 
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{PWV_Canary_Islands_1980-01-01_12-00}
-        \caption{PWV Canary Islands}
+        \caption{PWV distribution for Canary islands.}
         \label{fig:pwv_canary_islands}
 \end{figure}
 
@@ -67,15 +68,18 @@ small islands in general.
 
 \subsection{The Set of Relevant Meteorological Parameters}
 
-Climate reanalysis data ranging from January the 1th 1979 to November
-the 21th 2020 have been acquired by means of the ECMWF Web API, for a total of
-\num{367200} hours in UTC. Downloaded data concern only one of the pixels found in
-\autoref{fig:pwv_tenerife}: the one including the territory of Teide
-observatory, which in the figure is enclosed by a yellow
+Climate reanalysis data ranging from January the 1st 1979 to November the
+21st 2020 have been acquired by means of the ECMWF Web API, which allows
+the automation of data request and downloading via the \emph{Hypertext
+Transfer Protocol} (HTTP). We have acquired a total of \num{367200} hours
+of meteorological variables in UTC format. Downloaded data concern only one
+of the pixels found in \autoref{fig:pwv_tenerife}: the one including the
+territory of Teide observatory, which in the figure is enclosed by a yellow
 square.
 
 The relevant parameters, essential to provide a complete description of our
-atmosphere, have been selected, for a total of seven quantities:
+atmosphere, have been selected, for a total of seven quantities
+\autocite{era5}:
 
 \begin{itemize}
         \item \textbf{total column cloud liquid water} (\textbf{tclw}):
@@ -93,8 +97,8 @@ atmosphere, have been selected, for a total of seven quantities:
         measured in \si{\kilo\gram\per\square\meter}. Snow
         (aggregated ice crystals) is not included in this parameter;
 
-        \item \textbf{total column water vapour} (\textbf{tcwv}) or \textbf{precipitable
-        water vapour} (\textbf{PWV}):
+        \item \textbf{total column water vapour} (\textbf{tcwv})
+        or \textbf{precipitable water vapour} (\textbf{PWV}):
 
         the total amount of water vapour in a column
         extending from the surface of the Earth to the top of the
@@ -160,13 +164,15 @@ meaning that every statistical property of $X$ can be calculated starting
 from its cumulative distribution function.
 
 The CDFs for each one of the relevant meteorological parameters can be
-calculated by application of a sorting algorithm to a statistical
-population of data. Making use of this method, CDFs for every hour of a
-typical day of each month of the year have been
-calculated starting from the acquired ERA5 datasets, for a total of
-\num{288} cumulative distribution functions for each parameter.
-As an example, the CDFs for the PWD at Pico del Teide are shown in
-\autoref{fig:pwv_monthly_cdfs}.
+calculated by application of a sorting algorithm to the corresponding
+statistical populations of data. In fact, sorted data can be regarded as
+elements of a numerical sequence whose indeces represent different values
+of confidence level in a scale going from zero to the total number of data
+minus one i.e.  a CDF.  Making use of this method, CDFs for every hour of a
+typical day of each month of the year have been calculated starting from
+the acquired ERA5 datasets, for a total of \num{288} cumulative
+distribution functions for each parameter.  As an example, the CDFs for the
+PWD at Pico del Teide are shown in \autoref{fig:pwv_monthly_cdfs}.
 
 \begin{figure}
         \centering
@@ -178,9 +184,9 @@ As an example, the CDFs for the PWD at Pico del Teide are shown in
         \label{fig:pwv_monthly_cdfs}
 \end{figure}
 
-CDFs data have been subsequently decimated and saved in \texttt{.fits} file
-format. We will refer to this representation simply as the \emph{CDFs
-\texttt{.fits} file}. The structure of the latter
+The CDFs have been subsequently downsampled to \num{101} values and saved
+in \texttt{.fits} file format. We will refer to this representation simply
+as the \emph{CDFs \texttt{.fits} file}. The structure of the latter
 follows:
 
 \begin{Verbatim}[fontsize=\scriptsize]
@@ -243,21 +249,21 @@ relevant meteorological parameter. Every column is a matrix of $101 \times
 24$ double size floating point ordered values, one data for each
 percentile, representing a discretization of a CDF function.  The CDFs
 \texttt{.fits} file is rather light (\SI{\sim 2}{\mega\byte}) and can be
-employed by instrumental simulations frameworks such as
+employed by simulations frameworks of various CMB experiments such as
 \emph{TOAST}\footnote{\url{https://github.com/hpc4cmb/toast}},
 \emph{QUBIC\_Soft} \footnote{\url{https://github.com/qubicsoft/qubic}} and
 \emph{Stripeline}
 \footnote{\url{https://github.com/lspestrip/Stripeline.jl}} in order to
 produce simulations ground-based experiments observations. Furthermore,
-this method can be adapted for use at any site.
+this method can be adapted to any observing site.
 
 \section{The Seasonal Matrices}
 
-The atmospheric statistical picture constitutes an effective tool to
+The atmospheric statistical picture is an effective tool to
 predict seasonal variations of the parameters of interest. By evaluating
 cumulative distribution functions at different \emph{confidence levels}
 (CL), different expectation values for the meteorological parameters can be
-obtained. \autoref{fig:teide_seasonal_matrices_vertical} shows heatmap
+obtained. \autoref{fig:teide_seasonal_matrices_vertical} shows color map
 representations of the median seasonal variations of PWV, $T_s$ and $P_s$,
 which have been obtained evaluating the respective CDFs at the
 \SI{50}{\percent} confidence level. Change in colour along a row
