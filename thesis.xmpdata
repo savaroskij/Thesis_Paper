@@ -83,7 +83,10 @@ Cosmic Microwave Background}
 
 \Author       {Matteo Savatteri}
 
-\Copyright    {Copyright \copyright\ 2021 - Matteo Savatteri}
+\Copyright    {Atmospheric Effects in Ground-Based Observations of the
+Cosmic Microwave Background © 2021 by Matteo Savatteri is licensed
+under Attribution-ShareAlike 4.0 International. To view a copy of this
+license, visit http://creativecommons.org/licenses/by-sa/4.0/}
 
 \Keywords     {CMB\sep
                Anisotropies\sep
@@ -93,4 +96,18 @@ Cosmic Microwave Background}
                Strip\sep}
 
 
-\Subject      {This is where you put the abstract.}
+\Subject      {Atmospheric emission represents a major concern for
+ground-based cosmic microwave background (CMB) experiments. By increasing
+optical loading on the detectors, it amplifies their white noise level. In
+addition, fluctuations in water vapour content introduce spatial and
+temporal correlations between detected signals. I present a novel approach
+to produce a statistical model of atmospheric emission from climate
+reanalysis data and atmospheric vertical profiles. This model can be used
+to estimate the atmospheric brightness temperature and its seasonal
+variations at an arbitrary observation site. I compare my numerical results
+with atmospheric brightness temperatures measured by the QUIJOTE-MFI
+instrument during the years 2012-2015, at the ``Observatorio del Teide'' in
+Tenerife. In addition, I produce a forecast at 43 GHz for the Q-band of the
+LSPE/Strip telescope, which will be deployed to the same site by the end of
+2022. The atmospheric model is stored in a 2 MB .fits file and can be
+easely integrated into simulation pipelines for CMB experiments.}
