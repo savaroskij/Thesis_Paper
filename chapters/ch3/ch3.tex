@@ -1,10 +1,10 @@
 \chapter{The Atmospheric Emission Model}\label{ch:atm_model}
 
-In the current chapter the atmopsheric emission model is presented. First,
+In the current chapter we present the atmopsheric emission model. First,
 the equation describing atmospheric radiative transfer is introduced and
-solved, for the simple case of a thermal system. Then, the atmospheric
-turbulent structure and its effects on a ground-based radiometer are
-discussed. The atmospheric model by Church is used as reference
+solved, for the simple case of a thermal system. Then, we discuss the
+atmospheric turbulent structure and its effects on a ground-based
+radiometer. We use the atmospheric model by Church as reference
 \autocite{church1995predicting}.
 
 \section{Atmospheric Radiative Transfer}
@@ -30,8 +30,10 @@ Kramers-Kronig relations
         \frac{\epsilon_r\qty(s)}{s' - s}} \label{eq:kk_relations_2}.
 \end{align}
 
-The variable $s = \sigma + i 2\pi\nu$ is the complex frequency and $\sigma$
-is the \emph{Neper frequency}.
+The symbol $\principalvalue$ stands for the Cauchy principal value, the
+variable $s = \sigma + i 2\pi\nu$ is the complex frequency and $\sigma$ is
+the \emph{Neper frequency}, which is related to an exponential damping term
+and so represents attenuation or energy loss.
 
 As is shown in \autoref{fig:transmittance_teide}, contributions to the
 atmospheric complex permittivity arise principally from oxigen and water
@@ -39,8 +41,8 @@ vapour molecules \autocite{errard2015modeling}. Water vapour is responsible
 for most of the continuum absorption in the \SIrange{400}{500}{\giga\hertz}
 frequency range. The broad absorption oxigen band around
 \SI{60}{\giga\hertz} and the oxigen line at \SI{119}{\giga\hertz}
-contribute to very strong absorption, as the water vapour lines at
-\SIlist{22;183;325;380}{\giga\hertz} do. We will show that the most
+contribute to very strong absorption, similar to the water vapour lines at
+\SIlist{22;183;325;380}{\giga\hertz}. We will show that the most
 problematic features of the atmospheric absorption spectrum regarding the
 Q-band channels of the Strip telescope are in fact the \SI{22}{\giga\hertz}
 water vapour line and the \SI{\sim 60}{\giga\hertz} oxigen plateau.
@@ -48,8 +50,9 @@ water vapour line and the \SI{\sim 60}{\giga\hertz} oxigen plateau.
 \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{transmittance_Teide}
-        \caption{Atmospheric transmittance at Pico del Teide and low
-        frequencies detail. CAL software.}
+        \caption{Atmospheric transmittance at Pico del Teide (upper panel)
+        and detail focusing on low frequencies (lower panel). CAL
+        software.}
         \label{fig:transmittance_teide}
 \end{figure}
 
@@ -65,19 +68,19 @@ refractive index, $n\qty(\nu)$, and absorption coefficient, $\alpha\qty(\nu)$,
 where $\lambda$ is the wavelength of the incoming radiation.
 
 From \autoref{eq:kk_relations_1} and \autoref{eq:kk_relations_2} follows that
-the refractive index and the absorption coefficient are note independent
+the refractive index and the absorption coefficient are not independent
 quantities.
 
 \subsection{Essential Quantities in Radiative Transfer Theory}
 
-When the scale of a system greatly exceed the wavelength of propagating
-radiation, we can consider radiation to travel in straight line, called
+When the scale of a system greatly exceed the wavelength of the propagating
+the radiation, we can consider radiation travelling in straight lines, called
 \emph{rays} \autocite{rybicki2008radiative}. Starting from this observation
 we can devise a theory of propagating rays, knwon as the \emph{radiative
 transfer theory}.
 
 We consider an infinitesimal area $\dd{A}$ normal to the direction of a
-specific ray and we take into account all the rays passing through $\dd{A}$
+specific ray and we taken into account all the rays passing through $\dd{A}$
 whose direction is whithin an infinitesimal solid angle $\dd{\Omega}$ of
 the given ray (see \autoref{fig:rays_geometry}). The energy crossing
 $\dd{A}$ in an infinitesimal time $\dd{t}$, in a frequency range $\dd{\nu}$
@@ -88,8 +91,7 @@ is
         I\qty(\vb{x},\Omega,\nu)\dd{A}dd{\Omega}\dd{\nu}\dd{t}
 \end{equation}
 
-which defines the \emph{specififc intensity}, $I\qty(\vb{x},\Omega,\nu) =
-I_\nu$.
+where $I\qty(\vb{x},\Omega,\nu) = I_\nu$ is the \emph{specific intensity}.
 
 \begin{figure}
         \centering
@@ -176,7 +178,7 @@ and \autoref{eq:emission} we have
 \end{equation}
 
 which is known as the \emph{radiative transfer equation}. This equation
-takes a particularly simple for if we realize the change of variable
+takes a particularly simple form if we perform the change of variable
 
 \begin{equation}
         \begin{split}
@@ -280,7 +282,7 @@ in \autoref{ss:cmb_bb},
         \frac{1}{\exp(\frac{h\nu}{K_b T}) - 1}.
 \end{equation}
 
-This means that for black body radiation $I_\nu$ is an universal function
+This means that a black body $I_\nu$ is an universal function
 of $T$ and $\nu$, independent of the properties of the emitting body.
 
 Kirchhoff's law states that the source function of a body in thermodynamic
@@ -312,7 +314,7 @@ The exponential term in the Planck law can be expanded as
        \exp(\frac{h\nu}{K_b T}) = 1 + \frac{h\nu}{K_b T} + \order{\nu^2}.
 \end{equation}
 
-Therefore, for $\frac{h \nu}{K_b T}$, we obtain the \emph{Rayleigh-Jeans
+Therefore, for $h \nu/K_b T \ll 1$, we obtain the \emph{Rayleigh-Jeans
 approximation law} (see for example \cite{condon2016essential}):
 
 \begin{equation}
@@ -320,9 +322,9 @@ approximation law} (see for example \cite{condon2016essential}):
 \end{equation}
 
 This relation is commonly used in astrophysics to characterize the
-brightness of a radiation at a certain frequency. For any value value of
-$I_\nu$ a corresponding \emph{brightness temperature} temperature can be
-defined as
+brightness of a radiation at a certain frequency when $h \nu/K_b T \ll 1$.
+For any value value of $I_\nu$ a corresponding \emph{brightness
+temperature} temperature can be defined as
 
 \begin{equation}
         I_\nu \equiv B_\nu\qty(T_b)
@@ -378,7 +380,7 @@ where
         stimulated emission coefficients, respectively;
         \item $A_{21}$ is the Einstein stimulated emission coefficient;
         \item and $\phi\qty(\nu)$ is the \emph{line profile function},
-        which accounts for the fact that the energy difference $h\nu_0$i
+        which accounts for the fact that the energy difference $h\nu_0$
         is not infinitely sharp. The line profile function is peaked at
         $\nu = \nu_0$ and is taken to be normalized:
 
@@ -475,10 +477,10 @@ distribution,
 \end{equation}
 
 where $m_*$ is a reference mass for particles in the atmosphere.
-This means that in principle we can split the atmosphere in an arbitrary
+This means that in principle we can split the atmosphere into an arbitrary
 number of vertical layers, assuming the thermodynamic temperature is
 constant within each one.  The radiative transfer equation can then be
-written down and solved for every layer and the solutions connected. This
+written and solved for every layer and the solutions connected. This
 constitutes a simplified view of the numerical approach we have adopted in
 the context of this thesis to obtain estimates for atmospheric brightness
 temperatures.
@@ -506,12 +508,12 @@ frequency, $N\qty(\nu) = N$, given by the Smith-Weintraub equation
 \end{equation}
 
 Here $P_d$ is the partial vapour pressure of dry air in
-\si{\milli\bar}, $P_v$ is the partial wapter vapour pressure in the same
-unit measure and T is the physical atmosphere temperature in \si{\kelvin}.
+\si{\milli\bar}, $P_v$ is the partial water vapour pressure in the same
+units and T is the physical atmosphere temperature in \si{\kelvin}.
 Fluctuations in the value of the refractive index as the air drift through
 the instrument beam cause variations in the path length from a source to
-the telescope. For CMB radiation experiments with beamsizes of a degree or
-more that observe at \si{\centi\meter} wavelengths, these effects are small
+the telescope. For CMB experiments with beam size of a degree or
+more that approximation at \si{\centi\meter} wavelengths, these effects are small
 and can be ignored \autocite{church1995predicting}.
 
 The low frequnecy contribution to $\alpha_\nu$ is governed by the
@@ -554,16 +556,17 @@ travelled in the dispersive medium, reverting the change of variable $r
 \end{equation}
 
 where $T_\text{atm}$ is the atmospheric brightness temperature, which is
-obtained subtracting from the total brighness temperature, $T_b =
-T_\text{sky}$, the contribution from the cosmic radiations diminished by
-the atmospheric absorption. If the effects of the clouds are ignored,
-assuming that only clear sky observations will be used for CMB radiation
-observation, the total atmopsheric opacity is small for low frequencies:
-$\tau_{A,\nu} \sim \num{e-2}$. Consequently, fluctuations in atmospheric
-brightness temperature arising from variations in $\tau_\nu$ constitute a
-second order effect, when compared to fluctuations in the absorption
-coefficient. Therefore, from now on, we assume that $e^{-\tau_\nu} \simeq
-1$.
+obtained by subtracting the contribution from the cosmic radiations
+diminished by the atmospheric absorption from the total brighness
+temperature, $T_b = T_\text{sky}$. If the effects of the clouds are
+ignored, assuming that only clear sky observations will be used for CMB
+radiation observation, the total atmopsheric opacity is small for low
+frequencies: $\tau_{A,\nu} \sim \num{e-2}$. Consequently, fluctuations in
+atmospheric brightness temperature arising from variations in $\tau_\nu$
+constitute a second order effect, when compared to fluctuations in the
+absorption coefficient. Therefore, from now on, we assume that
+$e^{-\tau_\nu} \simeq 1$. \textcolor{red}{E quando ci sono le nuvole cosa
+si fa? Devo buttare le misure?}
 
 The \emph{effective area}, $A_\text{eff}$, of an instrument is defined as
 
@@ -719,7 +722,7 @@ scales of the atmospheric structures over which the $2/3$ law holds.
 Measurements of $L_0$ fluctuations in the optical and radio regime shows
 that $L_0 \sim \SI{e1}{\meter}$. However, large uncertainties in the value
 of the outer scale must be expected, this parameter strongly
-depends on weather conditions.
+depends on the weather conditions.
 
 The normalized Kolmogorov correlation function, $b_\alpha\qty(\abs{\vb{r}_1 - \vb{r}_2})$ can be related to a
 spherically symmetric power spectrum $\phi\qty(k)$:
@@ -774,11 +777,11 @@ absorption coefficient correlation function is
 \subsection{Random Fluctuations in Antenna Temperature}
 
 Random fluctuations in antenna temperature, caused by fluctuations in the
-absorption coefficient, can now be estimed for a specific instrument using
+absorption coefficient, can now be estimated for a specific instrument using
 \autoref{eq:rms_t_antenna}. We consider the simple case of a single dish
-system, making the further assumption that the beam patter as a function of
+system, making the further assumption that the beam pattern as a function of
 height can be described by the propagation of a single Gaussian mode.
-In this case the electronic field propagating in the $z$-direction is the
+In this case the electric field propagating in the $z$-direction is the
 simplest eigenfunction of the \emph{Huygens integral operator}
 \autocite{belanger1991beam}
 
@@ -844,7 +847,7 @@ in antenna temperature are
         \label{eq:rms_t_antenna_sdish}
 \end{equation}
 
-We now make a numer of assumption to successfully perform the integration.
+We now make a numer of assumptions to successfully perform the integration.
 First we assume that
 
 \begin{equation}
@@ -863,7 +866,7 @@ Kolmogorov correlation function, which can be easily integrated.
 
 is an appropriate choice. In particular this function understimates the
 correlation on small scales and overestimates it on larger scales when
-compared to the kolmogorov normalized correlation function.
+compared to the Kolmogorov normalized correlation function.
 
 \autoref{eq:rms_t_antenna_sdish} can now be easily integrated performing
 convenient changes of variables. The result is
@@ -888,7 +891,7 @@ where $Z = \qty(z_1 + z_2)/2$i \autocite{church1995predicting}.
 in antenna temperature on the outher scale factor, $L_0$, assuming a sea
 level temperature $T_0 = \SI{293}{\kelvin}$, with a linear decrease of $T\qty(z)
 = T_0 - \SI{6.5e3}{\kelvin\per\meter}z$ to a maximum height of
-\SI{2e3}{\meter} and beamsize of
+\SI{2e3}{\meter} and beam size of
 \ang{;30;}. The parameters in the amplitude function are $C_{\alpha,0}
 = \SI{2e-14}{\meter^{-8/3}}$ and $z_0 = \SI{2}{\kilo\meter}$. The fluctuations
 in antenna temperature increase as the outher scale does, and
@@ -915,16 +918,16 @@ Temperature}
 To make realistic predictions of the effects of atmospheric emission, it is
 now necessary to consider the temporal behaviour of the atmopsheric signal.
 We derive here the temporal power spectrum for the same model system
-presented in the previus subsection: a single dish instrument with beamsize
+presented in the previus subsection: a single dish instrument with beam size
 of \ang{;30;}, fixed and
 pointing at the zenith.
 
 The temporal power spectrum of atmospheric emission will depend on the
-speed at which the atmosphere in dragged through the instrument beam by the
-wind. It is convenient to select coordinate system coomoving with the
+speed at which the atmosphere moves through the instrument beam because of
+the wind. It is convenient to select coordinate system coomoving with the
 atmosphere. We choose the $x$-direction to be the wind direction. The
-fluctuations in antenna temperature at a given time $t$ are obtained using
-\autoref{eq:fluctuations_t_antenna}:
+fluctuations in antenna temperature at a given time, $t$, are obtained
+using \autoref{eq:fluctuations_t_antenna}:
 
 \begin{equation}
         \var{T_\text{A}} = \frac{1}{\lambda^2} \int^{z_u}_{z_c}
@@ -971,10 +974,17 @@ corresponding to large and small outher scales, the Fourier transform of
 the autocorrelation can be written as a product of two terms (see
 \cite{church1995predicting}), $S\qty(\omega) =
 I\qty(\omega/v)\Phi\qty(\omega/v)$. Where $I\qty(\omega/v)$ is the
-instrumental filter on the temporal power spectrum, which is the same in
-both of the cases, and $\Phi\qty(\omega,v)$ is the power spectrum itself.
-In particular, if $b_\alpha\qty(\xi_x,\xi_y,\xi_z)$ is taken as the
-Kolmogorov normalized correlation function,
+instrumental filter function on the temporal power spectrum,
+
+\begin{equation}
+        I\qty(\frac{\omega}{v}) \propto \int^{z_u}_{z_c}
+        \frac{\dd{Z}}{w\qty(Z)} C^2_\alpha\qty(Z) T\qty(Z)
+        e^{-\frac{w^2\qty(Z)\omega^2}{4v^2}}
+\end{equation}
+
+which is the same in both of the cases, and $\Phi\qty(\omega,v)$ is the
+power spectrum itself.  In particular, if $b_\alpha\qty(\xi_x,\xi_y,\xi_z)$
+is taken as the Kolmogorov normalized correlation function,
 
 \begin{itemize}
         \item If $w(Z) \gg L_0$:
@@ -1003,7 +1013,7 @@ Kolmogorov normalized correlation function,
 \end{itemize}
 
 where $K$ and $K'$ are constants. The calculated power spectra for these
-two limiting cases are showed in \autoref{fig:t_antenna_ps}. They were
+two limiting cases are shown in \autoref{fig:t_antenna_ps}. They were
 obtained choosing $L_0 \sim \SI{1}{\meter}$ and $L_0 ~ \SI{100}{\meter}$,
 respectively. In the real situation $L_0 \sim \SI{10}{\meter}$, so emission
 at low altitude will contribute a spectrum with a $-8/3$ index and that at
@@ -1020,24 +1030,22 @@ high altitudes with a $-11/3$ index.
 
 \section{The Necessity of a Statistical Approch}
 
-As has been shown in the current chapter, it's a complex task to model
-the radiative contribution of our atmosphere. Atmospheric brighness
-temperature in the microwave range depends on a set of
-meteorological parameters, such as ground temperature; ground pressure;
-total column liquid and iced water and wind speed. In addition,
-white and correlated noise from atmospheric emission
-srongly depends on total precipitable water vapour (PWV).
-All of these quantities undergo seasonal and daily variations, thus
-it is convenient to embrace a statistical approach.
+As has been shown in the current chapter, modelling the radiative
+contribution of our atmosphere is a complex task. Atmospheric brighness
+temperature in the microwave range depends on a set of meteorological
+parameters, such as ground temperature; ground pressure; total column
+liquid and iced water and wind speed. In addition, white and correlated
+noise from atmospheric emission srongly depends on total precipitable water
+vapour (PWV).  All of these quantities undergo seasonal and daily
+variations, thus it is convenient to embrace a statistical approach.
 
-The following chapters of these thesis will be devoted to realization of a
-\emph{statistical picture} of the atmosphere at the site of the
+The following chapters of this thesis will be devoted to the realization of
+a \emph{statistical picture} of the atmosphere at the site of the
 Observatiorio del Teide and to the evaluation of the extra white noise
 contribution on Strip detectors due to atmospheric effects. For the sake of
-semplicity, atmospheric brighness temperature fluctuations, caused by
-the turbulent structure of the atmosphere (see
-\autoref{ss:turbulent_structure}), are not taken into account, but
-are left to future works. Instead, the atmosphere will be treated as
-uniform dispersive medium, bringing no correlation in time and
-characterized by an absortion coefficient, $\alpha_\nu$, varying with
-altitude.
+semplicity, atmospheric brighness temperature fluctuations, caused by the
+turbulent structure of the atmosphere (see
+\autoref{ss:turbulent_structure}), are not taken into account, but are left
+to future works. Instead, the atmosphere will be treated as uniform
+dispersive medium, causing no correlation in time and characterized by an
+absortion coefficient, $\alpha_\nu$, varying with altitude.
