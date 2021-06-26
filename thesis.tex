@@ -10,6 +10,8 @@
 \usepackage[pass]{geometry}
 % empty pages without numbering
 \usepackage{emptypage}
+\usepackage[type={CC},modifier={by-sa},version={4.0},]{doclicense}
+\usepackage{qrcode}
 
 \usepackage[backend=bibtex,style=authoryear]{biblatex}
 \addbibresource{./bibliography.bib}
@@ -59,6 +61,9 @@
 \frontmatter
 
 \hypersetup{pageanchor=true}
+
+% copyright info
+\input{./chapters/copyright/copyright.tex}
 
 % dedication
 \input{./chapters/dedication/dedication.tex}
