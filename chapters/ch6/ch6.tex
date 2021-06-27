@@ -1,25 +1,27 @@
 \chapter{Comparison with QUIJOTE-MFI Data}\label{ch:comparison_quijote}
 
-In this chapter values of atmospheric brightness temperature, which have
-been obtained making use of the numerical methods described in
-\autoref{ch:statistical_picture} and \autoref{ch:atm_variations}, are
-compared with measurements acquired by the QUIJOTE experiment.
+In this chapter we compare values of atmospheric brightness temperature,
+which we have obtained making use of the numerical methods described in
+\autoref{ch:statistical_picture} and \autoref{ch:atm_variations}, with
+measurements acquired by the QUIJOTE experiment.
 
-In particular, the values of $T_\text{atm}$ that have been measured by the
-\emph{Multi-Frequency Instrument} (MFI) are considered. MFI is mounted on
+In particular, we consider the values of $T_\text{atm}$ that have been measured by the
+\emph{Multi-Frequency Instrument} (MFI). MFI is mounted on
 the QT1 telescope, which is deployed at the Observatorio del Teide. It
 operates since November 2012 in four bands centered at
 \SIlist{11;13;17;19}{\giga\hertz}.
 
 \section{QUIJOTE Data and Raw Simulations}
 
-The QUIJOTE dataset is represented in \autoref{fig:quijote_dataset}.
-It includes measurements from a total of \num{444} MFI \emph{sky-dip}
-observations, performed between December 2012 and February 2015.  On
-average, we have one observation every \num{1.78} days. However, the time
-distribution of the data is quite inhomogeneous. There are periods in which
-we have one observation every sidereal day (sometimes two per day), but
-there are some extended periods without observations.
+The QUIJOTE dataset is represented in \autoref{fig:quijote_dataset}.  It
+includes measurements from a total of \num{444} MFI \emph{sky-dip}
+observations, performed between December 2012 and February 2015. Sky-dip
+observations are measurements of atmospheric emission performed scanning
+the sky at variable elevations. On average, we have one observation every
+\num{1.78} days. However, the time distribution of the data is quite
+inhomogeneous. There are periods in which we have one observation every
+sidereal day (sometimes two per day), but there are some extended periods
+without observations.
 
 \begin{figure}
         \centering
@@ -32,7 +34,7 @@ For each point of the scatter plot showed in \autoref{fig:quijote_dataset},
 we have used CAL to simulate a value of atmospheric brightness temperature
 at the same frequency and at the same hour of a typical day of the
 corresponding month. The comparison between simulated data and
-$T_\text{atm}$ acquired by the QUIJOTE-MFI instrument is showed in
+$T_\text{atm}$ acquired by the QUIJOTE-MFI instrument is shown in
 \autoref{fig:quijote_sim}.
 
 \begin{figure}
@@ -44,18 +46,17 @@ $T_\text{atm}$ acquired by the QUIJOTE-MFI instrument is showed in
 \end{figure}
 
 The scatter plot shows that a significant mismatch occurs. In particular
-the simulations performed with CAL, making use of ERA5 dataset, yield higher
-values of atmospheric brightness temperature. The mismatch becomes
-especially problematic for higher frequencies, approaching the
-\SI{22}{\giga\hertz} water vapour line. Moreover, QUIJOTE-MFI data
-exhibit much greater fluctuations over time.
+the simulations performed with CAL, making use of ERA5 dataset, yield
+higher values of atmospheric brightness temperature. The mismatch is larger
+at higher frequencies, approaching the \SI{22}{\giga\hertz} water vapour
+line. Moreover, the QUIJOTE-MFI data exhibit larger fluctuations in time.
 
-We recognise that part of the issues showed in \autoref{fig:quijote_sim}
+We recognise that part of the issues shown in \autoref{fig:quijote_sim}
 are due to the insufficient spatial resolution of ERA5 reanalysis data.
 \autoref{fig:pwv_teide_1980-01-01_12-00} shows a focus on the pixel in
 which the Observatorio del Teide is located. In particular we are
 interested in the area in which the Strip telescope will be deployed, which
-in the figure is signaled by a red circle. The ERA5 dataset only provides a
+in the figure is enclosed in a red circle. The ERA5 dataset only provides a
 single value per hour of the PWV for the whole pixel, which constitutes a
 spatial average.  Therefore, values of PWV are biased by contributions from
 coastal low lands, below \SI{2390}{\meter}, and ocean waters. In other
@@ -73,30 +74,32 @@ true values for Pico del Teide.
 \section{The Calibration Coefficient}
 
 To mitigate part of the issues presented in the previous section, we have
-employed atmospheric vertical profiles acquired by balloon probes at Pico
-del Teide during the year 2018. These vertical profiles reflects the true
-weather conditions near the observation site, but are characterized by low
-temporal resolution. This is because balloon probes needs approximately
-\num{12} hours to measure a whole atmospheric vertical profile. Therefore,
-no more than two vertical profiles per day can be acquired.
+used atmospheric vertical profiles of $T_s$, $P_s$ and PWV acquired by
+balloon probes at Pico del Teide during 2018. These vertical
+profiles reflect the true weather conditions near the observation site,
+but are characterized by low temporal resolution. This is because balloon
+probes need approximately \num{12} hours to measure a whole atmospheric
+vertical profile. Therefore, no more than two vertical profiles per day can
+be acquired.
 
 
-The free and open source computer program \emph{Atmospheric
-Model}\footnote{\url{https://zenodo.org/record/3406483}} (S. Paine) (AM) has
-been used to compute sky brightness temperatures starting from the  median
-annual vertical atmospheric profile for the year 2018. AM is a tool for
-radiative transfer computations at microwave to submillimeter wavelengths.
-Spectra which can be computed with AM include thermal emission, absorption,
-transmission, and excess delay. Median annual values of $T_\text{sky}$ has
-been obtained in the frequency range from \SIrange{10}{50}{\giga\hertz},
-with a frequency step of \SI{0.1}{\giga\hertz}.
+The free and open source computer program \emph{Atmospheric Model}
+(AM)\footnote{\url{https://zenodo.org/record/3406483}}
+\autocite{paine2012atmospheric} has been used to compute sky brightness
+temperatures starting from the  median annual vertical atmospheric profile
+for the year 2018. AM is a tool for radiative transfer computations at
+microwave to submillimeter wavelengths.  Spectra which can be computed with
+AM include thermal emission, absorption, transmission, and excess delay.
+Median annual values of $T_\text{sky}$ has been obtained in the frequency
+range from \SIrange{10}{50}{\giga\hertz}, with a frequency step of
+\SI{0.1}{\giga\hertz}.
 
 To compare this result with sky brightness temperatures from CAL,
 statistical populations of \num{2736000} elements for the relevant
-meteorological parameters have been computedr. As before, we have
+meteorological parameters have been computed. As before, we have
 initialized the \texttt{Weather} method with the CDFs \texttt{.fits} file
 for Pico del Teide. The extracted values of PWV, $T_s$ and $P_s$, which are
-showed in \autoref{fig:teide_annual_distributions}, are homogeneously
+shown in \autoref{fig:teide_annual_distributions}, are homogeneously
 distributed among the months of the year and the hours of the day.
 Expectation values for the meteorological parameters were computed from the
 corresponding statistical populations using the same estimator choosen for
@@ -110,7 +113,7 @@ in the appropriate frequency range.
         \centering
         \includegraphics[width=0.93\textwidth]{Teide_Annual_Distributions}
         \caption{Annual distribution for relevant meteorological parameters
-        at Pico del Teide.}
+        at Pico del Teide obtained using CAL and ERA5 data.}
         \label{fig:teide_annual_distributions}
 \end{figure}
 
@@ -162,8 +165,11 @@ It must be noted that $k_\nu$ is assumed to be time independent. This means
 that we think that weather conditions are homogeneous across the pixel, and
 non-homogeneity in meteorological parameters at a fixed time only depends
 on quantities which are not time dependent, such altitude and distance from
-the ocean. The calibration coefficient as a function of frequency is showed
-in \autoref{fig:calibration_coefficient_quijote}.
+the ocean. This assumption could be veriefied acquiring multiple vertical
+profiles simultaneously in the same pixel or performing radar scans of the
+distribution of clouds and precipitations. The calibration coefficient as a
+function of frequency is shown in
+\autoref{fig:calibration_coefficient_quijote}.
 
 \begin{figure}
         \centering
